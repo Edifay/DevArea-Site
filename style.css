@@ -1,0 +1,10 @@
+body{
+	background: url("ressources/bannier.jpg");
+	background-size: 100%;
+}
+
+.title{
+	text-align: center;
+	font-size: 100px;
+	color: grey;
+}
