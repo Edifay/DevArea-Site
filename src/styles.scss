@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Cubest";
+  font-style: normal;
+  src: url(fonts/Cubest-Medium.otf) format("otf")
+  src: url(fonts/Cubest-Light.otf) format("otf");
+}
+
+body{
+  background-color: #292B2F;
+  font-family: "Cubest";
+}

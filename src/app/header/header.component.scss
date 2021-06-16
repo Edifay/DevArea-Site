@@ -1,0 +1,44 @@
+header{
+  background-color: #C79F11;
+
+  position: absolute;
+  width: 450px;
+  border-radius: 20px;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+div{
+  width: 100px;
+}
+p{
+
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size:20px;
+
+
+}
+div:hover{
+  background-color: #9A7A0A;
+
+
+}
+.reseaux:hover{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.staff:hover{
+  border-top-right-radius:20px;
+  border-bottom-right-radius: 20px;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
