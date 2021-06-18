@@ -1,44 +1,87 @@
-header{
-  background-color: #C79F11;
 
-  position: absolute;
-  width: 450px;
-  border-radius: 20px;
-  text-align: center;
+header {
+  position: fixed;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // Vous pouvez toucher à la taille du header sans toucher à rien d'autre tout va rester comme il faut, sauf margin du <p> !!!
+  width: 500px;
+  height: 60px;
+
+  margin-top: 10px;
+
   left: 50%;
+  display: flex;
   transform: translate(-50%, 0%);
 
-}
-div{
-  width: 100px;
-}
-p{
+  border-radius: 20px;
 
-  display: inline-block;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size:20px;
-
-
+  background-color: #C79F11;
 }
-div:hover{
+
+p {
+  width: 100%;
+  height: auto;
+
+  font-size: 20px;
+  text-align: center;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
   background-color: #9A7A0A;
-
-
 }
-.reseaux:hover{
+
+.left_border:hover {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.staff:hover{
-  border-top-right-radius:20px;
+
+.right_border:hover {
+  border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-a{
-  text-decoration: none;
-  color:black;
+
+@media screen and (max-width: 550px) {
+  header {
+    box-shadow: 0px -2px 10px black;
+    position: fixed;
+
+    // Vous pouvez toucher à la taille du header sans toucher à rien d'autre tout va rester comme il faut, sauf margin du <p> !!!
+    width: 100%;
+    height: 60px;
+    margin-top: 0;
+
+    display: flex;
+
+    border-radius: 0;
+
+  }
+
+  .left_border:hover {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .right_border:hover {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  p {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

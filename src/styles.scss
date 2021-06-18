@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face {
-  font-family: "Cubest";
-  font-style: normal;
-  src: url(fonts/Cubest-Medium.otf) format("otf")
-  src: url(fonts/Cubest-Light.otf) format("otf");
+
+*{
+  margin: 0;
+  padding: 0;
 }
 
-body{
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
+}
+
+body {
   background-color: #292B2F;
-  font-family: "Cubest";
+  font-family: "Poppins";
 }
