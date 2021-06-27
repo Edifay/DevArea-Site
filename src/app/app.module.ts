@@ -1,12 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule, Routes} from "@angular/router";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FilInfoComponent } from './fil-info/fil-info.component';
-import { HeaderComponent } from './header/header.component';
-import { DescriptionComponent } from './description/description.component';
-import { CommandsAvailableComponent } from './commands-available/commands-available.component';
+import { FilInfoComponent } from './components/include/fil-info/fil-info.component';
+import { HeaderComponent } from './components/include/header/header.component';
+import { DescriptionComponent } from './components/include/description/description.component';
+import { CommandsAvailableComponent } from './components/include/commands-available/commands-available.component';
+import { MenuComponent } from './components/base/menu/menu.component';
+import { MissionsComponent } from './components/base/missions/missions.component';
+import { StaffComponent } from './components/base/staff/staff.component';
+import { StatsComponent } from './components/base/stats/stats.component';
+import { ReseauxComponent } from './components/base/reseaux/reseaux.component';
+import { NotFoundComponent } from './components/base/not-found/not-found.component';
+const appRoutes: Routes =[
+  {path:'menu', component:MenuComponent},
+  {path: '', component: MenuComponent},
+  {path: 'stats', component: StatsComponent},
+  {path:'reseaux', component: ReseauxComponent},
+  {path: 'staff', component: StaffComponent},
+  {path:'missions', component: MissionsComponent},
+  {path:'**',component: NotFoundComponent}
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +31,18 @@ import { CommandsAvailableComponent } from './commands-available/commands-availa
     FilInfoComponent,
     HeaderComponent,
     DescriptionComponent,
-    CommandsAvailableComponent
+    CommandsAvailableComponent,
+    MenuComponent,
+    MissionsComponent,
+    StaffComponent,
+    StatsComponent,
+    ReseauxComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
