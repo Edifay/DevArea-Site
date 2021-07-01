@@ -15,6 +15,8 @@ import { StaffComponent } from './components/base/staff/staff.component';
 import { StatsComponent } from './components/base/stats/stats.component';
 import { ReseauxComponent } from './components/base/reseaux/reseaux.component';
 import { NotFoundComponent } from './components/base/not-found/not-found.component';
+import { StaffCardComponent } from './components/include/staff-card/staff-card.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 const appRoutes: Routes =[
   {path:'menu', component:MenuComponent},
   {path: '', component: MenuComponent},
@@ -37,11 +39,13 @@ const appRoutes: Routes =[
     StaffComponent,
     StatsComponent,
     ReseauxComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    StaffCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

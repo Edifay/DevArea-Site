@@ -1,0 +1,22 @@
+<div class="slider">
+    <div class="slide-track">
+        <div class="slide">
+            <div class="parent">
+                <app-staff-card *ngFor="let person of staff"
+                                [staff_name]="person.name"
+                                [staff_bio]="person.bio"
+                                [staff_urlAvatar]="person.urlAvatar">
+                </app-staff-card>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="parent">
+                <app-staff-card *ngFor="let person of staff"
+                                [staff_name]="person.name"
+                                [staff_bio]="person.bio"
+                                [staff_urlAvatar]="person.urlAvatar">
+                </app-staff-card>
+            </div>
+        </div>
+    </div>
+</div>
