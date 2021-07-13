@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import {HttpClient} from "@angular/common/http";
-import {DiscordDataConnectionService} from './services/discord-data-connection.service';
+import {DiscordDataService} from './services/discord-data.service';
 @Component({
   selector: 'app-connexion-button',
   templateUrl: './connexion-button.component.html',
@@ -12,7 +12,7 @@ export class ConnexionButtonComponent implements OnInit {
 
 
 
-  constructor(private DiscordData: DiscordDataConnectionService) {
+  constructor(private DiscordData: DiscordDataService) {
 
 
   }

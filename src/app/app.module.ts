@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
-import {DiscordDataConnectionService} from './services/discord-data-connection.service'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,8 +59,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-      CookieService,
-      DiscordDataConnectionService
+      CookieService
   ],
   bootstrap: [AppComponent]
 })
