@@ -1,6 +1,7 @@
-<div class="staff">
+<div id="{{ staff_id }}" class="staff">
+    <h1 id="name" [ngStyle]="{'font-size':getSize()}">
     <img id="icon" src="{{ staff_urlAvatar }}">
-    <h1 id="name">{{ staff_name }}</h1>
-    <p id="description">{{ staff_bio }}</p>
+    {{ staff_name }}</h1>
+    <p id="description" [ngStyle]="{'font-size':getDescriptionSize()}"> {{ staff_bio }} </p>
 </div>
 

@@ -1,10 +1,8 @@
-<div class="circle">
-  <img src="https://devarea.fr/assets/images/reseaux/github.jpg" alt="" class="deg0">
-  <img src="https://devarea.fr/assets/images/reseaux/discord.png" alt="" class="deg45">
-  <img src="https://devarea.fr/assets/images/reseaux/power.png" alt="" class="deg90">
-  <img src="https://devarea.fr/assets/images/reseaux/github.jpg" alt="" class="deg135">
-  <img src="https://devarea.fr/assets/images/reseaux/instagram.png" alt="" class="deg180">
-  <img src="https://devarea.fr/assets/images/reseaux/profilBot.jpg" alt="" class="deg225">
-  <img src="https://devarea.fr/assets/images/reseaux/twitter.png" alt="" class="deg270">
-  <img src="https://devarea.fr/assets/images/reseaux/youtube.png" alt="" class="deg315">
-</div>
+<div id="test"><div class="circle">
+
+  <img *ngFor="let network of reseaux"
+       src="{{network.url}}"alt="Image"
+       class="{{returnClass(network.index, 'deg',45)}} test2"
+       (click)="changeOrder(network.index)"
+  >
+</div></div>

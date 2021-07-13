@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
-
+import {CookieService} from 'ngx-cookie-service';
+import {DiscordDataConnectionService} from './services/discord-data-connection.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,10 @@ import { ReseauxComponent } from './components/base/reseaux/reseaux.component';
 import { NotFoundComponent } from './components/base/not-found/not-found.component';
 import { StaffCardComponent } from './components/include/staff-card/staff-card.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { LanguagesSticksComponent } from './components/include/languages-sticks/languages-sticks.component';
+import { XpTopRankComponent } from './components/include/xp-top-rank/xp-top-rank.component';
+import { ConnexionComponent } from './components/base/connexion/connexion.component';
+import { ConnexionButtonComponent } from './components/include/connexion-button/connexion-button.component';
 const appRoutes: Routes =[
   {path:'menu', component:MenuComponent},
   {path: '', component: MenuComponent},
@@ -24,6 +29,7 @@ const appRoutes: Routes =[
   {path:'reseaux', component: ReseauxComponent},
   {path: 'staff', component: StaffComponent},
   {path:'missions', component: MissionsComponent},
+  {path:'connexion', component: ConnexionComponent},
   {path:'**',component: NotFoundComponent}
 ]
 
@@ -40,7 +46,11 @@ const appRoutes: Routes =[
     StatsComponent,
     ReseauxComponent,
     NotFoundComponent,
-    StaffCardComponent
+    StaffCardComponent,
+    LanguagesSticksComponent,
+    XpTopRankComponent,
+    ConnexionComponent,
+    ConnexionButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,10 @@ const appRoutes: Routes =[
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+      CookieService,
+      DiscordDataConnectionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

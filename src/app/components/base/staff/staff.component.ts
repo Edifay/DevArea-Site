@@ -12,12 +12,14 @@ export class StaffComponent implements OnInit {
         {
             name: 'Stramis',
             bio: "Rien pour l'instant",
-            urlAvatar: "http://devarea.fr/assets/images/profilBot.jpg"
+            urlAvatar: "/assets/images/profilBot.jpg",
+            idCss: "pair"
         },
         {
             name: 'Edifay',
             bio: "Nothing today",
-            urlAvatar: "http://devarea.fr/assets/images/profilBot.jpg"
+            urlAvatar: "/assets/images/profilBot.jpg",
+            idCss: "pair"
         }
     ];
 
@@ -31,7 +33,7 @@ export class StaffComponent implements OnInit {
 
     getStaff() {
         this.httpClient
-            .get<any[]>('/data/staff_list')
+            .get<any[]>('/data/staff/staff_list')
             .subscribe(
                 (response) => {
                     this.staff = response;
