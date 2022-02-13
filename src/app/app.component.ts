@@ -9,6 +9,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
 
+  source="foo"
+
   constructor() {
 
   }
