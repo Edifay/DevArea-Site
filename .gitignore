@@ -45,11 +45,6 @@ Thumbs.db
 .vscode/tasks.json
 .browserslistrc
 .editorconfig
-angular.json
-DevArea.iml
 karma.conf.js
-package-lock.json
-package.json
-tsconfig.spec.json
-tsconfig.json
-tsconfig.app.json
+
+DevArea.iml
