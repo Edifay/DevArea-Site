@@ -1,6 +1,52 @@
-h2{
-  font-size: 15px;
+img {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
 }
-#emoji{
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+}
+
+#pseudo {
+  margin-left: 8px;
+}
+
+#container {
+  display: flex;
+  justify-content: end;
+}
+
+#left {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  width: available;
+  margin-right: auto;
+}
+
+#right {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  width: available;
+  margin-right: 8px;
+}
+
+#rank {
+  margin-right: 8px;
+  margin-left: 4px;
+}
+
+#xp {
+  font-size: 30px;
+  align-self: end;
+}
+
+#emoji {
   font-size: 22px;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
 }

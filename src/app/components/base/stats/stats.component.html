@@ -1,20 +1,24 @@
-
-    <div class="repere">
-
-    <app-languages-sticks *ngFor="let language of languages"
-                            [name]="language.name"
-                            [Members]="language.countMember"
-                            [color]="language.color"
-                            [numberOfLanguages]="number"
-                            [bigger]="bigString"
+<div id="top">
+  <div id="graphContainer">
+    <app-languages-sticks
+      id="graph"
+      *ngFor="let language of languages"
+      [name]="language.name"
+      [Members]="language.countMember"
+      [color]="language.color"
+      [numberOfLanguages]="number"
+      [bigger]="bigString"
     ></app-languages-sticks>
-
+  </div>
 </div>
 
-<div class="xp-top">
-    <app-xp-top-rank *ngFor="let person of XpBoard; let i= index"
-                    [rank]=person.rank
-                    [pseudo]="person.name"
-                    [xp]=person.xp
-                    [index]=i+1></app-xp-top-rank>
+<div class="bottom">
+  <app-xp-top-rank
+    id="xp"
+    *ngFor="let person of XpBoard; let i= index"
+    [rank]=person.rank+1
+    [pseudo]="person.name"
+    [xp]=person.xp
+    [url]="person.urlAvatar"></app-xp-top-rank>
+  <a id="loadMore" on-click="more()">Plus</a>
 </div>

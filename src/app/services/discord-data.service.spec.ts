@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DiscordDataService } from './discord-data.service';
+import {DiscordDataService} from './discord-data.service';
 
 describe('DiscordDataService', () => {
   let service: DiscordDataService;

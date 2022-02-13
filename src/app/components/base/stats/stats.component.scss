@@ -1,18 +1,55 @@
-.repere{
+#top {
+  padding-top: 100px;
+  margin: 0 auto auto;
+}
+
+#graphContainer {
   background-color: grey;
   width: min-content;
-  height:550px;
+  height: 550px;
   display: flex;
   align-items: flex-end;
   border-radius: 5px;
+  margin: auto auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
+#loadMore {
+  margin-left: auto;
+  margin-right: auto;
 
-.xp-top{
-  float:right;
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+
+  text-align: center;
+  font-size: 30px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: #53c6fa;
+}
+
+#loadMore:hover {
+  cursor: pointer;
+  background-color: #2086d7;
+  color: white;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 5em 5em 200px;
   background-color: grey;
+  align-content: center;
+  padding-bottom: 10px;
 }
-body{
+
+body {
   display: flex;
   align-items: center;
 }

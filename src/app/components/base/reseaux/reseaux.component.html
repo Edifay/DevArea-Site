@@ -1,8 +1,10 @@
-<div id="test"><div class="circle">
+<div id="test">
+  <div class="circle">
 
-  <img *ngFor="let network of reseaux"
-       src="{{network.url}}"alt="Image"
-       class="{{returnClass(network.index, 'deg',45)}} test2"
-       (click)="changeOrder(network.index)"
-  >
-</div></div>
+    <img *ngFor="let network of reseaux"
+         src="{{network.url}}" alt="Image"
+         class="{{returnClass(network.index, 'deg',45)}} test2"
+         (click)="changeOrder(network.index)"
+    >
+  </div>
+</div>
