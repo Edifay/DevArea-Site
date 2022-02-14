@@ -1,4 +1,16 @@
-<div id = "missions_container">
+<div id="missions_container">
+  <div id="presentation">
+    <h1 id="title">
+      Les missions payantes
+    </h1>
+    <p>
+      Cette espace représente le channel <a target="_blank" rel="noopener noreferrer"
+                                            href="https://discord.com/channels/768370886532137000/768855632224190496"><span
+      class="discord_channel"># 💰・missions-payantes</span></a> du serveur discord. Vous pourrez y retrouver les
+      missions
+      posté par les utilisateurs.
+    </p>
+  </div>
   <app-mission-card
     id="mission"
     *ngFor="let mission of missions_list; let i= index"
@@ -11,5 +23,6 @@
     [niveau]="mission.niveau"
     [member_name]="mission.member_name"
     [avatar]="mission.avatar"
-    [member_tag]="mission.member_tag"></app-mission-card>
+    [member_tag]="mission.member_tag"
+    [message_id]="mission.message_id"></app-mission-card>
 </div>

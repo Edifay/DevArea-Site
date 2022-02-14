@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -13,4 +13,14 @@
 body {
   background-color: #292B2F;
   font-family: "Poppins";
+}
+
+.discord_channel {
+  color: #8effff;
+  background-color: rgba(0, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.discord_channel:hover {
+  background-color: rgba(0, 255, 247, 0.54);
 }

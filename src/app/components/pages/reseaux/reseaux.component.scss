@@ -1,56 +1,64 @@
 .deg0 {
   transform: rotate(0deg) translate(250px) rotate(-0deg);
 
-};
+}
+
 .deg45 {
   transform: rotate(45deg) translate(250px) rotate(-45deg);
 
-};
+}
+
 .deg90 {
   transform: rotate(90deg) translate(250px) rotate(-90deg);
 
-};
+}
+
 .deg135 {
   transform: rotate(135deg) translate(250px) rotate(-135deg);
 
-};
+}
+
 .deg180 {
   transform: rotate(180deg) translate(250px) rotate(-180deg);
 
-};
+}
+
 .deg225 {
   transform: rotate(225deg) translate(250px) rotate(-225deg);
 
-};
+}
+
+
 .deg270 {
   transform: rotate(270deg) translate(250px) rotate(-270deg);
 
-};
-.deg315{
+}
+
+.deg315 {
   transform: rotate(315deg) translate(250px) rotate(-315deg);
 
-};
-img{
+}
+
+img {
 
   width: 150px;
   height: 150px;
   position: absolute;
   border-radius: 50%;
 }
-.test2{
+
+.test2 {
   //animation: spin-inverse 10s linear infinite;
 }
 
-.circle{
+.circle {
   z-index: 0;
   text-align: center;
   vertical-align: center;
   //transform: translate(-75px,0px);
-
   animation: spin 10s linear infinite;
-
-
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -62,6 +70,7 @@ img{
     transform-origin: 75px 75px;
   }
 }
+
 @keyframes spin-inverse {
   0% {
     transform: rotate(0deg);
@@ -73,9 +82,17 @@ img{
     //transform-origin: 75px 75px;
   }
 }
-#test{
+
+#test {
   padding-top: 200px;
   padding-left: 200px;
   display: flex;
   align-items: center;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  padding-top: 200px;
+  font-size: 55px;
 }

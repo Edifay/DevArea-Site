@@ -1,3 +1,7 @@
 <site-header></site-header>
-<app-connexion-button [sourceImage]="source"></app-connexion-button>
+<app-connexion-button
+  [sourceImage]="member_infos.urlAvatar"
+  [name]="member_infos.name"
+  [style_on_connection_change]="connected"
+></app-connexion-button>
 <router-outlet></router-outlet>

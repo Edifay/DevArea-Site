@@ -8,6 +8,7 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class StatsComponent implements OnInit {
+
   languages = [
     {
       name: "Chargement...",
@@ -16,41 +17,43 @@ export class StatsComponent implements OnInit {
     }
   ];
 
-  rolesId = ["0"];
+  roles_id = ["0"];
 
   constructor(private httpClient: HttpClient) {
-    this.try();
-    this.getXpTop();
+    this.fetch_id_languages();
+    this.fetch_xp();
   }
 
   ngOnInit(): void {
   }
 
-  request1: string = '';
+  languages_request: string = '';
   number: string = '1';
 
-  try() {
+  fetch_id_languages() {
     this.httpClient
       .get<any[]>('/assets/data/languages.json')
       .subscribe(data => {
-          this.rolesId = data;
-          this.number = this.rolesId.length.toString();
-          console.log("Ici : ", this.number)
-          this.request1 = this.rolesId.join('","');
-          this.request1 = '?roles="' + this.request1 + '"';
-          this.getLanguages();
+
+          this.roles_id = data;
+
+          this.number = this.roles_id.length.toString();
+
+          let list_of_ids = this.roles_id.join('","');
+          this.languages_request = '?roles="' + list_of_ids + '"';
+
+          this.fetch_languages();
         }
       );
   }
 
-  getLanguages() {
+  fetch_languages() {
     this.httpClient
-      .get<any[]>('/data/stats/rolesCount_list' + this.request1)
+      .get<any[]>('/data/stats/rolesCount_list' + this.languages_request)
       .subscribe(
         (response) => {
           this.languages = response;
           this.bigger();
-          console.log(this.big);
         },
         (error) => {
           console.log('Error : ', error);
@@ -81,7 +84,7 @@ export class StatsComponent implements OnInit {
   private number_fetch = 10;
   private load_per_click = 50;
 
-  getXpTop() {
+  fetch_xp() {
     this.httpClient
       .get<any[]>('/data/stats/xp_list?start=0&end=' + this.number_fetch.toString())
       .subscribe(

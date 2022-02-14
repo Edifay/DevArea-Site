@@ -1,1 +1,13 @@
-<img src="{{sourceImage}}" alt="" routerLink="connexion">
+<span class="{{style_on_connection_change}}">
+  <div id="container" [ngStyle]="{'visibility':visibility_menu}" (mouseleave)="closeMenu()">
+    <div id="data_member">
+      <h3 id="pseudo">{{name}}</h3>
+      <img src="{{sourceImage}}" (click)="openMenu()" alt="">
+    </div>
+    <h2 class="options" id="option" routerLink="connexion">Options</h2>
+    <h2 class="options" id="connect" (click)="connection()">Se connecter</h2>
+    <h2 class="options" id="disconnect" (click)="disconnection()">Se deconnecter</h2>
+  </div>
+</span>
+
+<!-- routerLink="connexion" -->

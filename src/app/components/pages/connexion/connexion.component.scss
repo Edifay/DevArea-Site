@@ -1,6 +1,6 @@
-#connected{
-  font-size:15px;
-  color:white;
+#connected {
+  font-size: 15px;
+  color: white;
   background-color: #4CAF50;
   border-radius: 2px;
   border-color: white;
@@ -9,12 +9,12 @@
   margin-top: 20px;
 
 
-
 }
-#disconnected{
+
+#disconnected {
   margin-top: 20px;
-  font-size:15px;
-  color:white;
+  font-size: 15px;
+  color: white;
 
   background-color: red;
   border-radius: 2px;
@@ -24,14 +24,17 @@
 
 
 }
-button:hover{
+
+button:hover {
   cursor: pointer;
 }
-h2{
+
+h2 {
 
 }
-.container{
-  padding-top:100px;
+
+.container {
+  padding-top: 100px;
   left: 50%;
   display: flex;
   flex-direction: column;

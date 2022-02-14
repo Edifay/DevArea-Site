@@ -17,7 +17,7 @@ import {StatsComponent} from './components/pages/stats/stats.component';
 import {ReseauxComponent} from './components/pages/reseaux/reseaux.component';
 import {NotFoundComponent} from './components/pages/not-found/not-found.component';
 import {StaffCardComponent} from './components/pages/staff/components/staff-card/staff-card.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {LanguagesSticksComponent} from './components/pages/stats/components/languages-sticks/languages-sticks.component';
 import {XpTopRankComponent} from './components/pages/stats/components/xp-top-rank/xp-top-rank.component';
 import {ConnexionComponent} from './components/pages/connexion/connexion.component';

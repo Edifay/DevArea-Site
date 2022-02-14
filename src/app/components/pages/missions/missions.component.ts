@@ -1,5 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {CookieService} from 'ngx-cookie-service';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -9,18 +8,13 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class MissionsComponent implements OnInit {
-  private cookieValue: string = '';
 
-  constructor(private httpClient: HttpClient, private cookieService: CookieService) {
+  constructor(private httpClient: HttpClient) {
   }
-
 
   ngOnInit(): void {
-    this.cookieValue = this.cookieService.get('codeDiscord');
-    console.log(this.cookieValue);
     this.fetch_mission();
   }
-
 
   missions_list = [
     {
@@ -33,7 +27,8 @@ export class MissionsComponent implements OnInit {
       niveau: "le niveau requis",
       member_name: "pseudo du membre",
       avatar: "https://www.magimix.com/webroot-mobile/img/loading.gif",
-      member_tag: "le tag du membre"
+      member_tag: "le tag du membre",
+      message_id: "0"
     }
   ]
 
@@ -52,7 +47,6 @@ export class MissionsComponent implements OnInit {
         }
       );
   }
-
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event: Event) {
@@ -89,6 +83,5 @@ export class MissionsComponent implements OnInit {
         );
     }
   }
-
 
 }

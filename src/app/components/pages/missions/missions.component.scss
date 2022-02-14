@@ -1,3 +1,35 @@
+#presentation {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+#presentation p {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+#presentation a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit;
+}
+
+#title {
+  text-align: center;
+  padding: 15px;
+
+  z-index: 2;
+  background-image: url("/assets/images/fond1.jpg");
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 #mission {
   display: block;
   background-color: grey;

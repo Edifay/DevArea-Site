@@ -72,12 +72,8 @@ export class ReseauxComponent implements OnInit {
     angle=angle*index;
     text=text+angle.toString();
     return text;
-
-
-
-
-
   }
+
   indexGen : number=0;
   changeOrder(index: number){
     console.log("Index : ",index);
