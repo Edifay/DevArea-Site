@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DiscordDataService} from 'src/app/services/discord-data.service';
+import {DiscordDataService} from 'src/app/services/discord-cookie/discord-data.service';
 
 @Component({
   selector: 'app-connexion-button',
