@@ -98,6 +98,7 @@ export class StatsComponent implements OnInit {
   To prevent multiple load !
    */
   private loading = false;
+  public display_mode_button = "block;";
 
   more(): void {
     if (!this.loading) {
@@ -111,8 +112,7 @@ export class StatsComponent implements OnInit {
             if (this.number_fetch + this.load_per_click == this.XpBoard.length)
               this.number_fetch = this.XpBoard.length;
             else {
-              // @ts-ignore
-              document.querySelector("#loadMore").style.cssText = "display: none";
+              this.display_mode_button = "none";
             }
           },
           (error) => {

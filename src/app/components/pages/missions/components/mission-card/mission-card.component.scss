@@ -1,0 +1,100 @@
+#container {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  white-space: break-spaces;
+}
+
+#title {
+  text-align: center;
+  color: white;
+  font-size: 35px;
+}
+
+#description {
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.title_param {
+  font-size: 20px;
+  color: #292B2F;
+}
+
+.param {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#member {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  margin-top: 20px;
+  user-select: none;
+}
+
+#block{
+  display: flex;
+  cursor: pointer;
+}
+
+#name {
+  line-height: 70px;
+  text-align: center;
+  user-select: none;
+}
+
+#icon {
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 200px;
+  user-select: none;
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  margin-bottom: -40px;
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -55px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+

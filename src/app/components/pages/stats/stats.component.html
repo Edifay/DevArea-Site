@@ -33,6 +33,6 @@
       [xp]=person.xp
       [url]="person.urlAvatar"
       [level]="person.level"></app-xp-top-rank>
-    <a id="loadMore" on-click="more()">Plus</a>
+    <a id="loadMore" on-click="more()" [ngStyle]="{'display':display_mode_button}">Plus</a>
   </div>
 </div>

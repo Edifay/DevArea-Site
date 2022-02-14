@@ -1,1 +1,16 @@
-<p>mission-card works!</p>
+<div id="container">
+  <h2 id="title">{{title}}</h2>
+  <h2 id="description">{{description}}</h2>
+  <h2 class="param"><span class="title_param">Date de retour:</span> {{date_retour}}</h2>
+  <h2 class="param"><span class="title_param">Langage:</span> {{langage}}</h2>
+  <h2 class="param"><span class="title_param">Support:</span> {{support}}</h2>
+  <h2 class="param"><span class="title_param">Niveau:</span> {{niveau}}</h2>
+  <h2 class="param">💵{{prix}}💵</h2>
+  <div id="member">
+    <div id="block" class="tooltip" (click)="myFunction()" (mouseout)="outFunc()">
+      <span class="tooltiptext" id="myTooltip">{{text_copy}}</span>
+      <img id="icon" src="{{avatar}}" alt=""/>
+      <h2 id="name">{{member_name}}</h2>
+    </div>
+  </div>
+</div>

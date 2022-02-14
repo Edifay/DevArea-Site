@@ -1,0 +1,15 @@
+<div id = "missions_container">
+  <app-mission-card
+    id="mission"
+    *ngFor="let mission of missions_list; let i= index"
+    [title]="mission.title"
+    [description]="mission.description"
+    [prix]="mission.prix"
+    [date_retour]="mission.date_retour"
+    [langage]="mission.langage"
+    [support]="mission.support"
+    [niveau]="mission.niveau"
+    [member_name]="mission.member_name"
+    [avatar]="mission.avatar"
+    [member_tag]="mission.member_tag"></app-mission-card>
+</div>
