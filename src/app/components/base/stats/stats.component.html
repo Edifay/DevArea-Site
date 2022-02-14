@@ -1,4 +1,5 @@
-<div id="top">
+<div id="languages_part">
+  <h1 class="title">Nombres de membres par langages</h1>
   <div id="graphContainer">
     <app-languages-sticks
       id="graph"
@@ -12,13 +13,26 @@
   </div>
 </div>
 
-<div class="bottom">
-  <app-xp-top-rank
-    id="xp"
-    *ngFor="let person of XpBoard; let i= index"
-    [rank]=person.rank+1
-    [pseudo]="person.name"
-    [xp]=person.xp
-    [url]="person.urlAvatar"></app-xp-top-rank>
-  <a id="loadMore" on-click="more()">Plus</a>
+<div id="xp_part">
+  <h1 class="title" id="title_graph">Leaderboard de l'xp du serveur</h1>
+  <div id="xp_container">
+    <div id="table_header">
+      <div id="table_header_left">
+        <h2 id="table_header_rank">Rang</h2>
+        <h2 id="table_header_pseudo">Pseudo</h2>
+      </div>
+      <div id="table_header_right">
+        <h2 id="table_header_xp">XP</h2>
+      </div>
+    </div>
+    <app-xp-top-rank
+      id="xp"
+      *ngFor="let person of XpBoard; let i= index"
+      [rank]=person.rank+1
+      [pseudo]="person.name"
+      [xp]=person.xp
+      [url]="person.urlAvatar"
+      [level]="person.level"></app-xp-top-rank>
+    <a id="loadMore" on-click="more()">Plus</a>
+  </div>
 </div>

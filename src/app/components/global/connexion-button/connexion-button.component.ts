@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CookieService} from 'ngx-cookie-service';
-import {HttpClient} from "@angular/common/http";
 import {DiscordDataService} from 'src/app/services/discord-data.service';
 
 @Component({

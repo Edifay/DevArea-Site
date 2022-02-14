@@ -1,5 +1,11 @@
-#top {
-  padding-top: 100px;
+.title {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+}
+
+#languages_part {
+  padding-top: 200px;
   margin: 0 auto auto;
 }
 
@@ -15,7 +21,79 @@
   padding-right: 5px;
 }
 
+#xp_part {
+  margin-top: 350px;
+  margin-bottom: 100px;
+}
+
+#xp_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-content: center;
+
+  margin-left: 15em;
+  margin-right: 15em;
+
+  border-radius: 5px;
+  background-color: grey;
+
+  padding-bottom: 10px;
+}
+
+#xp {
+  background-color: #767676;
+  margin: 2px;
+  border-radius: 15px;
+}
+
+#table_header {
+  display: flex;
+  justify-content: end;
+  height: 50px;
+  border-bottom: solid 2px;
+  user-select: none;
+}
+
+#table_header h2 {
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+}
+
+#table_header_left {
+  display: flex;
+  margin-right: auto;
+  width: 100%;
+}
+
+#table_header_right {
+  display: flex;
+}
+
+#table_header_rank {
+  border-right: solid 2px;
+  width: 72px;
+}
+
+#table_header_pseudo {
+  font-size: 30px;
+  width: 100%;
+}
+
+#table_header_xp {
+  border-left: solid 2px;
+  width: 220px;
+}
+
+#table_header_level {
+  border-left: solid 2px;
+  width: 220px;
+}
+
 #loadMore {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 
@@ -35,18 +113,12 @@
 #loadMore:hover {
   cursor: pointer;
   background-color: #2086d7;
-  color: white;
 }
 
-.bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 5px;
-  margin: 5em 5em 200px;
-  background-color: grey;
-  align-content: center;
-  padding-bottom: 10px;
+#loadMore:active{
+  cursor: pointer;
+  color: white;
+  background-color: #2086d7;
 }
 
 body {

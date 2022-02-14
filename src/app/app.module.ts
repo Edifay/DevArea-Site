@@ -6,22 +6,23 @@ import {CookieService} from 'ngx-cookie-service';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {FilInfoComponent} from './components/include/fil-info/fil-info.component';
-import {HeaderComponent} from './components/include/header/header.component';
-import {DescriptionComponent} from './components/include/description/description.component';
-import {CommandsAvailableComponent} from './components/include/commands-available/commands-available.component';
+import {FilInfoComponent} from './components/pages/menu/fil-info/fil-info.component';
+import {HeaderComponent} from './components/global/header/header.component';
+import {DescriptionComponent} from './components/pages/menu/description/description.component';
+import {CommandsAvailableComponent} from './components/pages/menu/commands-available/commands-available.component';
 import {MenuComponent} from './components/base/menu/menu.component';
 import {MissionsComponent} from './components/base/missions/missions.component';
 import {StaffComponent} from './components/base/staff/staff.component';
 import {StatsComponent} from './components/base/stats/stats.component';
 import {ReseauxComponent} from './components/base/reseaux/reseaux.component';
 import {NotFoundComponent} from './components/base/not-found/not-found.component';
-import {StaffCardComponent} from './components/include/staff-card/staff-card.component';
+import {StaffCardComponent} from './components/pages/staff/staff-card/staff-card.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {LanguagesSticksComponent} from './components/include/languages-sticks/languages-sticks.component';
-import {XpTopRankComponent} from './components/include/xp-top-rank/xp-top-rank.component';
+import {LanguagesSticksComponent} from './components/pages/stats/languages-sticks/languages-sticks.component';
+import {XpTopRankComponent} from './components/pages/stats/xp-top-rank/xp-top-rank.component';
 import {ConnexionComponent} from './components/base/connexion/connexion.component';
-import {ConnexionButtonComponent} from './components/include/connexion-button/connexion-button.component';
+import {ConnexionButtonComponent} from './components/global/connexion-button/connexion-button.component';
+import { MissionCardComponent } from './components/pages/missions/mission-card/mission-card.component';
 
 const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     LanguagesSticksComponent,
     XpTopRankComponent,
     ConnexionComponent,
-    ConnexionButtonComponent
+    ConnexionButtonComponent,
+    MissionCardComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +62,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    CookieService,
-    ConnexionButtonComponent
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

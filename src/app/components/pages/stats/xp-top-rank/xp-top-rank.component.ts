@@ -12,6 +12,7 @@ export class XpTopRankComponent implements OnInit {
   @Input() rank: number = 0;
   @Input() xp: number = 10000000;
   @Input() trophy: string = '';
+  @Input() level: number = 0;
 
   constructor() {
 
