@@ -1,24 +1,64 @@
-.parent{
+#container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 200px;
+}
+
+#informations {
+  background-color: gray;
+  display: block;
+  height: auto;
+  max-width: 80%;
+  width: auto;
+  margin-left: max(250px, 20%);
+  margin-right: 20%;
+  border-radius: 20px;
+}
+
+p {
+  padding: 2% 2%;
+  font-size: 15px;
+  text-align: justify;
+  z-index: 2;
+}
+
+h1 {
+  text-align: center;
+  padding: 15px;
+
+  z-index: 2;
+  background-image: url("/assets/images/fond1.jpg");
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.parent {
   display: flex;
 }
+
 @mixin white-gradient {
-  background: linear-gradient(to right,  rgba(41,43,47,1) 0%,rgba(41,43,47,0) 100%);
+  background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
 }
 
 $animationSpeed: 40s;
 
 // Animation
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-290px * 7))}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-290px * 7))
+  }
 }
-
 
 
 // Styling
 .slider {
-  padding-top: 150px;
-  overflow:hidden;
+  margin-top: 100px;
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -50,8 +90,8 @@ $animationSpeed: 40s;
   }
 }
 
-@media screen and(max-width: 550px){
-  .parent{
+@media screen and(max-width: 550px) {
+  .parent {
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -59,19 +99,23 @@ $animationSpeed: 40s;
     transform: translate(-50%);
   }
   @mixin white-gradient {
-    background: linear-gradient(to right,  rgba(41,43,47,1) 0%,rgba(41,43,47,0) 100%);
+    background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
   }
   // Animation
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-270px * 7))}
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-270px * 7))
+    }
   }
 
 
   // Styling
   .slider {
     padding-top: 150px;
-    overflow:hidden;
+    overflow: hidden;
 
     &::before,
     &::after {
@@ -97,7 +141,7 @@ $animationSpeed: 40s;
       width: calc(270px * 7);
     }
   }
-  #at-remove{
+  #at-remove {
     display: none;
   }
 }

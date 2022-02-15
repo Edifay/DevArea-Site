@@ -1,23 +1,34 @@
-<div class="slider">
-  <div class="slide-track">
-    <div class="slide">
-      <div class="parent">
-        <app-staff-card *ngFor="let person of staff"
-                        [staff_name]="person.name"
-                        [staff_bio]="person.bio"
-                        [staff_urlAvatar]="person.urlAvatar"
-                        [staff_id]="person.idCss">
-        </app-staff-card>
+<div id="container">
+  <div id="informations">
+    <h1>
+      Le Staff
+    </h1>
+    <p>
+      Le serveur <strong>Dev'Area</strong> a été mit en place, depuis 2020. Aujourd'hui l'équipe du staff composé de 7
+      membres, veilles toujours à ce que la communauté puisse évolué, et pouvoir y ajouter des fonctionnalitées.
+    </p>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide">
+        <div class="parent">
+          <app-staff-card *ngFor="let person of staff"
+                          [staff_name]="person.name"
+                          [staff_bio]="person.bio"
+                          [staff_urlAvatar]="person.urlAvatar"
+                          [staff_id]="person.idCss">
+          </app-staff-card>
+        </div>
       </div>
-    </div>
-    <div class="slide">
-      <div class="parent" id="at-remove">
-        <app-staff-card *ngFor="let person of staff"
-                        [staff_name]="person.name"
-                        [staff_bio]="person.bio"
-                        [staff_urlAvatar]="person.urlAvatar"
-                        [staff_id]="person.idCss">
-        </app-staff-card>
+      <div class="slide">
+        <div class="parent" id="at-remove">
+          <app-staff-card *ngFor="let person of staff"
+                          [staff_name]="person.name"
+                          [staff_bio]="person.bio"
+                          [staff_urlAvatar]="person.urlAvatar"
+                          [staff_id]="person.idCss">
+          </app-staff-card>
+        </div>
       </div>
     </div>
   </div>
