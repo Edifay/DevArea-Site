@@ -11,6 +11,7 @@
   margin-right: 5px;
   border-radius: 15px;
   padding-bottom: 5px;
+  user-select: none;
 }
 
 #data_member {
@@ -49,7 +50,7 @@ img {
   font-size: 22px;
 }
 
-.options {
+.connected .options {
   line-height: 40px;
   font-size: 23px;
   text-align: center;
@@ -57,7 +58,29 @@ img {
   transition: font-size 250ms;
 }
 
-.options:hover {
+.connected .options:hover {
+  font-size: 27px;
+  transition: font-size 250ms;
+}
+
+.not_connected .options {
+  line-height: 40px;
+  font-size: 23px;
+  text-align: center;
+  cursor: no-drop;
+  color: #4c4c4c;
+  pointer-events: none;
+}
+
+.not_connected .options_disco {
+  line-height: 40px;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: font-size 250ms;
+}
+
+.not_connected .options_disco:hover {
   font-size: 27px;
   transition: font-size 250ms;
 }
@@ -67,9 +90,5 @@ img {
 }
 
 .not_connected #disconnect {
-  display: none;
-}
-
-.not_connected #option {
   display: none;
 }

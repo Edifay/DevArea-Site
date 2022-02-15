@@ -1,0 +1,43 @@
+<div id="container">
+  <h1 id="title_page">Espace Personnel</h1>
+  <div id="first_line">
+    <div id="first_colum">
+      <div id="xp_card">
+        <app-personnal-xp
+          [avatar]="component.member_infos.urlAvatar"
+          [name]="component.member_infos.tag"
+          [next_level_xp]="component.member_infos.next_xp_level"
+          [previous_level_xp]="component.member_infos.previous_xp_level"
+          [xp]="component.member_infos.xp"
+          [previous_level]="component.member_infos.level"
+          [next_level]="component.member_infos.level+1">
+        </app-personnal-xp>
+      </div>
+      <div id=badges_card>
+        <app-badges-card>
+        </app-badges-card>
+      </div>
+    </div>
+    <div id="second_colum">
+      <h2 id="title_missions">Vos Missions:</h2>
+      <app-mission-card
+        id="mission"
+        *ngFor="let mission of component.member_infos.missions_list; let i= index"
+        [title]="mission.title"
+        [description]="mission.description"
+        [prix]="mission.prix"
+        [date_retour]="mission.date_retour"
+        [langage]="mission.langage"
+        [support]="mission.support"
+        [niveau]="mission.niveau"
+        [member_name]="mission.member_name"
+        [avatar]="mission.avatar"
+        [member_tag]="mission.member_tag"
+        [message_id]="mission.message_id"
+        [own]="own_missions"></app-mission-card>
+      <h2 *ngIf="component.member_infos.missions_list.length == 0" id="no_mission">Vous ne possédez pas de
+        mission...</h2>
+      <h2 id="button_create" (click)="newMission()">{{text_button_create}}</h2>
+    </div>
+  </div>
+</div>

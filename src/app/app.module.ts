@@ -20,9 +20,11 @@ import {StaffCardComponent} from './components/pages/staff/components/staff-card
 import {HttpClientModule} from "@angular/common/http";
 import {LanguagesSticksComponent} from './components/pages/stats/components/languages-sticks/languages-sticks.component';
 import {XpTopRankComponent} from './components/pages/stats/components/xp-top-rank/xp-top-rank.component';
-import {ConnexionComponent} from './components/pages/connexion/connexion.component';
 import {ConnexionButtonComponent} from './components/global/connexion-button/connexion-button.component';
 import { MissionCardComponent } from './components/pages/missions/components/mission-card/mission-card.component';
+import { OptionsComponent } from './components/pages/options/options.component';
+import { PersonnalXpComponent } from './components/pages/options/components/personnal-xp/personnal-xp.component';
+import { BadgesCardComponent } from './components/pages/options/components/badges-card/badges-card.component';
 
 const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -31,7 +33,7 @@ const appRoutes: Routes = [
   {path: 'reseaux', component: ReseauxComponent},
   {path: 'staff', component: StaffComponent},
   {path: 'missions', component: MissionsComponent},
-  {path: 'connexion', component: ConnexionComponent},
+  {path: 'options', component: OptionsComponent},
   {path: '**', component: NotFoundComponent}
 ]
 
@@ -51,9 +53,11 @@ const appRoutes: Routes = [
     StaffCardComponent,
     LanguagesSticksComponent,
     XpTopRankComponent,
-    ConnexionComponent,
     ConnexionButtonComponent,
-    MissionCardComponent
+    MissionCardComponent,
+    OptionsComponent,
+    PersonnalXpComponent,
+    BadgesCardComponent
   ],
   imports: [
     BrowserModule,

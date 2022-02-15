@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import {AppComponent} from "../../../../../app.component";
 
 @Component({
   selector: 'app-mission-card',
@@ -20,10 +21,11 @@ export class MissionCardComponent implements OnInit {
   @Input() avatar: string = "https://www.magimix.com/webroot-mobile/img/loading.gif";
   @Input() member_tag: string = "idk#8888";
   @Input() message_id: string = "0";
+  @Input() own: string = "false";
 
   text_copy = "Copy Tag";
 
-  constructor(private http_client: HttpClient, private cookie: CookieService) {
+  constructor(private http_client: HttpClient, private cookie: CookieService, private app: AppComponent) {
   }
 
   ngOnInit(): void {
@@ -45,7 +47,7 @@ export class MissionCardComponent implements OnInit {
     if (!this.is_sending)
       if (this.cookie.get("codeDiscord")) {
         this.is_sending = true;
-        let message_at_send = "La message lié à la mission transféré est : " + "https://discord.com/channels/768370886532137000/768855632224190496/" + this.message_id + ". Ce message peut avoir été supprimé ou modifier depuis.";
+        let message_at_send = "Le message lié à la mission transféré est : " + "https://discord.com/channels/768370886532137000/768855632224190496/" + this.message_id + ". Ce message peut avoir été supprimé ou modifier depuis.";
         this.text_send = "Envois..";
         this.http_client
           .get<string[]>("/data/global/send_message_by_discord/?message=" + message_at_send + "&code=" + this.cookie.get("codeDiscord"))
@@ -72,6 +74,41 @@ export class MissionCardComponent implements OnInit {
 
   requestMessageOut(): void {
     this.text_send = "Récupérer le message par MP."
+  }
+
+  public text_delete = "Cliquez-ici pour supprimer votre mission";
+  public delete_button = "false";
+
+  appearButton(): void {
+    this.text_delete = "ATTENTION: action est irréversible.";
+    this.delete_button = "delete_button";
+  }
+
+  requestDeleteMission(): void {
+    console.log("Clicked !");
+    this.text_delete = "Suppression en cour...";
+    this.delete_button = "false";
+    this.http_client
+      .get<string[]>("/data/missions/delete/?message_id=" + this.message_id + "&code=" + this.cookie.get("codeDiscord"))
+      .subscribe(
+        (response) => {
+          if (response[0] == "deleted") {
+            this.text_delete = "La mission a été supprimé.";
+            this.app.takeInfos();
+          } else if (response[0] == "mission_not_find")
+            this.text_delete = "Cette mission n'as pas été trouvé.";
+          else if (response[0] == "wrong_code")
+            this.text_delete = "L'authentification n'a pas pu être effectué.";
+        },
+        (error) => {
+          console.log('Error : ', error);
+        }
+      )
+  }
+
+  requestDeleteMissionOut(): void {
+    this.text_delete = "Cliquez-ici pour supprimer votre mission";
+    this.delete_button = "false";
   }
 
 }

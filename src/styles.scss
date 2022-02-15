@@ -10,6 +10,11 @@
   src: local("Poppins"), url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "font_xp";
+  src: local("font_xp"), url(./assets/fonts/font_xp.otf) format("opentype");
+}
+
 body {
   background-color: #292B2F;
   font-family: "Poppins";
@@ -19,6 +24,7 @@ body {
   color: #8effff;
   background-color: rgba(0, 255, 255, 0.3);
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .discord_channel:hover {

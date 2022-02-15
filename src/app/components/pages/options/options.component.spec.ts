@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConnexionComponent } from './connexion.component';
+import { OptionsComponent } from './options.component';
 
-describe('ConnexionComponent', () => {
-  let component: ConnexionComponent;
-  let fixture: ComponentFixture<ConnexionComponent>;
+describe('OptionsComponent', () => {
+  let component: OptionsComponent;
+  let fixture: ComponentFixture<OptionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnexionComponent ]
+      declarations: [ OptionsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConnexionComponent);
+    fixture = TestBed.createComponent(OptionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

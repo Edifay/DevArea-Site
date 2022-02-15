@@ -17,6 +17,7 @@ export class AppComponent {
     id: '0',
     urlAvatar: '/assets/images/reseaux/discord.png',
     name: 'Disconnected',
+    tag: 'Disconnected#0000',
     rank: 0,
     xp: 42,
     previous_xp_level: 0,
@@ -52,8 +53,7 @@ export class AppComponent {
             if (response == null) {
               this.cookieService.delete('codeDiscord');
               this.connected = "not_connected";
-            }
-            else {
+            } else {
               this.member_infos = response;
               this.connected = "connected";
             }
@@ -72,8 +72,9 @@ export class AppComponent {
       id: '0',
       urlAvatar: '/assets/images/reseaux/discord.png',
       name: 'Disconnected',
+      tag: 'Disconnected#0000',
       rank: 0,
-      xp: 42,
+      xp: 0,
       previous_xp_level: 0,
       next_xp_level: 0,
       level: 0,

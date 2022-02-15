@@ -1,0 +1,57 @@
+#container {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "font_xp", serif;
+}
+
+#container img {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+#text_part {
+  display: flex;
+  flex-direction: column;
+}
+
+#name {
+  font-size: 35px;
+  width: 300px;
+  text-align: center;
+}
+
+#xp_part {
+  display: flex;
+  font-size: 20px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#xp {
+  width: 100%;
+  text-align: center;
+}
+
+.progress-bar {
+  border-radius: 60px;
+  overflow: hidden;
+  width: 100%;
+  span {
+    display: block;
+  }
+}
+
+.bar {
+  background: rgb(106, 106, 106);
+}
+
+.progress {
+  background: #52c4f8;
+  padding: 8px;
+}
