@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {AppComponent} from "../../../app.component";
 
 @Component({
   selector: 'app-missions',

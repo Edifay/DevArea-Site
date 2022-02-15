@@ -25,6 +25,7 @@ import { MissionCardComponent } from './components/pages/missions/components/mis
 import { OptionsComponent } from './components/pages/options/options.component';
 import { PersonnalXpComponent } from './components/pages/options/components/personnal-xp/personnal-xp.component';
 import { BadgesCardComponent } from './components/pages/options/components/badges-card/badges-card.component';
+import { BadgeComponent } from './components/pages/options/components/badge/badge.component';
 
 const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     MissionCardComponent,
     OptionsComponent,
     PersonnalXpComponent,
-    BadgesCardComponent
+    BadgesCardComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,

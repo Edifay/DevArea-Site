@@ -37,6 +37,13 @@ export class AppComponent {
         member_tag: "le tag du membre",
         message_id: "0"
       }
+    ],
+    badges:[
+      {
+        description:"description",
+        name:"Nom du badge",
+        url_icon:"https://www.magimix.com/webroot-mobile/img/loading.gif"
+      }
     ]
   }
 
@@ -74,7 +81,7 @@ export class AppComponent {
       name: 'Disconnected',
       tag: 'Disconnected#0000',
       rank: 0,
-      xp: 0,
+      xp: 42,
       previous_xp_level: 0,
       next_xp_level: 0,
       level: 0,
@@ -91,6 +98,13 @@ export class AppComponent {
           avatar: "https://www.magimix.com/webroot-mobile/img/loading.gif",
           member_tag: "le tag du membre",
           message_id: "0"
+        }
+      ],
+      badges:[
+        {
+          description:"description",
+          name:"Nom du badge",
+          url_icon:"https://www.magimix.com/webroot-mobile/img/loading.gif"
         }
       ]
     }

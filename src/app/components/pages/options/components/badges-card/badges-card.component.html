@@ -1,6 +1,10 @@
 <div id="container">
   <h2>Vos badges:</h2>
-  <p>
-    Vous ne disposez pas de badges.
-  </p>
+  <app-badge
+    id="badge"
+    *ngFor="let badge of component.member_infos.badges; let i= index"
+    [description]="badge.description"
+    [name]="badge.name"
+    [url_icon]="badge.url_icon"
+  ></app-badge>
 </div>
