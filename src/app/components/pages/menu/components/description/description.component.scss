@@ -7,9 +7,14 @@
   margin-left: max(250px, 20%);
   margin-right: 20%;
   border-radius: 20px;
+  padding-bottom: 20px;
 }
 
-h1{
+a {
+  text-decoration: none;
+}
+
+h1 {
   text-align: center;
   padding: 15px;
 
@@ -20,13 +25,14 @@ h1{
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
 a {
   color: black;
 }
 
 p {
   padding: 2% 2%;
-  font-size:15px;
+  font-size: 15px;
   text-align: justify;
   z-index: 2;
 }
@@ -48,4 +54,35 @@ p {
     margin-right: 2.5%;
     max-width: 100%;
   }
+}
+
+
+#button {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+
+  text-align: center;
+  font-size: 15px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: #53c6fa;
+
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: #2086d7;
+}
+
+#button:active {
+  cursor: pointer;
+  color: white;
+  background-color: #2086d7;
 }

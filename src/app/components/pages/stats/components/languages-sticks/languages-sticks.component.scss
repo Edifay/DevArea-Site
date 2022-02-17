@@ -1,5 +1,5 @@
 div {
-  width: 100px;
+  width: 82px;
   height: 100px;
   margin-right: 5px;
   margin-left: 5px;
@@ -10,4 +10,24 @@ div {
 .legend {
   font-size: 15px;
   text-align: center;
+}
+
+@media screen and(max-width: 1040px) {
+  div {
+    width: 20px;
+  }
+
+  .legend{
+
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(-170deg);
+    margin-bottom: 5px;
+  }
+
+  #name {
+    margin-top: 5px;
+    height: 80px;
+  }
+
 }

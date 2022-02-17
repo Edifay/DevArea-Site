@@ -3,7 +3,8 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
-  white-space: break-spaces;
+  white-space: pre-wrap;
+  word-break: break-all;
   background-color: grey;
   margin-bottom: 30px;
   border-radius: 15px;
@@ -37,7 +38,7 @@
 
 #member {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 20px;
   margin-right: 40px;
   margin-top: 20px;

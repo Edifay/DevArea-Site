@@ -90,6 +90,40 @@ $animationSpeed: 40s;
   }
 }
 
+.slider:hover {
+  margin-top: 100px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation-play-state: paused;
+    display: flex;
+    width: calc(290px * 7);
+  }
+
+  .slide {
+    height: auto;
+    width: auto;
+  }
+}
+
 @media screen and(max-width: 550px) {
   .parent {
     left: 50%;

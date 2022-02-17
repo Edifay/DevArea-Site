@@ -55,3 +55,40 @@ h2 {
   height: 30px;
   display: inline-block;
 }
+
+@media screen and(max-width: 700px) {
+
+  #rank {
+    font-size: 15px;
+    width: 30px;
+    line-height: 30px;
+    margin: 0 3px 0 0;
+  }
+
+  #emoji{
+    font-size: 11px;
+    margin: 0;
+    width: 20px;
+  }
+
+  #pseudo {
+    font-size: 15px;
+    width: auto;
+    margin: 0 0 0 4px;
+  }
+
+  #xp {
+    font-size: 15px;
+    margin: 0;
+    width: auto;
+    line-height: 30px;
+  }
+
+  #level {
+    font-size: 11px;
+    margin: 0;
+    width: auto;
+    line-height: 30px;
+  }
+
+}

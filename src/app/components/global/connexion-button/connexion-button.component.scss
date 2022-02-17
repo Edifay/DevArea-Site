@@ -22,11 +22,11 @@
 }
 
 .connected #container {
-  width: 250px;
+  min-width: fit-content;
 }
 
 .not_connected #container {
-  width: 250px;
+  min-width: fit-content;
 }
 
 img {
@@ -189,11 +189,11 @@ img {
   display: none;
 }
 
-#top{
+#top {
   display: none;
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 1050px) {
   #container {
     z-index: 1;
     display: flex;
@@ -210,12 +210,15 @@ img {
     padding-bottom: 5px;
     user-select: none;
   }
-  
-  #bottom{
+
+  #bottom {
     display: none;
   }
-  #top{
+  #top {
     display: block;
+  }
+  #disconnect {
+    margin-top: 10px;
   }
 
 }

@@ -20,6 +20,7 @@ export class LanguagesSticksComponent implements OnInit {
     //console.log(this.color);
     return this.color;
   }
+  
   getCent(){
     //console.log((800/+(this.numberOfLanguages).toString()+'px'));
     return (900/+(this.numberOfLanguages).toString()+'px');
