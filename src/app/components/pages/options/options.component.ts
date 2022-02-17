@@ -21,10 +21,8 @@ export class OptionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.cookie.get('codeDiscord')) {
-      console.log("Direction Menu")
-      this.router.navigate(['/','menu'])
-    }
+    if (this.component.connected == "not_connected")
+      this.router.navigate(['/', 'menu'])
   }
 
 

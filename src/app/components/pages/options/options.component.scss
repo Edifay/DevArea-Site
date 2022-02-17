@@ -2,6 +2,7 @@
   padding-top: 130px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 150px;
 }
 
 #title_page {
@@ -29,6 +30,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+  width: 100%;
 }
 
 #title_missions {
@@ -37,9 +39,6 @@
   margin-bottom: 35px;
 }
 
-#mission {
-  margin-right: 12em;
-}
 
 #no_mission {
   margin-left: 40px;
@@ -79,4 +78,29 @@
 
 #badges_card {
   margin-top: 30px;
+}
+
+#missions_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 850px;
+}
+
+
+@media screen and(max-width: 550px) {
+  #first_line {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  #first_colum {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
 }

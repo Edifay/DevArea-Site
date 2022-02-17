@@ -11,6 +11,8 @@ export class AppComponent {
 
   public connected = "not_connected";
 
+  public is_connected = false;
+
 
   member_infos = {
     isMember: true,
@@ -38,11 +40,11 @@ export class AppComponent {
         message_id: "0"
       }
     ],
-    badges:[
+    badges: [
       {
-        description:"description",
-        name:"Nom du badge",
-        url_icon:"https://www.magimix.com/webroot-mobile/img/loading.gif"
+        description: "description",
+        name: "Nom du badge",
+        url_icon: "https://www.magimix.com/webroot-mobile/img/loading.gif"
       }
     ]
   }
@@ -69,8 +71,8 @@ export class AppComponent {
             console.log('Error : ', error);
           }
         );
-    }
-    this.connected = "not_connected";
+    } else
+      this.connected = "not_connected";
   }
 
   reset(): void {
@@ -100,11 +102,11 @@ export class AppComponent {
           message_id: "0"
         }
       ],
-      badges:[
+      badges: [
         {
-          description:"description",
-          name:"Nom du badge",
-          url_icon:"https://www.magimix.com/webroot-mobile/img/loading.gif"
+          description: "description",
+          name: "Nom du badge",
+          url_icon: "https://www.magimix.com/webroot-mobile/img/loading.gif"
         }
       ]
     }

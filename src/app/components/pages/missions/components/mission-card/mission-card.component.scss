@@ -7,9 +7,6 @@
   background-color: grey;
   margin-bottom: 30px;
   border-radius: 15px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #title {
@@ -74,7 +71,7 @@
 
 .tooltip .tooltiptext {
   margin-bottom: -40px;
-  visibility: hidden;
+  display: none;
   width: 200px;
   background-color: #555;
   color: #fff;
@@ -102,7 +99,7 @@
 }
 
 .tooltip:hover .tooltiptext {
-  visibility: visible;
+  display: block;
   opacity: 1;
 }
 
@@ -181,9 +178,40 @@
   background-color: #2086d7;
 }
 
-#delete_button:active{
+#delete_button:active {
   cursor: pointer;
   color: white;
   background-color: #2086d7;
 }
 
+@media screen and (max-width: 550px) {
+  .param {
+    font-size: 13px;
+  }
+
+  .title_param{
+    font-size: 13px;
+  }
+
+  #icon {
+    width: 40px;
+    height: 40px;
+  }
+  #name {
+    font-size: 15px;
+    line-height: 40px;
+  }
+
+  #title {
+    font-size: 20px;
+  }
+
+  #icon_send{
+    width: 30px;
+    height: 30px;
+  }
+
+  #container{
+    width: available;
+  }
+}

@@ -36,6 +36,35 @@
 
 #missions_container {
   padding-top: 200px;
-  margin-left: 30em;
-  margin-right: 30em;
+  margin-left: 25em;
+  margin-right: 25em;
+}
+
+
+@media screen and (max-width: 1340px) {
+  #missions_container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #missions_container {
+    font-size: 13px;
+  }
+
+  #tile {
+    font-size: 15px;
+  }
+
+  #presentation {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #missions {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }

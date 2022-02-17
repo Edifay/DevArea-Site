@@ -1,6 +1,6 @@
 {
   "/data": {
-    "target": "http://localhost:8192/",
+    "target": "http://45.90.161.107:8192/",
     "changeOrigin": true,
     "secure": false,
     "pathRewrite": {

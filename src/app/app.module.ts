@@ -59,7 +59,7 @@ const appRoutes: Routes = [
     OptionsComponent,
     PersonnalXpComponent,
     BadgesCardComponent,
-    BadgeComponent
+    BadgeComponent,
   ],
   imports: [
     BrowserModule,
