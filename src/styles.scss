@@ -5,6 +5,34 @@
   padding: 0;
 }
 
+.light_theme {
+  --background-color: white;
+  --background-component-color: #f1f1f1;
+  --unclickable-color: #4c4c4c;
+  --main-color: #53c6fa;
+  --main-color-hover: #2086d7;
+  --main-color-active: #2086d7;
+  --main-color-active-text-color: white;
+  --main-text-color: black;
+  --main-title-color: black;
+  --main-title-contrast-color: black;
+  --text-channel-color: black;
+}
+
+.dark_theme {
+  --background-color: #292B2F;
+  --background-component-color: #d0d0d0;
+  --unclickable-color: #4c4c4c;
+  --main-color: #53c6fa;
+  --main-color-hover: #2086d7;
+  --main-color-active: #2086d7;
+  --main-color-active-text-color: white;
+  --main-text-color: black;
+  --main-title-color: black;
+  --main-title-contrast-color: white;
+  --text-channel-color: #8effff;
+}
+
 @font-face {
   font-family: "Poppins";
   src: local("Poppins"), url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
@@ -16,12 +44,12 @@
 }
 
 body {
-  background-color: #292B2F;
+  background-color: var(--background-color);
   font-family: "Poppins";
 }
 
 .discord_channel {
-  color: #8effff;
+  color: var(--text-channel-color);
   background-color: rgba(0, 255, 255, 0.3);
   border-radius: 3px;
   cursor: pointer;
@@ -29,4 +57,31 @@ body {
 
 .discord_channel:hover {
   background-color: rgba(0, 255, 247, 0.54);
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-size: 15px;
+
+  width: fit-content;
+  padding: 15px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: #53c6fa;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #2086d7;
+}
+
+.button:active {
+  cursor: pointer;
+  color: white;
+  background-color: #2086d7;
 }

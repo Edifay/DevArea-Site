@@ -1,6 +1,6 @@
 .title {
   font-size: 50px;
-  color: white;
+  color: var(--main-title-contrast-color);
   text-align: center;
 }
 
@@ -10,7 +10,7 @@
 }
 
 #graphContainer {
-  background-color: grey;
+  background-color: var(--background-component-color);
   width: min-content;
   height: 550px;
   display: flex;
@@ -39,13 +39,14 @@
   margin-right: auto;
 
   border-radius: 5px;
-  background-color: grey;
+  background-color: var(--background-component-color);
 
   padding-bottom: 10px;
 }
 
 #xp {
-  background-color: #767676;
+  background-color: var(--background-component-color);
+  filter: brightness(95%);
   margin: 2px;
   border-radius: 15px;
 }
@@ -94,33 +95,10 @@
   width: 220px;
 }
 
-#loadMore {
+.button {
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 120px;
-  height: 60px;
-  line-height: 60px;
-
-  text-align: center;
   font-size: 30px;
-
-  border-radius: 5px;
-
-  user-select: none;
-  background-color: #53c6fa;
-}
-
-#loadMore:hover {
-  cursor: pointer;
-  background-color: #2086d7;
-}
-
-#loadMore:active {
-  cursor: pointer;
-  color: white;
-  background-color: #2086d7;
+  padding: 5px 20px;
 }
 
 body {

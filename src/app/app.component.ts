@@ -11,6 +11,8 @@ export class AppComponent {
 
   public connected = "not_connected";
 
+  public page_theme = "dark_theme";
+
   public is_connected = false;
 
 
@@ -51,6 +53,24 @@ export class AppComponent {
 
   constructor(private cookieService: CookieService, private httpClient: HttpClient) {
     this.takeInfos();
+    if (this.cookieService.get('theme')) {
+      this.page_theme = this.cookieService.get('theme');
+    }
+    // @ts-ignore
+    document.getElementById("body").className = this.page_theme;
+    console.log("Setup the theme")
+  }
+
+  switch_theme(): void {
+    if (this.page_theme == "dark_theme") {
+      this.page_theme = "light_theme";
+      this.cookieService.set('theme', 'light_theme');
+    } else {
+      this.page_theme = "dark_theme";
+      this.cookieService.set('theme', 'dark_theme');
+    }
+    // @ts-ignore
+    document.getElementById("body").className = this.page_theme;
   }
 
   takeInfos() {

@@ -1,6 +1,6 @@
 {
   "/data": {
-    "target": "http://45.90.161.107:8192/",
+    "target": "https://devarea.fr/data/",
     "changeOrigin": true,
     "secure": false,
     "pathRewrite": {

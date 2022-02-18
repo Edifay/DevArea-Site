@@ -6,7 +6,7 @@
 }
 
 #title_page {
-  color: white;
+  color: var(--main-title-contrast-color);
   font-size: 55px;
   text-align: center;
 }
@@ -35,7 +35,7 @@
 
 #title_missions {
   font-size: 35px;
-  color: white;
+  color: var(--main-title-contrast-color);
   margin-bottom: 35px;
 }
 
@@ -44,37 +44,8 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: white;
+  color: var(--main-title-contrast-color);
   font-size: 15px;
-}
-
-#button_create {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 170px;
-  height: 60px;
-  line-height: 60px;
-
-  text-align: center;
-  font-size: 15px;
-
-  border-radius: 5px;
-
-  user-select: none;
-  background-color: #53c6fa;
-}
-
-#button_create:hover {
-  cursor: pointer;
-  background-color: #2086d7;
-}
-
-#button_create:active {
-  cursor: pointer;
-  color: white;
-  background-color: #2086d7;
 }
 
 #badges_card {

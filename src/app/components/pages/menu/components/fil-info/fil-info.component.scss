@@ -1,6 +1,5 @@
-
 .info{
-  background-color: #606060;
+  background-color: var(--background-component-color);
   width:203px;
   border-radius: 10px;
   float: left;
@@ -15,7 +14,7 @@ h2{
 
 }
 hr{
-  background-color: black;
+  background-color: var(--main-text-color);
   width: 90%;
 
   border: none;

@@ -164,7 +164,7 @@ img {
   font-size: 23px;
   text-align: center;
   cursor: no-drop;
-  color: #4c4c4c;
+  color: var(--unclickable-color);
   pointer-events: none;
 }
 

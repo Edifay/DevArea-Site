@@ -1,5 +1,5 @@
 .informations {
-  background-color: gray;
+  background-color: var(--background-component-color);
   display: block;
   height: auto;
   max-width: 80%;
@@ -11,7 +11,8 @@
 }
 
 a {
-  text-decoration: none;
+  text-decoration: inherit;
+  color: inherit;
 }
 
 h1 {
@@ -24,10 +25,6 @@ h1 {
   border-top-left-radius: 20px;
   background-repeat: no-repeat;
   background-size: 100%;
-}
-
-a {
-  color: black;
 }
 
 p {
@@ -54,35 +51,4 @@ p {
     margin-right: 2.5%;
     max-width: 100%;
   }
-}
-
-
-#button {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 120px;
-  height: 60px;
-  line-height: 60px;
-
-  text-align: center;
-  font-size: 15px;
-
-  border-radius: 5px;
-
-  user-select: none;
-  background-color: #53c6fa;
-
-}
-
-#button:hover {
-  cursor: pointer;
-  background-color: #2086d7;
-}
-
-#button:active {
-  cursor: pointer;
-  color: white;
-  background-color: #2086d7;
 }

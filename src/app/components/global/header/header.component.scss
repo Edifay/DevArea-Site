@@ -15,20 +15,22 @@ header {
 
   border-radius: 20px;
 
-  background-color: #53c6fa;//L'ancienne couleur est #03c6d7
+  background-color: var(--main-color); //L'ancienne couleur est #03c6d7
 }
+
 @keyframes header-color {
-  0%{
+  0% {
     background-color: #2086d7;
   }
-  50%{
-    background-color:  #fff045;
+  50% {
+    background-color: #fff045;
 
   }
-  100%{
+  100% {
     background-color: #2086d7;
   }
 }
+
 p {
   width: 100%;
   height: auto;
@@ -49,22 +51,25 @@ a {
 }
 
 a:hover {
-  background-color: #2086d7;
+  background-color: var(--main-color-hover);
 }
 
-.left_border{
+.left_border {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-left_border2{
+
+left_border2 {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.active{
-  background-color: #2086d7;
-  color: white;
+
+.active {
+  background-color: var(--main-color-active);
+  color: var(--main-color-active-text-color);
 }
-.right_border{
+
+.right_border {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }

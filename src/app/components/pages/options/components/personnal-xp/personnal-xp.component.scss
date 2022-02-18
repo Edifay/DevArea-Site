@@ -1,5 +1,5 @@
 #container {
-  background-color: grey;
+  background-color: var(--background-component-color);
   display: flex;
   flex-direction: column;
   width: min-content;
@@ -24,6 +24,8 @@
   font-size: 35px;
   width: 300px;
   text-align: center;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 #xp_part {
@@ -52,6 +54,6 @@
 }
 
 .progress {
-  background: #52c4f8;
+  background: var(--main-color);
   padding: 8px;
 }

@@ -1,5 +1,5 @@
 .informations {
-  background-color: gray; //#606060
+  background-color: var(--background-component-color); //#606060
   display: block;
   height: auto;
   max-width: 80%;
@@ -19,11 +19,6 @@ img {
   border-top-left-radius: 20px;
 
 }
-
-a {
-  color: black;
-}
-
 
 p {
   font-size: 15px;
