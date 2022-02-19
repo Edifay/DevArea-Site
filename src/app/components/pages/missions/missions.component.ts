@@ -66,7 +66,6 @@ export class MissionsComponent implements OnInit {
 
   fetch_more(): void {
     if (!this.loading) {
-      console.log("Load more !")
       this.loading = true;
       this.httpClient
         .get<any[]>('/data/missions/get?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())

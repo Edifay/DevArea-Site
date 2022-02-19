@@ -40,13 +40,19 @@ h3 {
   margin-top: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 750px) and (min-width: 551px) {
   .informations {
     margin-right: 5%;
   }
+
   p {
     font-size: 18.9px;
   }
+
   #title {
     font-size: 24px;
     padding-bottom: 0;
@@ -65,10 +71,10 @@ h3 {
   p {
     font-size: 12px;
   }
-  h3{
+  h3 {
     font-size: 16px;
   }
-  h2{
+  h2 {
     font-size: 17px;
     line-height: 17px;
   }

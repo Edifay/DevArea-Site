@@ -1,9 +1,15 @@
 #main_switcher {
+  padding-top: 10px;
+  padding-left: 20px;
+  float: left;
 }
 
 @media screen and(max-width: 720px) {
   #main_switcher {
     display: none;
+    padding-top: 0;
+    padding-left: 0;
+    float: left;
   }
 
   #dist_top {

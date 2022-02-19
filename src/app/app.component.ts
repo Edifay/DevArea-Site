@@ -58,11 +58,9 @@ export class AppComponent {
     }
     // @ts-ignore
     document.getElementById("body").className = this.page_theme;
-    console.log("Setup the theme")
   }
 
   switch_theme(): void {
-    console.log("Switch !" + this.page_theme)
     if (this.page_theme == "dark_theme") {
       this.page_theme = "light_theme";
       this.cookieService.set('theme', 'light_theme');
