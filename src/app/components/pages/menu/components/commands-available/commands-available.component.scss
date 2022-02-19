@@ -10,6 +10,7 @@
   border-radius: 20px;
   padding-bottom: 25px;
   margin-bottom: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.32);
 }
 
 img {
@@ -31,6 +32,7 @@ h2 {
   padding: 0px;
   text-align: justify;
   font-size: 20px;
+  color: var(--main-title-contrast-color);
 }
 
 h3 {

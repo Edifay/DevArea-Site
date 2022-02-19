@@ -1,7 +1,12 @@
-#but {
-  width: 60px;
-  position: absolute;
-  margin-top: 0;
-  margin-left: 20px;
-  cursor: pointer;
+#main_switcher {
+}
+
+@media screen and(max-width: 720px) {
+  #main_switcher {
+    display: none;
+  }
+
+  #dist_top {
+    height: 70px;
+  }
 }

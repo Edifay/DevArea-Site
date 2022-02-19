@@ -1,5 +1,4 @@
 #container {
-  padding-top: 130px;
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
@@ -59,8 +58,12 @@
   max-width: 850px;
 }
 
+.button{
+  margin-top: 20px;
+}
 
-@media screen and(max-width: 550px) {
+
+@media screen and(max-width: 650px) {
   #first_line {
     display: flex;
     flex-direction: column;

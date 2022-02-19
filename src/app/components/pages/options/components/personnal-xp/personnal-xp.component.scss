@@ -6,6 +6,8 @@
   border-radius: 5px;
   padding: 10px;
   font-family: "font_xp", serif;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
 }
 
 #container img {
@@ -16,6 +18,7 @@
 }
 
 #text_part {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -26,6 +29,7 @@
   text-align: center;
   white-space: pre-wrap;
   word-break: break-all;
+  margin-bottom: 15px;
 }
 
 #xp_part {
@@ -44,6 +48,9 @@
   border-radius: 60px;
   overflow: hidden;
   width: 100%;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+
   span {
     display: block;
   }

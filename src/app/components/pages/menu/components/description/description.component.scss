@@ -8,6 +8,8 @@
   margin-right: 20%;
   border-radius: 20px;
   padding-bottom: 20px;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
 }
 
 a {
@@ -19,8 +21,10 @@ h1 {
   text-align: center;
   padding: 15px;
 
+  color: var(--main-title-contrast-color);
+
   z-index: 2;
-  background-image: url("/assets/images/fond1.jpg");
+  //background-image: url("/assets/images/fond1.jpg");
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   background-repeat: no-repeat;

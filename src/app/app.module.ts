@@ -26,6 +26,7 @@ import { OptionsComponent } from './components/pages/options/options.component';
 import { PersonnalXpComponent } from './components/pages/options/components/personnal-xp/personnal-xp.component';
 import { BadgesCardComponent } from './components/pages/options/components/badges-card/badges-card.component';
 import { BadgeComponent } from './components/pages/options/components/badge/badge.component';
+import { ThemeSwitcherComponent } from './components/global/theme-switcher/theme-switcher.component';
 
 const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
     PersonnalXpComponent,
     BadgesCardComponent,
     BadgeComponent,
+    ThemeSwitcherComponent,
   ],
   imports: [
     BrowserModule,

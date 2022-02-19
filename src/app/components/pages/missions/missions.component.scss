@@ -7,6 +7,8 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 }
 
 #presentation p {
@@ -25,8 +27,13 @@
   text-align: center;
   padding: 15px;
 
-  z-index: 2;
-  background-image: url("/assets/images/fond1.jpg");
+  z-index: 0;
+  //background-image: url("/assets/images/fond1.jpg");
+
+  color: var(--main-title-contrast-color);
+
+  margin-bottom: 20px;
+
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   background-repeat: no-repeat;
@@ -35,7 +42,6 @@
 
 
 #missions_container {
-  padding-top: 200px;
   margin-left: 25em;
   margin-right: 25em;
 }

@@ -1,23 +1,30 @@
-<header>
+<div class="{{this.component.page_theme}}" id="container">
+  <header class="{{this.header_status}}">
+    <div id="bar">
+      <img id="button" src="assets/images/icon-menu.png" (click)="openMenu()"/>
+    </div>
+    <a class="left_border" (click)="close()" routerLink="reseaux" routerLinkActive="active left_border:hover">
+      <p>Réseaux</p>
+    </a>
 
-  <a class="left_border" routerLink="reseaux" routerLinkActive="active left_border:hover">
-    <p>Réseaux</p>
-  </a>
+    <a (click)="close()" routerLink="stats" routerLinkActive="active">
+      <p>Stats</p>
+    </a>
 
-  <a routerLink="stats" routerLinkActive="active">
-    <p>Stats</p>
-  </a>
+    <a (click)="close()" routerLink="menu" routerLinkActive="active">
+      <p>Menu</p>
+    </a>
 
-  <a routerLink="menu" routerLinkActive="active">
-    <p>Menu</p>
-  </a>
+    <a (click)="close()" routerLink="missions" routerLinkActive="active">
+      <p>Missions</p>
+    </a>
 
-  <a routerLink="missions" routerLinkActive="active">
-    <p>Missions</p>
-  </a>
-
-  <a class="right_border" routerLink="staff" routerLinkActive="active">
-    <p>Staff</p>
-  </a>
-
-</header>
+    <a (click)="close()" class="right_border" routerLink="staff" routerLinkActive="active">
+      <p>Staff</p>
+    </a>
+    <app-theme-switcher></app-theme-switcher>
+    <div id="croix_container">
+      <img id="close_button" (click)="close()" src="assets/images/close.png">
+    </div>
+  </header>
+</div>
