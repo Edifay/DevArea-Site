@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AppComponent} from "../../../app.component";
 import {CookieService} from "ngx-cookie-service";
+import {MemberService} from "../../../services/member.service";
 
 @Component({
   selector: 'app-connexion-button',
@@ -15,7 +16,7 @@ export class ConnexionButtonComponent implements OnInit {
 
   public visibility_menu = "hidden";
 
-  constructor(private component: AppComponent, private cookieService: CookieService) {
+  constructor(private service: MemberService, private cookieService: CookieService) {
   }
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class ConnexionButtonComponent implements OnInit {
 
   disconnection() {
     this.cookieService.delete('codeDiscord');
-    this.component.reset();
+    this.service.reset();
   }
 
 

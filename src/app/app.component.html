@@ -3,9 +3,9 @@
 </div>
 <site-header></site-header>
 <div id="dist_top"></div>
-<app-connexion-button
-  [sourceImage]="member_infos.urlAvatar"
-  [name]="member_infos.name"
-  [style_on_connection_change]="connected"
+<app-connexion-button *ngIf="memberInfos"
+  [sourceImage]="this.memberInfos.urlAvatar"
+  [name]="this.memberInfos.name"
+  [style_on_connection_change]="this.connected"
 ></app-connexion-button>
 <router-outlet></router-outlet>

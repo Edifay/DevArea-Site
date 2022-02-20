@@ -3,6 +3,8 @@ import {AppComponent} from "../../../app.component";
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
+import {MemberService} from "../../../services/member.service";
+import {MemberInfos} from "../../../models/member-infos";
 
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -15,13 +17,24 @@ async function delay(ms: number) {
 })
 export class OptionsComponent implements OnInit {
 
+  memberInfos: MemberInfos | undefined;
+  connected: any;
+
   public own_missions = "true";
 
-  constructor(public component: AppComponent, private http_client: HttpClient, private cookie: CookieService, private router: Router,) {
+  constructor(public service: MemberService, private http_client: HttpClient, private cookie: CookieService, private router: Router,) {
   }
 
   ngOnInit(): void {
-    if (this.component.connected == "not_connected")
+    this.service.memberInfos$.subscribe({
+      next: (memberInfos) => this.memberInfos = memberInfos
+    });
+
+    this.service.connected$.subscribe({
+      next: (connected) => this.connected = connected
+    });
+
+    if (this.connected == "not_connected")
       this.router.navigate(['/', 'menu'])
   }
 
