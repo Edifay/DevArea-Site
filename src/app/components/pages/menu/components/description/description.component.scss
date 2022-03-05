@@ -13,8 +13,12 @@
 }
 
 a {
-  text-decoration: inherit;
+  text-decoration: none;
   color: inherit;
+}
+
+#click {
+  text-decoration: underline;
 }
 
 h1 {
