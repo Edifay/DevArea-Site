@@ -1,8 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-*{
+* {
   margin: 0;
   padding: 0;
+  color: var(--main-text-color);
+}
+
+.light_theme {
+  --background-color: white;
+  --background-component-color: #f1f1f1;
+  --unclickable-color: #4c4c4c;
+  --main-color: #fd654e;
+  --main-color-hover: #d45541;
+  --main-color-active: #9c3d2f;
+  --main-color-active-text-color: white;
+  --main-text-color: black;
+  --main-title-color: black;
+  --main-title-contrast-color: black;
+  --text-channel-color: black;
+}
+
+.dark_theme {
+  --background-color: #1b141c;
+  --background-component-color: #1e2029;
+  --unclickable-color: #4c4c4c;
+  --main-color: #fd654e;
+  --main-color-hover: #d45541;
+  --main-color-active: #9c3d2f;
+  --main-color-active-text-color: white;
+  --main-text-color: #dedede;
+  --main-title-color: #fafafb;
+  --main-title-contrast-color: white;
+  --text-channel-color: #8effff;
 }
 
 @font-face {
@@ -10,7 +39,76 @@
   src: local("Poppins"), url(./assets/fonts/Poppins-Medium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "font_xp";
+  src: local("font_xp"), url(./assets/fonts/font_xp.otf) format("opentype");
+}
+
 body {
-  background-color: #292B2F;
+  background-color: var(--background-color);
   font-family: "Poppins";
+}
+
+.discord_channel {
+  color: var(--text-channel-color);
+  background-color: rgba(0, 255, 255, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.discord_channel:hover {
+  background-color: rgba(0, 255, 247, 0.54);
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-size: 15px;
+
+  color: white;
+
+  width: fit-content;
+  padding: 10px 30px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: var(--main-color);
+
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--main-color-hover);
+}
+
+.button:active {
+  cursor: pointer;
+  color: white;
+  background-color: var(--main-color-active);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--background-component-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #bd5140;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fd654e;
 }

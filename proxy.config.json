@@ -1,0 +1,10 @@
+{
+  "/data": {
+    "target": "https://devarea.fr/data/",
+    "changeOrigin": true,
+    "secure": false,
+    "pathRewrite": {
+      "^/data": ""
+    }
+  }
+}

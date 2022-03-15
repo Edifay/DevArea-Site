@@ -1,0 +1,88 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+
+#title_page {
+  color: var(--main-title-contrast-color);
+  font-size: 55px;
+  text-align: center;
+}
+
+#xp_card {
+  display: block;
+}
+
+#first_line {
+  display: flex;
+  margin-top: 30px;
+}
+
+#first_colum {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+}
+
+#second_colum {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 100%;
+}
+
+#title_missions {
+  font-size: 35px;
+  color: var(--main-title-contrast-color);
+  margin-bottom: 35px;
+}
+
+
+#no_mission {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--main-title-contrast-color);
+  font-size: 15px;
+}
+
+#badges_card {
+  margin-top: 30px;
+}
+
+#missions_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 850px;
+}
+
+.button{
+  margin-top: 20px;
+}
+
+
+@media screen and(max-width: 650px) {
+  #first_line {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  #first_colum {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #second_colum {
+    margin-left: 0;
+  }
+
+  #title_missions {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
