@@ -35,13 +35,20 @@
   font-size: 15px;
 }
 
-#member {
+#bottom {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 20px;
   margin-right: 40px;
   margin-top: 20px;
+  align-items: flex-end;
   user-select: none;
+}
+
+#validation {
+  text-align: center;
+  padding-left: 90px;
+  font-size: 13px;
 }
 
 #block {
@@ -189,5 +196,15 @@
 
   #container {
     width: available;
+  }
+
+  #bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #validation {
+    margin-bottom: 5px;
   }
 }

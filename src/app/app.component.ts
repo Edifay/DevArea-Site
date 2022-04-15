@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, enableProdMode, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "./services/member.service";
@@ -17,6 +17,7 @@ export class AppComponent {
   public page_theme = "dark_theme";
 
   constructor(private cookieService: CookieService, private _memberService: MemberService) {
+    enableProdMode();
     this._memberService.memberInfos$.subscribe({
       next: (memberInfos) => this.memberInfos = memberInfos
     })

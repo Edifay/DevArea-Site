@@ -4,8 +4,33 @@
   text-align: center;
 }
 
+#memberContainer {
+  background-color: var(--background-component-color);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 5000px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
+}
+
+#member_title {
+  margin-bottom: auto;
+  margin-top: auto;
+
+  text-align: center;
+
+  width: 100%;
+}
+
 #languages_part {
-  margin: 0 auto auto;
+  margin: 100px auto 0;
 }
 
 #graphContainer {

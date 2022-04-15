@@ -1,10 +1,10 @@
 <div id="container">
-  <div class="tooltip" id="send_container">
-    <img id="icon_send" (click)="requestMessageFromBot()" (mouseout)="requestMessageOut()"
-         src="https://findicons.com/files/icons/2770/ios_7_icons/512/sent.png" alt="">
-    <span class="tooltiptext" id="info_send">{{text_send}}</span>
-  </div>
-  <span id="{{own}}" (mouseleave)="requestDeleteMissionOut()">
+    <div class="tooltip" id="send_container">
+        <img id="icon_send" (click)="requestMessageFromBot()" (mouseout)="requestMessageOut()"
+             src="https://findicons.com/files/icons/2770/ios_7_icons/512/sent.png" alt="">
+        <span class="tooltiptext" id="info_send">{{text_send}}</span>
+    </div>
+    <span id="{{own}}" (mouseleave)="requestDeleteMissionOut()">
     <div class="tooltip" id="delete_container">
       <img id="icon_delete" (click)="appearButton()"
            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/OOjs_UI_icon_trash.svg/1200px-OOjs_UI_icon_trash.svg.png"
@@ -14,18 +14,19 @@
     </div>
   </span>
 
-  <h2 id="title">{{title}}</h2>
-  <p id="description">{{description}}</p>
-  <h2 class="param"><span class="title_param">Date de retour:</span> {{date_retour}}</h2>
-  <h2 class="param"><span class="title_param">Langage:</span> {{langage}}</h2>
-  <h2 class="param"><span class="title_param">Support:</span> {{support}}</h2>
-  <h2 class="param"><span class="title_param">Niveau:</span> {{niveau}}</h2>
-  <h2 class="param">💵{{prix}}💵</h2>
-  <div id="member">
-    <div id="block" class="tooltip" (click)="myFunction()" (mouseout)="outFunc()">
-      <span class="tooltiptext">{{text_copy}}</span>
-      <img id="icon" src="{{avatar}}" alt=""/>
-      <h2 id="name">{{member_name}}</h2>
+    <h2 id="title">{{title}}</h2>
+    <p id="description">{{description}}</p>
+    <h2 class="param"><span class="title_param">Date de retour:</span> {{date_retour}}</h2>
+    <h2 class="param"><span class="title_param">Langage:</span> {{langage}}</h2>
+    <h2 class="param"><span class="title_param">Support:</span> {{support}}</h2>
+    <h2 class="param"><span class="title_param">Niveau:</span> {{niveau}}</h2>
+    <h2 class="param">💵{{prix}}💵</h2>
+    <div id="bottom">
+        <div id="validation">Dernière validation il y a {{last_update}} jours</div>
+        <div id="block" class="tooltip" (click)="myFunction()" (mouseout)="outFunc()">
+            <span class="tooltiptext">{{text_copy}}</span>
+            <img id="icon" src="{{avatar}}" alt=""/>
+            <h2 id="name">{{member_name}}</h2>
+        </div>
     </div>
-  </div>
 </div>
