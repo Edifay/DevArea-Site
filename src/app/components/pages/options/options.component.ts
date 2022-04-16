@@ -22,7 +22,7 @@ export class OptionsComponent implements OnInit {
 
   public own_missions = "true";
 
-  constructor(public service: MemberService, private http_client: HttpClient, private cookie: CookieService, private router: Router,) {
+  constructor(public service: MemberService, private http_client: HttpClient, private cookie: CookieService, private router: Router) {
   }
 
   ngOnInit(): void {
