@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {AppComponent} from "../../../app.component";
+import {MissionsList} from "../../../models/missions-list";
 
 @Component({
     selector: 'app-missions',
@@ -17,7 +17,7 @@ export class MissionsComponent implements OnInit {
         this.fetch_mission();
     }
 
-    missions_list = [
+    missions_list: MissionsList[] = [
         {
             title: "title",
             description: "description..",
@@ -34,12 +34,12 @@ export class MissionsComponent implements OnInit {
         }
     ]
 
-    private number_fetch = 5;
-    private load_on_more = 10;
+    private number_fetch: number = 5;
+    private load_on_more: number = 10;
 
     fetch_mission(): void {
         this.httpClient
-            .get<any[]>('/data/missions/get?start=0&end=' + this.number_fetch)
+            .get<MissionsList[]>('/data/missions/get?start=0&end=' + this.number_fetch)
             .subscribe(
                 (response) => {
                     this.missions_list = response;
@@ -69,7 +69,7 @@ export class MissionsComponent implements OnInit {
         if (!this.loading) {
             this.loading = true;
             this.httpClient
-                .get<any[]>('/data/missions/get?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())
+                .get<MissionsList[]>('/data/missions/get?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())
                 .subscribe(
                     (response) => {
                         this.missions_list = [...this.missions_list, ...response]

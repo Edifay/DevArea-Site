@@ -2,7 +2,6 @@ import { Badge } from "./badge";
 import { MissionsList } from "./missions-list";
 
 export interface MemberInfos {
-    isMember: boolean;
     id: string;
     urlAvatar: string;
     name: string;

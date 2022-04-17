@@ -10,4 +10,5 @@ export interface MissionsList {
     avatar: string;
     member_tag: string;
     message_id: string;
+    last_update: string;
 }
