@@ -1,0 +1,29 @@
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+
+  gap: 30px;
+
+  width: 100%;
+}
+
+h1 {
+  font-size: 45px;
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  font-size: 35px;
+}
+
+#title {
+  font-size: 65px;
+}

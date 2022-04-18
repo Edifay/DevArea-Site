@@ -32,6 +32,7 @@ import {BadgesCardComponent} from './components/pages/options/components/badges-
 import {BadgeComponent} from './components/pages/options/components/badge/badge.component';
 import {ThemeSwitcherComponent} from './components/global/theme-switcher/theme-switcher.component';
 import {HowConnectComponent} from './components/pages/how-connect/how-connect.component';
+import {ToDoComponent} from './components/pages/to-do/to-do.component';
 
 const appRoutes: Routes = [
     {path: 'menu', component: MenuComponent},
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     {path: 'missions', component: MissionsComponent},
     {path: 'options', component: OptionsComponent},
     {path: 'how-connect', component: HowConnectComponent},
+    {path: 'to-do', component: ToDoComponent},
     {path: '**', component: NotFoundComponent}
 ]
 
@@ -69,6 +71,7 @@ const appRoutes: Routes = [
         BadgeComponent,
         ThemeSwitcherComponent,
         HowConnectComponent,
+        ToDoComponent,
     ],
     imports: [
         BrowserModule,
