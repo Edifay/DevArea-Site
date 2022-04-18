@@ -17,12 +17,14 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 .light_theme {
   background-image: url("/assets/images/moon.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 100%;;
-  height: 100%;;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
 }

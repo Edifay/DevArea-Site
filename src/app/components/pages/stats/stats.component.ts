@@ -11,10 +11,60 @@ export class StatsComponent implements OnInit {
 
     languages = [
         {
-            name: "Chargement...",
-            countMember: "150",
+            name: "Java",
+            countMember: "0",
             color: 'd'
-        }
+        },
+        {
+            name: "C/C++",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Python",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Lua",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "JavaScript",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Html/Css",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Php",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Go",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "C#",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Autres..",
+            countMember: "0",
+            color: 'd'
+        },
+        {
+            name: "Hardware",
+            countMember: "0",
+            color: 'd'
+        },
     ];
 
     roles_id = ["0"];

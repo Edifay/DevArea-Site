@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   color: var(--main-text-color);
+
+  transition: background-color 0.5s ease-in-out;
 }
 
 .light_theme {
@@ -78,6 +80,7 @@ body {
   background-color: var(--main-color);
 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.23);
+  transition: background-color 0.15s ease-in-out;
 }
 
 .button:hover {
