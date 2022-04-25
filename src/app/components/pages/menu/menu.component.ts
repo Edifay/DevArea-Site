@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
-import {AppComponent} from "../../../app.component";
 import {MemberService} from "../../../services/member.service";
 
 @Component({

@@ -1,5 +1,5 @@
 import { Badge } from "./badge";
-import { MissionsList } from "./missions-list";
+import {MissionPreview} from "./missionPreview";
 
 export interface MemberInfos {
     id: string;
@@ -11,6 +11,6 @@ export interface MemberInfos {
     previous_xp_level: number;
     next_xp_level: number;
     level: number;
-    missions_list: MissionsList[];
+    missions_list: MissionPreview[];
     badges: Badge[];
 }

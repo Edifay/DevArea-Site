@@ -16,7 +16,10 @@
 
 #first_line {
   display: flex;
+  flex-flow: row wrap;
   margin-top: 30px;
+
+  gap: 30px;
 }
 
 #first_colum {
@@ -28,8 +31,7 @@
 #second_colum {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  width: 100%;
+  flex: 1;
 }
 
 #title_missions {
@@ -37,7 +39,6 @@
   color: var(--main-title-contrast-color);
   margin-bottom: 35px;
 }
-
 
 #no_mission {
   margin-left: auto;
@@ -52,10 +53,11 @@
 }
 
 #missions_container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  max-width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 20px;
 }
 
 .button{

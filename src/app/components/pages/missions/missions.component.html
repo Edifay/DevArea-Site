@@ -11,22 +11,20 @@
             les
             missions postées par les utilisateurs.
         </p>
+        <div class="button" routerLink="/mission-creator">Créer sa mission</div>
     </div>
     <div id="missions">
-        <app-mission-card
+        <app-mission-preview
                 id="mission"
                 *ngFor="let mission of missions_list; let i= index"
                 [title]="mission.title"
+                [id]="mission.id"
+                [last_update]="mission.lastUpdate"
                 [description]="mission.description"
-                [prix]="mission.prix"
-                [date_retour]="mission.date_retour"
-                [langage]="mission.langage"
-                [support]="mission.support"
-                [niveau]="mission.niveau"
-                [member_name]="mission.member_name"
-                [avatar]="mission.avatar"
-                [member_tag]="mission.member_tag"
-                [message_id]="mission.message_id"
-                [last_update]="mission.last_update"></app-mission-card>
+                [posterUrl]="mission.avatarURL"
+                [budget]="mission.budget"
+        ></app-mission-preview>
     </div>
+    <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
+    <div *ngIf="loading" class="button">Chargement en cour...</div>
 </div>

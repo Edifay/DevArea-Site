@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {MissionsList} from "../../../models/missions-list";
+import {MissionContent} from "../../../models/missionContent";
+import {MissionPreview} from "../../../models/missionPreview";
 
 @Component({
     selector: 'app-missions',
@@ -17,29 +18,23 @@ export class MissionsComponent implements OnInit {
         this.fetch_mission();
     }
 
-    missions_list: MissionsList[] = [
+    missions_list: MissionPreview[] = [
         {
             title: "title",
             description: "description..",
-            prix: "price",
-            date_retour: "date de retour",
-            langage: "langage utilisé",
-            support: "le support utlisé",
-            niveau: "le niveau requis",
-            member_name: "pseudo du membre",
-            avatar: "https://www.magimix.com/webroot-mobile/img/loading.gif",
-            member_tag: "le tag du membre",
-            message_id: "0",
-            last_update: "0"
+            avatarURL: "https://www.magimix.com/webroot-mobile/img/loading.gif",
+            lastUpdate: "0",
+            id: "0",
+            budget: "0",
         }
     ]
 
-    private number_fetch: number = 5;
+    private number_fetch: number = 6;
     private load_on_more: number = 10;
 
     fetch_mission(): void {
         this.httpClient
-            .get<MissionsList[]>('/data/missions/get?start=0&end=' + this.number_fetch)
+            .get<MissionPreview[]>('/data/missions/preview?start=0&end=' + this.number_fetch)
             .subscribe(
                 (response) => {
                     this.missions_list = response;
@@ -63,20 +58,22 @@ export class MissionsComponent implements OnInit {
 
     }
 
-    private loading = false;
+    public loading = false;
+    public end = false;
 
     fetch_more(): void {
-        if (!this.loading) {
+        if (!this.loading && !this.end) {
             this.loading = true;
             this.httpClient
-                .get<MissionsList[]>('/data/missions/get?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())
+                .get<MissionPreview[]>('/data/missions/preview?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())
                 .subscribe(
                     (response) => {
                         this.missions_list = [...this.missions_list, ...response]
+                        this.loading = false;
                         if (this.number_fetch + this.load_on_more == this.missions_list.length) {
                             this.number_fetch = this.missions_list.length;
-                            this.loading = false;
-                        }
+                        } else
+                            this.end = true;
                     },
                     (error) => {
                         console.log('Error : ', error);

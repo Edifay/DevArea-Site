@@ -4,7 +4,7 @@
   background-color: var(--background-component-color);
   border-radius: 20px;
   margin-bottom: 60px;
-  width: 80%;
+  width: min(1335px, 90%);
   margin-left: auto;
   margin-right: auto;
 
@@ -42,10 +42,29 @@
   background-size: 100%;
 }
 
+.button {
+  margin-bottom: 20px;
+}
 
 #missions_container {
-  margin-left: 25em;
-  margin-right: 25em;
+}
+
+#missions {
+  width: min(1580px, 95%);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 30px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.button{
+  margin-top: 60px;
 }
 
 
@@ -62,10 +81,6 @@
     margin-right: 0;
   }
 
-  #missions_container {
-    font-size: 13px;
-  }
-
   #tile {
     font-size: 15px;
   }
@@ -75,11 +90,4 @@
     margin-right: auto;
   }
 
-  #missions {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
 }

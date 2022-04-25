@@ -25,7 +25,6 @@ import {
 } from './components/pages/stats/components/languages-sticks/languages-sticks.component';
 import {XpTopRankComponent} from './components/pages/stats/components/xp-top-rank/xp-top-rank.component';
 import {ConnexionButtonComponent} from './components/global/connexion-button/connexion-button.component';
-import {MissionCardComponent} from './components/pages/missions/components/mission-card/mission-card.component';
 import {OptionsComponent} from './components/pages/options/options.component';
 import {PersonnalXpComponent} from './components/pages/options/components/personnal-xp/personnal-xp.component';
 import {BadgesCardComponent} from './components/pages/options/components/badges-card/badges-card.component';
@@ -33,6 +32,12 @@ import {BadgeComponent} from './components/pages/options/components/badge/badge.
 import {ThemeSwitcherComponent} from './components/global/theme-switcher/theme-switcher.component';
 import {HowConnectComponent} from './components/pages/how-connect/how-connect.component';
 import {ToDoComponent} from './components/pages/to-do/to-do.component';
+import {MissionCreatorComponent} from './components/pages/mission-creator/mission-creator.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {
+    MissionPreviewComponent
+} from './components/pages/missions/components/mission-preview/mission-preview.component';
+import {Mission} from './components/pages/mission/mission';
 
 const appRoutes: Routes = [
     {path: 'menu', component: MenuComponent},
@@ -44,6 +49,8 @@ const appRoutes: Routes = [
     {path: 'options', component: OptionsComponent},
     {path: 'how-connect', component: HowConnectComponent},
     {path: 'to-do', component: ToDoComponent},
+    {path: 'mission-creator', component: MissionCreatorComponent},
+    {path: 'mission', component: Mission},
     {path: '**', component: NotFoundComponent}
 ]
 
@@ -64,7 +71,6 @@ const appRoutes: Routes = [
         LanguagesSticksComponent,
         XpTopRankComponent,
         ConnexionButtonComponent,
-        MissionCardComponent,
         OptionsComponent,
         PersonnalXpComponent,
         BadgesCardComponent,
@@ -72,12 +78,16 @@ const appRoutes: Routes = [
         ThemeSwitcherComponent,
         HowConnectComponent,
         ToDoComponent,
+        MissionCreatorComponent,
+        MissionPreviewComponent,
+        Mission,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        ReactiveFormsModule
     ],
     providers: [
         CookieService

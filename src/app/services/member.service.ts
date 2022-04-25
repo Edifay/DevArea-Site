@@ -11,7 +11,9 @@ export class MemberService {
 
     memberInfos$ = new BehaviorSubject<MemberInfos>(this.createMemberInfos());
 
-    connected$ = new BehaviorSubject("not_connected");
+    connected$ = new BehaviorSubject("connected");
+
+    public code: string | undefined;
 
     constructor(private _cookieService: CookieService, private _httpClient: HttpClient) {
         this.loadInfos();
@@ -21,13 +23,13 @@ export class MemberService {
         const memberInfos = this.createMemberInfos();
         this.memberInfos$.next(memberInfos);
         this.loadInfos();
-
     }
 
     loadInfos() {
         if (this._cookieService.get('codeDiscord')) {
+            this.code = this._cookieService.get('codeDiscord');
             this._httpClient
-                .get<MemberInfos>('/data/auth/get?code=' + this._cookieService.get('codeDiscord'))
+                .get<MemberInfos>('/data/auth/get?code=' + this.code)
                 .subscribe({
                     next: (response) => {
                         if (response == null) {
@@ -60,18 +62,12 @@ export class MemberService {
             level: 0,
             missions_list: [
                 {
-                    title: "title",
-                    description: "description..",
-                    prix: "price",
-                    date_retour: "date de retour",
-                    langage: "langage utilisé",
-                    support: "le support utlisé",
-                    niveau: "le niveau requis",
-                    member_name: "pseudo du membre",
-                    avatar: "https://www.magimix.com/webroot-mobile/img/loading.gif",
-                    member_tag: "le tag du membre",
-                    message_id: "0",
-                    last_update: "0"
+                    title: "Title",
+                    id: "0",
+                    lastUpdate: "0",
+                    description: "Default description.",
+                    avatarURL: "",
+                    budget: "0",
                 }
             ],
             badges: [
