@@ -39,21 +39,6 @@ import {
 } from './components/pages/missions/components/mission-preview/mission-preview.component';
 import {Mission} from './components/pages/mission/mission';
 
-const appRoutes: Routes = [
-    {path: 'menu', component: MenuComponent},
-    {path: '', component: MenuComponent},
-    {path: 'stats', component: StatsComponent},
-    {path: 'reseaux', component: ReseauxComponent},
-    {path: 'staff', component: StaffComponent},
-    {path: 'missions', component: MissionsComponent},
-    {path: 'options', component: OptionsComponent},
-    {path: 'how-connect', component: HowConnectComponent},
-    {path: 'to-do', component: ToDoComponent},
-    {path: 'mission-creator', component: MissionCreatorComponent},
-    {path: 'mission', component: Mission},
-    {path: '**', component: NotFoundComponent}
-]
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -86,8 +71,7 @@ const appRoutes: Routes = [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        RouterModule.forRoot(appRoutes),
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     providers: [
         CookieService
