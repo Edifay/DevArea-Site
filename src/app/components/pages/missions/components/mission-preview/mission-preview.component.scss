@@ -45,6 +45,7 @@
 
 img {
   width: 60px;
+  height: 60px;
   border-radius: 100px;
 }
 
@@ -80,10 +81,59 @@ img {
     width: 90%;
     height: fit-content;
 
-
-
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #title {
+    font-size: 19px;
+
+    min-height: 29px;
+
+    height: auto;
+    display: block;
+
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #last_line {
+    flex-direction: column-reverse;
+    align-items: center;
+
+
+    height: auto;
+  }
+
+  #group{
+    justify-content: space-between;
+  }
+
+  #group p {
+    visibility: visible;
+
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+    color: var(--main-text-color);
+  }
+
+  #last_update {
+    height: auto;
+    line-height: initial;
+
+    margin-right: auto;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  #preview:hover {
+    transform: none;
   }
 
 }

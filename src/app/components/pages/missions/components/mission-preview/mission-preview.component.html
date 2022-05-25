@@ -2,7 +2,8 @@
     <p id="title">{{title}}</p>
     <p>{{description}}</p>
     <div id="last_line">
-        <p id="last_update">Il y a {{last_update}} jours.</p>
+        <p *ngIf="last_update == '1'" id="last_update">Il y a {{last_update}} jour...</p>
+        <p *ngIf="last_update != '1'" id="last_update">Il y a {{last_update}} jours...</p>
         <div id="group">
             <p>{{budget}}</p>
             <img src="{{posterUrl}}">

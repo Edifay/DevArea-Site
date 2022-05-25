@@ -20,7 +20,8 @@
         <p *ngIf="mission.language != 'Non définie'">•</p>
         <p>Budget 💰: {{mission.budget}}</p>
         <p>•</p>
-        <p>Dernière validation il y a {{mission.lastUpdate}} jours</p>
+        <p *ngIf="mission.lastUpdate == '1'">Dernière validation il y a {{mission.lastUpdate}} jour</p>
+        <p *ngIf="mission.lastUpdate != '1'">Dernière validation il y a {{mission.lastUpdate}} jours</p>
 
         <div *ngIf="!loading && !took && this.mission.memberID != memberID" class="button" (click)="tookMission()">
             Prendre la mission
