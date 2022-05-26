@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule, Routes} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 
 
@@ -43,6 +42,10 @@ import { PresentationCard } from './components/pages/options/components/presenta
 import { Loader } from './components/global/loader/loader';
 import { MissionsWiewer } from './components/pages/options/components/missions-wiewer/missions-wiewer';
 import { FreelanceWiewer } from './components/pages/options/components/freelance-wiewer/freelance-wiewer';
+import { Field } from './components/pages/options/components/freelance-wiewer/components/field/field';
+import { Freelances } from './components/pages/freelances/freelances';
+import { FreelanceCreatorComponent } from './components/pages/freelance-creator/freelance-creator.component';
+import { FreelancePreview } from './components/pages/freelances/components/freelance-preview/freelance-preview';
 
 @NgModule({
     declarations: [
@@ -76,6 +79,10 @@ import { FreelanceWiewer } from './components/pages/options/components/freelance
         Loader,
         MissionsWiewer,
         FreelanceWiewer,
+        Field,
+        Freelances,
+        FreelanceCreatorComponent,
+        FreelancePreview,
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,20 @@
+<div id="container">
+    <div id="presentation">
+        <h1 id="title">
+            Les freelances
+        </h1>
+        <p>
+            Cet espace représente le channel <a target="_blank" rel="noopener noreferrer"
+                                                href="https://discord.com/channels/768370886532137000/856081355309842452">
+      <span class
+                    ="discord_channel"># 🛠・free-lance</span></a> du serveur discord. Vous pourrez y retrouver
+            les développeurs freelance.
+        </p>
+        <div class="button" routerLink="/freelance-creator">Créer sa page Freelance</div>
+    </div>
+    <div id="freelances_container">
+        <app-freelance-preview
+                *ngFor="let freelance of this.freelances; let i= index"
+                [preview]="freelance"></app-freelance-preview>
+    </div>
+</div>

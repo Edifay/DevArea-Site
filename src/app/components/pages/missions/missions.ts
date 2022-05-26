@@ -29,7 +29,7 @@ export class Missions implements OnInit {
         }
     ]
 
-    private number_fetch: number = 6;
+    private number_fetch: number = 10;
     private load_on_more: number = 10;
 
     fetch_mission(): void {

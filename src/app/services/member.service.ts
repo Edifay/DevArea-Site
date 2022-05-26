@@ -71,6 +71,7 @@ export class MemberService {
                     budget: "0",
                 }
             ],
+            freelance: undefined,
             badges: [
                 {
                     description: "description",

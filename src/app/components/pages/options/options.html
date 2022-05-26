@@ -32,9 +32,12 @@
             </div>
             <hr/>
 
-            <app-missions-wiewer *ngIf="this.status == tabs.Mission" [controller]="true"
+            <app-missions-wiewer *ngIf="this.status == tabs.Mission"
+                                 [controller]="true"
                                  [missions]="this.memberInfos.missions_list"></app-missions-wiewer>
-            <app-freelance-wiewer *ngIf="this.status == tabs.Freelance" [controller]="true"></app-freelance-wiewer>
+            <app-freelance-wiewer *ngIf="this.status == tabs.Freelance"
+                                  [controller]="true"
+                                  [freelance]="this.memberInfos.freelance"></app-freelance-wiewer>
         </div>
     </div>
 </div>

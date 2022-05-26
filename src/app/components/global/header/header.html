@@ -3,14 +3,6 @@
     <div id="bar">
       <img id="button" src="assets/images/icon-menu.png" (click)="openMenu()"/>
     </div>
-    <a class="left_border" (click)="close()" routerLink="reseaux" routerLinkActive="active left_border:hover">
-      <p>Réseaux</p>
-    </a>
-
-    <a (click)="close()" routerLink="stats" routerLinkActive="active">
-      <p>Stats</p>
-    </a>
-
     <a (click)="close()" routerLink="menu" routerLinkActive="active">
       <p>Menu</p>
     </a>
@@ -18,6 +10,20 @@
     <a (click)="close()" routerLink="missions" routerLinkActive="active">
       <p>Missions</p>
     </a>
+
+    <a (click)="close()" routerLink="freelances" routerLinkActive="active">
+      <p>Freelances</p>
+    </a>
+
+    <a (click)="close()" routerLink="stats" routerLinkActive="active">
+      <p>Stats</p>
+    </a>
+
+    <a class="left_border" (click)="close()" routerLink="reseaux" routerLinkActive="active left_border:hover">
+      <p>Réseaux</p>
+    </a>
+
+
 
     <a (click)="close()" class="right_border" routerLink="staff" routerLinkActive="active">
       <p>Staff</p>

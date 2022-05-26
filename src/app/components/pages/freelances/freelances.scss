@@ -1,0 +1,92 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+}
+
+#presentation {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-component-color);
+  border-radius: 20px;
+  margin-bottom: 60px;
+  width: min(1335px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+#presentation p {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#presentation a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit;
+}
+
+#title {
+  text-align: center;
+  padding: 15px;
+
+  z-index: 0;
+  //background-image: url("/assets/images/fond1.jpg");
+
+  color: var(--main-title-contrast-color);
+
+  margin-bottom: 20px;
+
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.button {
+  margin-bottom: 20px;
+}
+
+#freelances_container {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 95%;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 200px;
+
+  gap: 30px;
+}
+
+@media screen and (max-width: 1340px) {
+  #title {
+    font-size: 20px;
+  }
+
+  #presentation p {
+    font-size: 13px;
+  }
+
+  #tile {
+    font-size: 15px;
+  }
+
+  #presentation {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}

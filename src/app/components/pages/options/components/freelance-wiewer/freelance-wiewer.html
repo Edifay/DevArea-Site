@@ -1,1 +1,19 @@
-<h2>Coming Soon !</h2>
+<h2 *ngIf="!this.freelance && controller">Vous ne possédez pas de page freelance.</h2>
+<h2 *ngIf="!this.freelance && !controller">Ce membre ne possède pas de page freelance.</h2>
+<div *ngIf="this.freelance" id="container">
+    <div id="head_text">
+        <div>
+            <img src="{{this.freelance.avatar_url}}">
+            <p id="name">
+                {{this.freelance.name}}
+            </p>
+        </div>
+        <p *ngIf="controller" class="annonce">Votre page freelance !</p>
+        <p *ngIf="!controller" class="annonce">La page freelance de {{this.freelance.name}} !</p>
+        <p>{{this.freelance.description}}</p>
+    </div>
+    <app-field *ngFor="let field of this.freelance.fields; let i= index"
+               [field]="field">
+    </app-field>
+
+</div>

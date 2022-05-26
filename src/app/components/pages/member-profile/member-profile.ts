@@ -28,6 +28,12 @@ export class MemberProfileComponent implements OnInit {
             this.load();
         });
 
+        this.route.queryParams.subscribe(params => {
+            let open = params['open'];
+            if (open != undefined)
+                this.status = open;
+        });
+
         this.service.memberInfos$.subscribe({
             next: (memberInfos) => this.memberConnectedId = memberInfos.id
         });
@@ -74,6 +80,7 @@ export class MemberProfileComponent implements OnInit {
                     budget: "0",
                 }
             ],
+            freelance: undefined,
             badges: [
                 {
                     description: "description",
@@ -89,23 +96,25 @@ export class MemberProfileComponent implements OnInit {
     }
 
     public injectDescription(str: string | undefined) {
-        // @ts-ignore
-        let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-        let final = str;
-        // @ts-ignore
-        match.map(url => {
+        if (str != undefined) {
+            let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+            let final = str;
             // @ts-ignore
-            final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
-        })
-        let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;'>" + final + "</p>";
-        content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-        let dom = new DOMParser().parseFromString(content, 'text/html')
-        console.log(dom)
-        let new_element = dom.body.firstElementChild;
-        console.log(new_element)
-        let main = document.getElementById("descriptionContainer");
-        // @ts-ignore
-        main.appendChild(new_element);
+            match.map(url => {
+                // @ts-ignore
+                final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
+            })
+            let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;'>" + final + "</p>";
+            content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+            let dom = new DOMParser().parseFromString(content, 'text/html')
+            console.log(dom)
+            let new_element = dom.body.firstElementChild;
+            console.log(new_element)
+            let main = document.getElementById("descriptionContainer");
+            if (main != undefined) { // @ts-ignore
+                main.appendChild(new_element);
+            }
+        }
     }
 
     public status: number = tabs.Mission;
