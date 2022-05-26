@@ -5,7 +5,7 @@
         <p id="date">{{getCreationDate()}}</p>
     </div>
     <div id="infos">
-        <div id="memberInfo">
+        <div id="memberInfo" (click)="openProfile()">
             <img src="{{mission.avatarURL}}">
             <p><strong>{{mission.memberTag}}</strong></p>
         </div>

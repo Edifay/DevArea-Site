@@ -1,0 +1,40 @@
+<div id="container">
+    <h1 id="title_page">Espace Personnel</h1>
+    <div id="first_line" *ngIf="memberInfos">
+        <div id="first_colum">
+            <div id="xp_card">
+                <app-personnal-xp
+                        [avatar]="this.memberInfos.urlAvatar"
+                        [name]="this.memberInfos.tag"
+                        [next_level_xp]="this.memberInfos.next_xp_level"
+                        [previous_level_xp]="this.memberInfos.previous_xp_level"
+                        [xp]="this.memberInfos.xp"
+                        [previous_level]="this.memberInfos.level"
+                        [next_level]="this.memberInfos.level+1">
+                </app-personnal-xp>
+            </div>
+            <app-presentation-card
+                    [description]="memberInfos.memberDescription">
+            </app-presentation-card>
+            <div id=badges_card>
+                <app-badges-card [badges]="this.memberInfos.badges">
+                </app-badges-card>
+            </div>
+        </div>
+        <div id="second_colum">
+            <div id="selector">
+                <p *ngIf="this.status != tabs.Mission" style="color:grey;" (click)="switch(tabs.Mission)">Missions</p>
+                <p *ngIf="this.status == tabs.Mission">Missions</p>
+                <div class="separator"></div>
+                <p *ngIf="this.status != tabs.Freelance" style="color:grey;" (click)="switch(tabs.Freelance)">
+                    Freelance</p>
+                <p *ngIf="this.status == tabs.Freelance">Freelance</p>
+            </div>
+            <hr/>
+
+            <app-missions-wiewer *ngIf="this.status == tabs.Mission" [controller]="true"
+                                 [missions]="this.memberInfos.missions_list"></app-missions-wiewer>
+            <app-freelance-wiewer *ngIf="this.status == tabs.Freelance" [controller]="true"></app-freelance-wiewer>
+        </div>
+    </div>
+</div>

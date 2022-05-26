@@ -69,6 +69,8 @@ h1 {
   flex-direction: column;
   align-items: center;
 
+  cursor: pointer;
+
   gap: 8px;
 }
 
@@ -76,6 +78,7 @@ h1 {
   width: 90px;
   height: 90px;
   border-radius: 100px;
+
 }
 
 #memberInfo p {

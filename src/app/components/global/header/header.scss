@@ -1,0 +1,157 @@
+*{
+  transition: all 0.2s;
+}
+
+#container {
+  z-index: 1;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-bottom: 120px;
+}
+
+header {
+  display: flex;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  z-index: 1;
+}
+
+#bar {
+  display: none;
+}
+
+p {
+  color: grey;
+  z-index: 1;
+}
+
+#button {
+  color: black;
+  display: none;
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+.dark_theme #button {
+  filter: invert(1);
+}
+
+.dark_theme #close_button {
+  filter: invert(1);
+}
+
+#close_button {
+  display: none;
+  // filter: invert(var(--invert-black-image));
+}
+
+.active p {
+  color: var(--main-title-contrast-color);
+  //text-decoration: underline;
+}
+
+#bottom_container {
+  display: flex;
+}
+
+app-theme-switcher {
+  display: none;
+}
+
+@media screen and(max-width: 720px) {
+  #container {
+    padding-top: 0;
+    margin: 0;
+    width: fit-content;
+  }
+
+  header {
+    flex-direction: column;
+    position: fixed;
+  }
+
+  #bar {
+    background-color: var(--background-color);
+    display: block;
+    width: 720px;
+    padding-bottom: 15px;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+  }
+
+  .visible {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+  }
+
+  #button {
+    display: block;
+  }
+
+  .visible close_button {
+    display: block;
+  }
+
+  .visible a, app-theme-switcher {
+    display: block;
+  }
+
+  .invisible a, app-theme-switcher {
+    display: none;
+  }
+
+  .visible app-theme-switcher {
+    display: block;
+  }
+
+  .invisible app-theme-switcher {
+    display: none;
+  }
+
+  app-theme-switcher {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    z-index: 1;
+  }
+
+  app-theme-switcher {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .visible #close_button {
+    display: block;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+
+  #croix_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+
+}

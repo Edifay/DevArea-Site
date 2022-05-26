@@ -1,7 +1,7 @@
 import { Badge } from "./badge";
 import {MissionPreview} from "./missionPreview";
 
-export interface MemberInfos {
+export interface MemberProfile {
     id: string;
     urlAvatar: string;
     name: string;

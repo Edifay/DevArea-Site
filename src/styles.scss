@@ -5,7 +5,11 @@
   padding: 0;
   color: var(--main-text-color);
 
-  transition: background-color 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+textarea {
+  transition: none;
 }
 
 .light_theme {

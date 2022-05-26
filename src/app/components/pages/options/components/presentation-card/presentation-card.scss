@@ -1,0 +1,80 @@
+#container {
+  width: 304px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-component-color);
+  border-radius: 5px;
+
+  padding: 8px;
+
+  gap: 20px;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+}
+
+.editing {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.editing p {
+  font-size: 11px;
+  color: red;
+
+  margin-left: auto;
+}
+
+.editing .button {
+  margin-top: 15px;
+}
+
+textarea {
+  width: 298px;
+  height: 200px;
+
+  max-width: 298px;
+  max-height: 300px;
+
+  min-height: 50px;
+  min-width: 298px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  padding: 3px;
+
+  font-family: "Poppins";
+
+  margin-top: -20px;
+
+  border-radius: 5px;
+
+  background-color: var(--background-color);
+}
+
+.line {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.static {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.button {
+  padding: 3px 6px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#edit {
+  margin-left: auto;
+}

@@ -1,0 +1,34 @@
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+    selector: 'app-languages-sticks',
+    templateUrl: './languages-sticks.html',
+    styleUrls: ['./languages-sticks.scss']
+})
+export class LanguagesSticks implements OnInit {
+    @Input() name: string = 'No';
+    @Input() Members: string = '0';
+    @Input() color: string = '0';
+    @Input() numberOfLanguages: string = '0';
+    @Input() bigger: string = '0';
+
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
+
+    getColor() {
+        return this.color;
+    }
+
+    getCent() {
+        return (900 / +(this.numberOfLanguages).toString() + 'px');
+    }
+
+
+    getHeight() {
+        return (((450 / +(this.bigger)) * +(this.Members)).toString() + 'px');
+    }
+
+}

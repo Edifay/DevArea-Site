@@ -56,10 +56,11 @@ export class MemberService {
             name: 'Disconnected',
             tag: 'Disconnected#0000',
             rank: 0,
-            xp: 42,
+            xp: 0,
             previous_xp_level: 0,
-            next_xp_level: 0,
-            level: 0,
+            next_xp_level: 2,
+            level: 1,
+            memberDescription: undefined,
             missions_list: [
                 {
                     title: "Title",

@@ -38,7 +38,6 @@ export class Mission implements OnInit {
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
             this.id = params['id'];
-            console.log("Id : " + this.id);
             this.fetchMission();
         });
 
@@ -127,6 +126,10 @@ export class Mission implements OnInit {
                 }
             }
         )
+    }
+
+    public openProfile(){
+        this.router.navigate(['/', "member-profile"], {queryParams: {member_id: this.mission.memberID}});
     }
 
 }
