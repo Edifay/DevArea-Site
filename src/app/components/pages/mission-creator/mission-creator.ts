@@ -35,12 +35,12 @@ export class MissionCreator implements OnInit {
 
     }
 
-    public sendind: boolean = false;
+    public loading: boolean = false;
     public error: boolean = false;
 
     validate() {
-        if (!this.sendind) {
-            this.sendind = true;
+        if (!this.loading) {
+            this.loading = true;
             this.httpClient
                 .post('/data/missions/create?code=' + this.memberService.code,
 
@@ -55,7 +55,7 @@ export class MissionCreator implements OnInit {
                     }
                 ).subscribe({
                 complete: () => {
-                    this.sendind = false;
+                    this.loading = false;
                 },
                 next: (bol) => {
                     this.error = !bol;

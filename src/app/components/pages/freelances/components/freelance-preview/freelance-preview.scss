@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
 
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 375px;
 
   border-radius: 5px;
   padding: 15px;
 
-  gap: 15px;
+  gap: 30px;
 
   cursor: pointer;
 
@@ -34,7 +34,16 @@ img {
   display: block;
 }
 
-#first_line p {
+#name {
+  text-align: center;
+  margin-bottom: 15px;
+
+  padding-right: 60px;
+
+  font-size: 21px;
+}
+
+#description {
   text-align: justify;
 }
 
@@ -56,7 +65,11 @@ img {
 #abilities {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+#abilities h2 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .ability {
@@ -67,3 +80,14 @@ img {
   text-overflow: ellipsis;
 }
 
+@media screen and(max-width: 400px) {
+  #container {
+    width: 300px;
+  }
+}
+
+@media screen and(max-width: 350px) {
+  #container {
+    width: 250px;
+  }
+}

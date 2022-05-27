@@ -12,24 +12,9 @@ import {MemberService} from "../../../services/member.service";
 export class Mission implements OnInit {
 
     private id: string | undefined;
-    public mission: MissionContent = {
-        title: "Title",
-        description: "Default desciption !",
-        budget: "0",
-        deadLine: "none",
-        language: "none",
-        support: "none",
-        level: "none",
-        memberName: "Name",
-        avatarURL: "",
-        memberTag: "none",
-        lastUpdate: "0",
-        id: "0",
-        createdAt: 0,
-        memberID: ""
-    };
+    public mission: MissionContent | undefined;
 
-    public memberID: any;
+    public memberID: string | undefined;
     private connected: string | undefined;
 
     constructor(private route: ActivatedRoute, private client: HttpClient, private memberService: MemberService, private router: Router) {
@@ -41,9 +26,13 @@ export class Mission implements OnInit {
             this.fetchMission();
         });
 
-        this.memberID = this.memberService.memberInfos$.getValue().id;
+        let temp = this.memberService.memberInfos$.getValue();
+        if (temp)
+            this.memberID = temp.id;
+
         this.memberService.memberInfos$.subscribe(value => {
-            this.memberID = value.id;
+            if (value)
+                this.memberID = value.id;
         });
 
         this.memberService.connected$.subscribe({
@@ -66,7 +55,10 @@ export class Mission implements OnInit {
     }
 
     public getCreationDate(): string {
-        return "Créé le " + new Date(this.mission.createdAt).toLocaleDateString() + ".";
+        if (this.mission)
+            return "Créé le " + new Date(this.mission.createdAt).toLocaleDateString() + ".";
+        else
+            return "";
     }
 
     public loading = false;
@@ -74,7 +66,7 @@ export class Mission implements OnInit {
 
     public tookMission() {
         if (this.connected == "connected") {
-            if (!this.loading) {
+            if (!this.loading && this.mission) {
                 this.loading = true;
                 this.client.get<string[]>("data/missions/took" + "?missionID=" + this.mission.id + "&code=" + this.memberService.code).subscribe(
                     {
@@ -109,27 +101,31 @@ export class Mission implements OnInit {
     }
 
     public delete() {
-        this.client.get<string[]>("data/missions/delete" + "?missionID=" + this.mission.id + "&code=" + this.memberService.code).subscribe(
-            {
-                next: (response) => {
-                    console.log(response);
-                    this.memberService.loadInfos();
-                    this.router.navigate(['/', 'options']);
-                },
-                error: (err) => {
-                    console.log("Error : " + err)
+        if (this.mission) {
+            this.loading = true;
+            this.client.get<string[]>("data/missions/delete" + "?missionID=" + this.mission.id + "&code=" + this.memberService.code).subscribe(
+                {
+                    next: (response) => {
+                        console.log(response);
+                        this.memberService.loadInfos();
+                        this.router.navigate(['/', 'options']);
+                    },
+                    error: (err) => {
+                        console.log("Error : " + err)
 
-                },
-                complete: () => {
-                    console.log("Complete !")
-                    this.loading = false;
+                    },
+                    complete: () => {
+                        console.log("Complete !")
+                        this.loading = false;
+                    }
                 }
-            }
-        )
+            )
+        }
     }
 
-    public openProfile(){
-        this.router.navigate(['/', "member-profile"], {queryParams: {member_id: this.mission.memberID}});
+    public openProfile() {
+        if (this.mission)
+            this.router.navigate(['/', "member-profile"], {queryParams: {member_id: this.mission.memberID}});
     }
 
 }

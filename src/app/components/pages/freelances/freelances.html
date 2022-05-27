@@ -12,9 +12,13 @@
         </p>
         <div class="button" routerLink="/freelance-creator">Créer sa page Freelance</div>
     </div>
-    <div id="freelances_container">
+    <div id="freelances_container" *ngIf="freelances">
         <app-freelance-preview
                 *ngFor="let freelance of this.freelances; let i= index"
                 [preview]="freelance"></app-freelance-preview>
+    </div>
+    <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
+    <div *ngIf="loading" style="cursor: wait;" class="disabled_button">
+        <app-loader></app-loader>
     </div>
 </div>

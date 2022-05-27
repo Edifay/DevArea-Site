@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {MissionContent} from "../../../models/missionContent";
 import {MissionPreview} from "../../../models/missionPreview";
 
 @Component({
@@ -18,26 +17,19 @@ export class Missions implements OnInit {
         this.fetch_mission();
     }
 
-    missions_list: MissionPreview[] = [
-        {
-            title: "title",
-            description: "description..",
-            avatarURL: "https://www.magimix.com/webroot-mobile/img/loading.gif",
-            lastUpdate: "0",
-            id: "0",
-            budget: "0",
-        }
-    ]
+    missions_list: MissionPreview[] | undefined;
 
     private number_fetch: number = 10;
     private load_on_more: number = 10;
 
     fetch_mission(): void {
+        this.loading = true;
         this.httpClient
             .get<MissionPreview[]>('/data/missions/preview?start=0&end=' + this.number_fetch)
             .subscribe(
                 (response) => {
                     this.missions_list = response;
+                    this.loading = false;
                 },
                 (error) => {
                     console.log('Error : ', error);
@@ -68,12 +60,15 @@ export class Missions implements OnInit {
                 .get<MissionPreview[]>('/data/missions/preview?start=' + (this.number_fetch).toString() + '&end=' + (this.number_fetch + this.load_on_more).toString())
                 .subscribe(
                     (response) => {
-                        this.missions_list = [...this.missions_list, ...response]
-                        this.loading = false;
-                        if (this.number_fetch + this.load_on_more == this.missions_list.length) {
-                            this.number_fetch = this.missions_list.length;
-                        } else
-                            this.end = true;
+                        if (this.missions_list) {
+
+                            this.missions_list = [...this.missions_list, ...response]
+                            this.loading = false;
+                            if (this.number_fetch + this.load_on_more == this.missions_list.length) {
+                                this.number_fetch = this.missions_list.length;
+                            } else
+                                this.end = true;
+                        }
                     },
                     (error) => {
                         console.log('Error : ', error);

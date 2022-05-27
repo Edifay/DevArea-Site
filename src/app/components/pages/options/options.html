@@ -40,4 +40,7 @@
                                   [freelance]="this.memberInfos.freelance"></app-freelance-wiewer>
         </div>
     </div>
+    <div *ngIf="!memberInfos" class="disabled_button">
+        <app-loader></app-loader>
+    </div>
 </div>

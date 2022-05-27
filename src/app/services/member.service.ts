@@ -9,7 +9,7 @@ import {MemberInfos} from '../models/member-infos';
 })
 export class MemberService {
 
-    memberInfos$ = new BehaviorSubject<MemberInfos>(this.createMemberInfos());
+    memberInfos$ = new BehaviorSubject<MemberInfos | undefined>(undefined);
 
     connected$ = new BehaviorSubject("connected");
 
@@ -20,7 +20,7 @@ export class MemberService {
     }
 
     reset() {
-        const memberInfos = this.createMemberInfos();
+        const memberInfos = undefined;
         this.memberInfos$.next(memberInfos);
         this.loadInfos();
     }
@@ -49,37 +49,38 @@ export class MemberService {
         }
     }
 
-    private createMemberInfos(): MemberInfos {
-        return {
-            id: '0',
-            urlAvatar: '/assets/images/reseaux/discord.png',
-            name: 'Disconnected',
-            tag: 'Disconnected#0000',
-            rank: 0,
-            xp: 0,
-            previous_xp_level: 0,
-            next_xp_level: 2,
-            level: 1,
-            memberDescription: undefined,
-            missions_list: [
-                {
-                    title: "Title",
-                    id: "0",
-                    lastUpdate: "0",
-                    description: "Default description.",
-                    avatarURL: "",
-                    budget: "0",
-                }
-            ],
-            freelance: undefined,
-            badges: [
-                {
-                    description: "description",
-                    name: "Nom du badge",
-                    url_icon: "https://www.magimix.com/webroot-mobile/img/loading.gif"
-                }
-            ]
-        }
-    }
+    /*
+        private createMemberInfos(): MemberInfos {
+            return {
+                id: '0',
+                urlAvatar: '/assets/images/reseaux/discord.png',
+                name: 'Disconnected',
+                tag: 'Disconnected#0000',
+                rank: 0,
+                xp: 0,
+                previous_xp_level: 0,
+                next_xp_level: 2,
+                level: 1,
+                memberDescription: undefined,
+                missions_list: [
+                    {
+                        title: "Title",
+                        id: "0",
+                        lastUpdate: "0",
+                        description: "Default description.",
+                        avatarURL: "",
+                        budget: "0",
+                    }
+                ],
+                freelance: undefined,
+                badges: [
+                    {
+                        description: "description",
+                        name: "Nom du badge",
+                        url_icon: "https://www.magimix.com/webroot-mobile/img/loading.gif"
+                    }
+                ]
+            }
+        }*/
 
 }

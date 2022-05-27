@@ -1,42 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
+export interface staffCard {
+    name: string;
+    bio: string;
+    urlAvatar: string;
+    idCss: string;
+    id: string;
+}
+
 @Component({
     selector: 'app-staff',
     templateUrl: './staff.html',
     styleUrls: ['./staff.scss']
 })
 export class Staff implements OnInit {
-    staff = [
-        {
-            name: 'Chargement...',
-            bio: "Chargement..",
-            urlAvatar: "https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif",
-            idCss: "pair",
-            id: "none"
-        },
-        {
-            name: 'Chargement...',
-            bio: "Chargement..",
-            urlAvatar: "https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif",
-            idCss: "pair",
-            id: "none"
-        },
-        {
-            name: 'Chargement...',
-            bio: "Chargement..",
-            urlAvatar: "https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif",
-            idCss: "pair",
-            id: "none"
-        },
-        {
-            name: 'Chargement...',
-            bio: "Chargement..",
-            urlAvatar: "https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif",
-            idCss: "pair",
-            id: "none"
-        }
-    ];
+    public staff: staffCard[] | undefined;
 
     constructor(private httpClient: HttpClient) {
         this.getStaff()

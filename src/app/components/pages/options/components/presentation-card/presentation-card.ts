@@ -20,7 +20,7 @@ export class PresentationCard implements OnInit {
             this.injectDescription(this.description);
         this.service.memberInfos$.subscribe({
             next: (memberInfos) => {
-                if (memberInfos.memberDescription != undefined)
+                if (memberInfos && memberInfos.memberDescription)
                     this.injectDescription(memberInfos.memberDescription);
             }
         });
@@ -90,10 +90,9 @@ export class PresentationCard implements OnInit {
             let dom = new DOMParser().parseFromString(content, 'text/html')
             let new_element = dom.body.firstElementChild;
             let main = document.getElementById("containerInjector");
-            if (main != undefined)
-                { // @ts-ignore
-                    main.replaceWith(new_element);
-                }
+            if (main != undefined) { // @ts-ignore
+                main.replaceWith(new_element);
+            }
         }
     }
 

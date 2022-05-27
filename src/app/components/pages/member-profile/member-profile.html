@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" *ngIf="member_profile">
     <h1 id="title_page">{{this.member_profile.name}}</h1>
     <div id="first_line" *ngIf="member_profile">
         <div id="first_colum">
@@ -43,4 +43,8 @@
         </div>
     </div>
     <div *ngIf="memberConnectedId == member_id" class="button" (click)="openOptions()">Gérer votre profil...</div>
+</div>
+
+<div class="disabled_button" *ngIf="!member_profile">
+    <app-loader></app-loader>
 </div>

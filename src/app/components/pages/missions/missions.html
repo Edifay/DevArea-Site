@@ -13,7 +13,7 @@
         </p>
         <div class="button" routerLink="/mission-creator">Créer sa mission</div>
     </div>
-    <div id="missions">
+    <div *ngIf="missions_list" id="missions">
         <app-mission-preview
                 id="mission"
                 *ngFor="let mission of missions_list; let i= index"
@@ -26,6 +26,6 @@
         ></app-mission-preview>
     </div>
     <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
-    <div *ngIf="loading" class="button">Chargement en cour...</div>
+    <div *ngIf="loading" class="disabled_button"><app-loader></app-loader></div>
     <div id="bottom"></div>
 </div>

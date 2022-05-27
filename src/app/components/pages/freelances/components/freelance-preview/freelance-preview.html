@@ -2,12 +2,12 @@
     <div id="first_line">
         <div id="member">
             <img src="{{this.preview.avatar_url}}">
-            <p>{{this.preview.name}}</p>
         </div>
-        <p>{{this.preview.description}}...</p>
+        <p id="name">{{this.preview.name}}</p>
+        <p id="description">{{this.preview.description}}...</p>
     </div>
     <div id="abilities">
-        <h1 class="ability">Compétences:</h1>
-        <p class="ability" *ngFor="let ability of this.abilities; let i= index">{{ability}}</p>
+        <h2 class="ability">Compétences:</h2>
+        <p class="ability" *ngFor="let ability of this.abilities; let i= index"><strong>•</strong> {{ability}}</p>
     </div>
 </div>

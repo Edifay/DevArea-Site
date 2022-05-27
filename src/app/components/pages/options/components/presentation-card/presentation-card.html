@@ -12,7 +12,7 @@
             <div *ngIf="!this.sending" class="button" (click)="cancel()">Annuler</div>
             <div *ngIf="!this.sending" class="button" (click)="save()">Enregistrer</div>
         </div>
-        <div *ngIf="this.sending" class="button" (click)="save()">
+        <div *ngIf="this.sending" class="disabled_button" style="margin-left: auto" (click)="save()">
             <app-loader></app-loader>
         </div>
     </div>

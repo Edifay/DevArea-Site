@@ -1,4 +1,4 @@
-<div id="container">
+<div *ngIf="this.mission" id="container">
     <div id="mission_content">
         <h1>{{mission.title}}</h1>
         <p id="description">{{mission.description}}</p>
@@ -26,19 +26,29 @@
         <div *ngIf="!loading && !took && this.mission.memberID != memberID" class="button" (click)="tookMission()">
             Prendre la mission
         </div>
-        <div *ngIf="loading && !took" class="button" id="disabled">Prendre la mission</div>
-        <div *ngIf="took" class="button" id="disabled">Vous suivez cette mission !</div>
+        <div *ngIf="loading && !took && !comfirm" class="disabled_button">
+            <app-loader></app-loader>
+        </div>
+        <div *ngIf="took" class="disabled_button">Vous suivez cette mission !</div>
         <p *ngIf="took">Vous suivez cette mission ! Un channel dédier à votre discussion avec le client a donc été créé
             ! Retournez tout simplement sur le serveur discord !</p>
+
+
         <div *ngIf="this.mission.memberID == memberID  && !comfirm" class="button" (click)="buttonDeleteClick()">
             Supprimer cette mission
         </div>
-
         <hr *ngIf="comfirm">
         <p *ngIf="comfirm">Voulez-vous vaiment supprimer cette mission ?</p>
         <div style="display: flex; gap: 20px;">
-            <div *ngIf="comfirm" class="button" (click)="delete()">Oui</div>
-            <div *ngIf="comfirm" class="button" (click)="cancel()">Non</div>
+            <div *ngIf="comfirm && !this.loading" class="button" (click)="cancel()">Non</div>
+            <div *ngIf="comfirm && !this.loading" class="button" (click)="delete()">Oui</div>
+        </div>
+        <div *ngIf="loading && comfirm" class="disabled_button">
+            <app-loader></app-loader>
         </div>
     </div>
+</div>
+
+<div *ngIf="!this.mission" class="disabled_button">
+    <app-loader></app-loader>
 </div>

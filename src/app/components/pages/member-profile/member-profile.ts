@@ -15,11 +15,10 @@ export class MemberProfileComponent implements OnInit {
     tabs = tabs;
 
     public memberConnectedId: string | undefined;
-    public member_profile: MemberProfile;
+    public member_profile: MemberProfile | undefined;
     public member_id: string | undefined;
 
     constructor(private httpClient: HttpClient, private route: ActivatedRoute, private service: MemberService, public router: Router) {
-        this.member_profile = this.defaultMemberProfile();
     }
 
     ngOnInit(): void {
@@ -35,7 +34,10 @@ export class MemberProfileComponent implements OnInit {
         });
 
         this.service.memberInfos$.subscribe({
-            next: (memberInfos) => this.memberConnectedId = memberInfos.id
+            next: (memberInfos) => {
+                if (memberInfos != undefined)
+                    this.memberConnectedId = memberInfos.id
+            }
         });
     }
 
@@ -55,40 +57,6 @@ export class MemberProfileComponent implements OnInit {
                     console.log('Error : ', err);
                 }
             });
-    }
-
-
-    private defaultMemberProfile(): MemberProfile {
-        return {
-            id: '0',
-            urlAvatar: '/assets/images/reseaux/discord.png',
-            name: 'Disconnected',
-            tag: 'Disconnected#0000',
-            rank: 0,
-            xp: 0,
-            previous_xp_level: 0,
-            next_xp_level: 2,
-            level: 1,
-            memberDescription: undefined,
-            missions_list: [
-                {
-                    title: "Title",
-                    id: "0",
-                    lastUpdate: "0",
-                    description: "Default description.",
-                    avatarURL: "",
-                    budget: "0",
-                }
-            ],
-            freelance: undefined,
-            badges: [
-                {
-                    description: "description",
-                    name: "Nom du badge",
-                    url_icon: "https://www.magimix.com/webroot-mobile/img/loading.gif"
-                }
-            ]
-        }
     }
 
     public openOptions() {

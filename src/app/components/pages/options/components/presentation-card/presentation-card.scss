@@ -32,6 +32,10 @@
   margin-top: 15px;
 }
 
+.editing .disabled_button {
+  margin-top: 15px;
+}
+
 textarea {
   width: 298px;
   height: 200px;
@@ -70,6 +74,12 @@ textarea {
 }
 
 .button {
+  padding: 3px 6px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.disabled_button{
   padding: 3px 6px;
   margin-right: 0;
   margin-left: 0;

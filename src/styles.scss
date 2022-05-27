@@ -98,6 +98,27 @@ body {
   background-color: var(--main-color-active);
 }
 
+.disabled_button {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-size: 15px;
+
+  color: white;
+
+  width: fit-content;
+  padding: 10px 30px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: grey;
+
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.09);
+  transition: background-color 0.15s ease-in-out;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

@@ -9,7 +9,7 @@
             fonctionnalitées.
         </p>
     </div>
-    <div class="slider">
+    <div class="slider" *ngIf="staff">
         <div class="slide-track">
             <div class="slide">
                 <div class="parent">
@@ -33,5 +33,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="disabled_button" *ngIf="!staff" style="margin-top: 120px">
+        <app-loader></app-loader>
     </div>
 </div>
