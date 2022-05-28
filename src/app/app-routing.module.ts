@@ -13,7 +13,7 @@ import {Mission} from "./components/pages/mission/mission";
 import {NotFound} from "./components/pages/not-found/not-found";
 import {MemberProfileComponent} from "./components/pages/member-profile/member-profile";
 import {Freelances} from "./components/pages/freelances/freelances";
-import {FreelanceCreatorComponent} from "./components/pages/freelance-creator/freelance-creator.component";
+import {FreelanceCreator} from "./components/pages/freelance-creator/freelance-creator";
 
 const routes: Routes = [
     {path: 'menu', component: Menu},
@@ -29,7 +29,7 @@ const routes: Routes = [
     {path: 'mission', component: Mission},
     {path: 'member-profile', component: MemberProfileComponent},
     {path: 'freelances', component: Freelances},
-    {path: 'freelance-creator', component: FreelanceCreatorComponent},
+    {path: 'freelance-creator', component: FreelanceCreator},
     {path: '**', component: NotFound}
 ];
 

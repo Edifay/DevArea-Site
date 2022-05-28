@@ -32,7 +32,6 @@ export class MissionCreator implements OnInit {
                     this.router.navigate(['/', 'how-connect']);
             }
         });
-
     }
 
     public loading: boolean = false;

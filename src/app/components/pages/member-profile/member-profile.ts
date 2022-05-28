@@ -1,16 +1,27 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {MemberService} from "../../../services/member.service";
 import {tabs} from "../options/options";
 import {MemberProfile} from "../../../models/member-profile";
 
+
 @Component({
     selector: 'app-member-profile',
     templateUrl: './member-profile.html',
     styleUrls: ['./member-profile.scss']
 })
-export class MemberProfileComponent implements OnInit {
+export class MemberProfileComponent implements AfterViewInit {
+
+    private descriptionComponent!: ElementRef;
+
+    @ViewChild('descriptionComponent') set content(content: ElementRef) {
+        if (content) {
+            this.descriptionComponent = content;
+            if (this.member_profile && this.member_profile.memberDescription)
+                this.injectDescription(this.member_profile.memberDescription);
+        }
+    }
 
     tabs = tabs;
 
@@ -19,6 +30,11 @@ export class MemberProfileComponent implements OnInit {
     public member_id: string | undefined;
 
     constructor(private httpClient: HttpClient, private route: ActivatedRoute, private service: MemberService, public router: Router) {
+
+    }
+
+    ngAfterViewInit(): void {
+
     }
 
     ngOnInit(): void {
@@ -46,12 +62,11 @@ export class MemberProfileComponent implements OnInit {
             .get<MemberProfile>('/data/user-data/member-profile?member_id=' + this.member_id)
             .subscribe({
                 next: (response) => {
-                    if (response == null) {
+                    if (response == null)
                         console.log("Le serveur n'as pas pu trouver le membre recherché !")
-                    } else {
+                    else
                         this.member_profile = response;
-                        this.injectDescription(this.member_profile.memberDescription)
-                    }
+
                 },
                 error: (err) => {
                     console.log('Error : ', err);
@@ -60,35 +75,41 @@ export class MemberProfileComponent implements OnInit {
     }
 
     public openOptions() {
-        this.router.navigate(['/', "options"]);
+        this.router.navigate(['/', "options"], {
+            queryParams: {
+                open: this.status
+            }
+        });
     }
 
-    public injectDescription(str: string | undefined) {
-        if (str != undefined) {
-            let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-            let final = str;
-            // @ts-ignore
+    public injectDescription(str: string) {
+        let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+
+        let final = str;
+        if (match != null)
             match.map(url => {
-                // @ts-ignore
                 final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
             })
-            let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;'>" + final + "</p>";
-            content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-            let dom = new DOMParser().parseFromString(content, 'text/html')
-            console.log(dom)
-            let new_element = dom.body.firstElementChild;
-            console.log(new_element)
-            let main = document.getElementById("descriptionContainer");
-            if (main != undefined) { // @ts-ignore
-                main.appendChild(new_element);
-            }
-        }
+        else
+            final = str;
+
+        let content = "<span>" + final + "</span>";
+        content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+        let new_element = new DOMParser().parseFromString(content, 'text/html').body.firstElementChild;
+
+        this.descriptionComponent.nativeElement.append(new_element);
     }
 
     public status: number = tabs.Mission;
 
     public switch(tabs: number) {
         this.status = tabs;
+        this.router.navigate(['/', "member-profile"], {
+            queryParams: {
+                member_id: this.member_id,
+                open: this.status
+            }
+        });
     }
 
 }

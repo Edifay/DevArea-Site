@@ -113,6 +113,11 @@ hr {
 }
 
 
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
+
 @media screen and(max-width: 650px) {
   #first_line {
     display: flex;

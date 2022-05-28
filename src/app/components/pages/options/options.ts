@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MemberService} from "../../../services/member.service";
 import {MemberInfos} from "../../../models/member-infos";
 
@@ -24,7 +24,7 @@ export class Options implements OnInit {
 
     public own_missions = "true";
 
-    constructor(public service: MemberService, private http_client: HttpClient, private cookie: CookieService, private router: Router) {
+    constructor(public service: MemberService, private http_client: HttpClient, private cookie: CookieService, private router: Router, private route: ActivatedRoute) {
     }
 
     public status: number = tabs.Mission;
@@ -32,6 +32,12 @@ export class Options implements OnInit {
     ngOnInit(): void {
         this.service.memberInfos$.subscribe({
             next: (memberInfos) => this.memberInfos = memberInfos
+        });
+
+        this.route.queryParams.subscribe(params => {
+            let open = params['open'];
+            if (open != undefined)
+                this.status = open;
         });
 
         this.service.connected$.subscribe({
@@ -46,6 +52,11 @@ export class Options implements OnInit {
 
     public switch(tabs: number) {
         this.status = tabs;
+        this.router.navigate(['/', "options"], {
+            queryParams: {
+                open: this.status
+            }
+        });
     }
 
 }

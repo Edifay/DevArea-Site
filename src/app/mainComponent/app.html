@@ -8,4 +8,5 @@
   [name]="this.memberInfos.name"
   [style_on_connection_change]="this.connected"
 ></app-connexion-button>
+<app-connexion-button *ngIf="!memberInfos"></app-connexion-button>
 <router-outlet></router-outlet>

@@ -44,8 +44,9 @@ import { MissionsWiewer } from './components/pages/options/components/missions-w
 import { FreelanceWiewer } from './components/pages/options/components/freelance-wiewer/freelance-wiewer';
 import { Field } from './components/pages/options/components/freelance-wiewer/components/field/field';
 import { Freelances } from './components/pages/freelances/freelances';
-import { FreelanceCreatorComponent } from './components/pages/freelance-creator/freelance-creator.component';
+import { FreelanceCreator } from './components/pages/freelance-creator/freelance-creator';
 import { FreelancePreview } from './components/pages/freelances/components/freelance-preview/freelance-preview';
+import { InputField } from './components/pages/freelance-creator/components/input-field/input-field';
 
 @NgModule({
     declarations: [
@@ -81,8 +82,9 @@ import { FreelancePreview } from './components/pages/freelances/components/freel
         FreelanceWiewer,
         Field,
         Freelances,
-        FreelanceCreatorComponent,
+        FreelanceCreator,
         FreelancePreview,
+        InputField,
     ],
     imports: [
         BrowserModule,

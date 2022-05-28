@@ -16,7 +16,7 @@ export class PresentationCard implements OnInit {
     }
 
     ngOnInit(): void {
-        if (this.description != undefined)
+        if (this.description)
             this.injectDescription(this.description);
         this.service.memberInfos$.subscribe({
             next: (memberInfos) => {
@@ -67,7 +67,8 @@ export class PresentationCard implements OnInit {
 
     public cancel() {
         this.editing = false;
-        this.injectDescription(this.description);
+        if (this.description)
+            this.injectDescription(this.description);
     }
 
     public removeInject() {
@@ -76,23 +77,20 @@ export class PresentationCard implements OnInit {
         main.replaceWith(new DOMParser().parseFromString("<div id=\"containerInjector\" style='visibility: hidden'></div>", 'text/html').body.firstElementChild);
     }
 
-    public injectDescription(str: string | undefined) {
-        if (str != undefined) {
-            let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-            let final = str;
-            if (match != undefined)
-                match.map(url => {
-                    final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
-                })
+    public injectDescription(str: string) {
+        let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+        let final = str;
+        if (match != undefined)
+            match.map(url => {
+                final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
+            })
 
-            let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;'>" + final + "</p>";
-            content = content.replace(/(?:\r\n|\r|\n)/g, '<br>');
-            let dom = new DOMParser().parseFromString(content, 'text/html')
-            let new_element = dom.body.firstElementChild;
-            let main = document.getElementById("containerInjector");
-            if (main != undefined) { // @ts-ignore
-                main.replaceWith(new_element);
-            }
+        let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll; '>" + final + "</p>";
+        content = content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        let new_element = new DOMParser().parseFromString(content, 'text/html').body.firstElementChild;
+        let main = document.getElementById("containerInjector");
+        if (main != undefined) { // @ts-ignore
+            main.replaceWith(new_element);
         }
     }
 
