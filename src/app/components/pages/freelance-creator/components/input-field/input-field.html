@@ -14,27 +14,27 @@
     </div>
     <div id="childs" *ngIf="show">
         <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <textarea id="description" [formControl]="this.data.description" maxlength="1024"
+            <textarea id="description" [formControl]="this.data.description" maxlength="734"
                       [ngStyle]="{'border-color': (this.data.description.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
             ></textarea>
             <p class="littleAdvert" style="text-align: center;"
-               *ngIf="this.data.description.value.toString().length >= 1024">1024 charactères maximum.</p>
+               *ngIf="this.data.description.value.toString().length >= 734">734 charactères maximum.</p>
             <p class="littleAdvert" style="text-align: center" *ngIf="this.data.description.value.length == 0">Vous
                 devez remplir ce champ.</p>
         </div>
         <hr>
         <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <textarea id="deadline" [formControl]="this.data.temps" rows="1" maxlength="300"></textarea>
-            <p class="littleAdvert" style="text-align: center;" *ngIf="this.data.temps.value.toString().length >= 300">
-                300 charactères maximum.</p>
+            <textarea id="deadline" [formControl]="this.data.temps" rows="1" maxlength="100"></textarea>
+            <p class="littleAdvert" style="text-align: center;" *ngIf="this.data.temps.value.toString().length >= 100">
+                100 charactères maximum.</p>
             <p class="little" style="text-align: center" *ngIf="this.data.temps.value.length == 0">Vous n'êtes pas
                 obligé de remplir ce champ.</p>
         </div>
         <hr>
         <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <textarea id="price" [formControl]="this.data.prix" rows="1" maxlength="300"></textarea>
-            <p class="littleAdvert" style="text-align: center;" *ngIf="this.data.prix.value.toString().length >= 300">
-                300 charactères maximum.</p>
+            <textarea id="price" [formControl]="this.data.prix" rows="1" maxlength="150"></textarea>
+            <p class="littleAdvert" style="text-align: center;" *ngIf="this.data.prix.value.toString().length >= 150">
+                150 charactères maximum.</p>
             <p class="little" style="text-align: center" *ngIf="this.data.prix.value.length == 0">Vous n'êtes pas obligé
                 de remplir ce champ.</p>
         </div>

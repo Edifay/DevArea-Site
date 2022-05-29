@@ -7,12 +7,20 @@
             <div id="memberGroup">
                 <img src="{{this.memberInfos.urlAvatar}}" alt="">
                 <div>
-                    <textarea rows="1" maxlength="50" [formControl]="nameController"></textarea>
+                    <textarea rows="1" maxlength="50" [formControl]="nameController"
+                              [ngStyle]="{'border-color': (nameController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
+                    ></textarea>
+                    <p class="little" *ngIf="nameController.value.length == 0"
+                       style="color: red; text-align: center;">Vous devez remplir ce champ...</p>
                     <p class="little">Il est préférable de ne pas mettre de pseudo.</p>
                 </div>
             </div>
             <div id="descriptionContainer">
-                <textarea id="description" [formControl]="descriptionController" maxlength="4096"></textarea>
+                <textarea id="description" [formControl]="descriptionController" maxlength="4096"
+                          [ngStyle]="{'border-color': (descriptionController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
+                ></textarea>
+                <p class="little" *ngIf="descriptionController.value.length == 0"
+                   style="color: red; text-align: center;">Vous devez remplir ce champ...</p>
                 <p class="littleAdvert" *ngIf="this.descriptionController.value.toString().length >= 4096">4096
                     charactère maximum.</p>
             </div>
@@ -25,9 +33,13 @@
         <div id="last_line">
             <div class="button" (click)="addField()" *ngIf="this.fields.length < 25">Ajouter une compétence</div>
             <div style="display: flex; flex-direction: column; align-items: center">
-                <div class="button" (click)="save()" *ngIf="canBeSend() && !this.loading" style="margin-bottom: 0">Enregistrer</div>
-                <div class="disabled_button" (click)="save()" *ngIf="!canBeSend() && !this.loading">Enregistrer</div>
-                <div class="disabled_button" *ngIf="loading"><app-loader></app-loader></div>
+                <div class="button" (click)="save()" *ngIf="canBeSend() && !this.loading" style="margin-bottom: 0">
+                    Enregistrer
+                </div>
+                <div class="disabled_button" *ngIf="!canBeSend() && !this.loading">Enregistrer</div>
+                <div class="disabled_button" *ngIf="loading">
+                    <app-loader></app-loader>
+                </div>
                 <p *ngIf="finish" style="color: greenyellow;">✓</p>
                 <p *ngIf="error" style="color: red;">✗ Vous devez attendre 5sc entre chaque enregistrement !</p>
                 <p class="littleAdvert" *ngIf="!canBeSend()">Certains champs ne sont pas remplis.</p>

@@ -85,7 +85,7 @@ export class PresentationCard implements OnInit {
                 final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
             })
 
-        let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll; '>" + final + "</p>";
+        let content = "<p id='description' style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll; text-align: justify;'>" + final + "</p>";
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br>');
         let new_element = new DOMParser().parseFromString(content, 'text/html').body.firstElementChild;
         let main = document.getElementById("containerInjector");
