@@ -15,6 +15,9 @@ export class Header implements OnInit {
     if (this.cookieService.get('custom')) {
       let custom = JSON.parse(this.cookieService.get('custom'));
       let actualTheme = this.cookieService.get('theme');
+      if (actualTheme == undefined) {
+        this.cookieService.set('theme', 'dark_theme');
+      }
       // change the css variables of the modules
       var themeElement:HTMLElement = document.getElementsByClassName(actualTheme)[0] as HTMLElement; 
       themeElement.style.setProperty('--background-color', custom.background);

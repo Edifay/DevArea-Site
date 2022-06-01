@@ -37,37 +37,30 @@
     height: 50px;
 }
 
+.shareTheme,
+.importTheme {
+    border-radius: 5px;
+    flex-grow: 1;
+    background-color: var(--background-color);
+    padding: 3px;
+    font-family: "Poppins";
+    resize: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: var(--main-text-color);
+    width: 800px;
+    height: 60px;
+    font-size: 20px;
+}
+
 input[type=color] {
     float: right;
 }
 
 .button {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 10px 30px;
-    border-radius: 5px;
-    -webkit-user-select: none;
-    user-select: none;
-    background-color: var(--main-color);
-    box-shadow: 3px 3px 3px rgb(0 0 0 / 23%);
-    transition: background-color 0.15s ease-in-out;
-}
-
-.button:hover {
-    background-color: var(--main-color-hover);
-}
-
-.button:active {
-    background-color: var(--main-color-active);
-}
-
-.validate {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 550px) {

@@ -23,8 +23,15 @@
             <label for="buttonsAct">Couleur des boutons actifs<input type="color" id="buttonsAct" name="buttonsAct" value="#9c3d2f"></label>
         </div>
     </div>
-    <a>
-        <div class="button validate" (click)="saveSettings()">Valider</div>
+    <div class="buttonsCustom">
+        <div class="button" (click)="saveSettings()">Valider</div>
         <div class="button" (click)="resetSettings()">Réinitialiser</div>
-    </a>
+        <div class="button" (click)="shareSettings()">Partager</div>
+        <div class="button" (click)="importSettings()">Importer</div>
+    </div>
+    <textarea id="shareTheme" class="shareTheme" style="display: none;border-color: var(--main-text-color);" readonly></textarea>
+    <div id="importDiv" class="importDiv" style="display: none;">
+        <textarea id="importTheme" class="importTheme" style="border-color: var(--main-text-color);"></textarea>
+        <div class="button" (click)="validateImportSettings()">Valider</div>
+    </div>
 </div>
