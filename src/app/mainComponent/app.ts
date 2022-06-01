@@ -50,7 +50,7 @@ export class App {
     if (this.page_theme == "dark_theme") {
       this.page_theme = "light_theme";
       this.cookieService.set('theme', 'light_theme');
-    } else  {
+    } else {
       this.page_theme = "dark_theme";
       this.cookieService.set('theme', 'dark_theme');
     }

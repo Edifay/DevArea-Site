@@ -2,11 +2,7 @@
     <h2>Plus sur moi...</h2>
     <div class="static">
         <p *ngIf="!description && !this.editing">Vous ne possédez pas de présentation !</p>
-        <!--<div id="containerInjector"></div>-->
-        <p *ngIf="description && !this.editing" id='description'
-           style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll; text-align: justify;'>
-            {{this.description}}
-        </p>
+        <div id="containerInjector"></div>
         <div *ngIf="!this.editing" id="edit" class="button" (click)="edit()">Modifier</div>
     </div>
     <div class="editing" *ngIf="this.editing">
