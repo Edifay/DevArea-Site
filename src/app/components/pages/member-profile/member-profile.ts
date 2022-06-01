@@ -83,7 +83,7 @@ export class MemberProfileComponent implements AfterViewInit {
     }
 
     public injectDescription(str: string) {
-        let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+       /* let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
 
         let final = str;
         if (match != null)
@@ -97,7 +97,7 @@ export class MemberProfileComponent implements AfterViewInit {
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
         let new_element = new DOMParser().parseFromString(content, 'text/html').body.firstElementChild;
 
-        this.descriptionComponent.nativeElement.append(new_element);
+        this.descriptionComponent.nativeElement.append(new_element);*/
     }
 
     public status: number = tabs.Mission;
