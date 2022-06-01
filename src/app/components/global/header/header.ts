@@ -12,7 +12,7 @@ export class Header implements OnInit {
   public header_status = "invisible";
 
   constructor(public component: App, private cookieService: CookieService) {
-    if (this.cookieService.get('custom')) {
+    if (this.cookieService.get('custom') && this.cookieService.get('theme') == 'custom_theme') {
       let custom = JSON.parse(this.cookieService.get('custom'));
       let actualTheme = this.cookieService.get('theme');
       // change the css variables of the modules
