@@ -13,5 +13,4 @@ export class ThemeSwitcher implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

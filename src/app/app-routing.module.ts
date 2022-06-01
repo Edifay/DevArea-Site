@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {Menu} from "./components/pages/menu/menu";
+import {Customisation} from "./components/pages/customisation/customisation";
 import {Stats} from "./components/pages/stats/stats";
 import {Reseaux} from "./components/pages/reseaux/reseaux";
 import {Staff} from "./components/pages/staff/staff";
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path: '', component: Menu},
     {path: 'stats', component: Stats},
     {path: 'reseaux', component: Reseaux},
+    {path: 'customisation', component: Customisation},
     {path: 'staff', component: Staff},
     {path: 'missions', component: Missions},
     {path: 'options', component: Options},
