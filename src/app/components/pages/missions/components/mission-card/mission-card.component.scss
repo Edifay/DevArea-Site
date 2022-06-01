@@ -1,0 +1,193 @@
+#container {
+  position: relative;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background-color: var(--background-component-color);
+  margin-bottom: 30px;
+  border-radius: 15px;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+  text-align: center;
+  color: var(--main-title-color);
+  font-size: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#description {
+  text-align: justify;
+  margin: 25px 30px 15px;
+}
+
+.title_param {
+  font-size: 15px;
+  filter: brightness(80%);
+}
+
+.param {
+  text-align: center;
+  font-size: 15px;
+}
+
+#member {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  margin-top: 20px;
+  user-select: none;
+}
+
+#block {
+  display: flex;
+  cursor: pointer;
+}
+
+#name {
+  line-height: 70px;
+  text-align: center;
+  user-select: none;
+}
+
+#icon {
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 200px;
+  user-select: none;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  margin-bottom: -40px;
+  display: none;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -55px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block;
+  opacity: 1;
+}
+
+
+#send_container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#info_send {
+  margin-bottom: 55px;
+  margin-left: -73px;
+}
+
+#icon_send {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+#delete_container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#icon_delete {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 8px;
+  margin-left: 55px;
+}
+
+#info_delete {
+  margin-bottom: 55px;
+  margin-left: -30px;
+}
+
+#false {
+  display: none;
+}
+
+#true {
+  visibility: visible;
+}
+
+.button {
+  padding: 2px;
+}
+
+@media screen and (max-width: 550px) {
+  .param {
+    font-size: 13px;
+  }
+
+  .title_param {
+    font-size: 13px;
+  }
+
+  #icon {
+    width: 40px;
+    height: 40px;
+  }
+  #name {
+    font-size: 15px;
+    line-height: 40px;
+  }
+
+  #title {
+    font-size: 20px;
+  }
+
+  #icon_send {
+    width: 30px;
+    height: 30px;
+  }
+
+  #container {
+    width: available;
+  }
+}
