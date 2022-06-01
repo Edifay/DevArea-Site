@@ -67,6 +67,7 @@ export class Customisation implements OnInit {
     // create one cookie with all of this values
     let cookie = {"background": background, "modules": modules, "textes": text, "titles": title, "buttonsIna": buttonsIna, "buttonsHover": buttonsHover, "buttonsAct": buttonsAct};
     this.cookieService.set('custom', JSON.stringify(cookie));
+    this.cookieService.set('theme', 'custom_theme');
     // refresh the page
     window.location.reload();
   }

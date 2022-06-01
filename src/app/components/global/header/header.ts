@@ -15,10 +15,8 @@ export class Header implements OnInit {
     if (this.cookieService.get('custom')) {
       let custom = JSON.parse(this.cookieService.get('custom'));
       let actualTheme = this.cookieService.get('theme');
-      if (actualTheme == undefined) {
-        this.cookieService.set('theme', 'dark_theme');
-      }
       // change the css variables of the modules
+
       var themeElement:HTMLElement = document.getElementsByClassName(actualTheme)[0] as HTMLElement; 
       themeElement.style.setProperty('--background-color', custom.background);
       themeElement.style.setProperty('--background-component-color', custom.modules);
@@ -28,10 +26,19 @@ export class Header implements OnInit {
       themeElement.style.setProperty('--main-color', custom.buttonsIna);
       themeElement.style.setProperty('--main-color-hover', custom.buttonsHover);
       themeElement.style.setProperty('--main-color-active', custom.buttonsAct);
-     }
-  }
+     } else {
+      var themeElement:HTMLElement = document.getElementsByTagName('body')[0] as HTMLElement; 
+      themeElement.removeAttribute('style');
+    }
 
+    }
   ngOnInit(): void {
+    let actualTheme = this.cookieService.get('theme');
+    if (actualTheme == undefined) {
+      this.cookieService.set('theme', 'dark_theme');
+    }
+    
+
   }
 
   openMenu() {
