@@ -78,7 +78,7 @@ export class PresentationCard implements OnInit {
     }
 
     public injectDescription(str: string) {
-        let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+        /*let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
         let final = str;
         if (match != undefined)
             match.map(url => {
@@ -91,7 +91,7 @@ export class PresentationCard implements OnInit {
         let main = document.getElementById("containerInjector");
         if (main != undefined) { // @ts-ignore
             main.replaceWith(new_element);
-        }
+        }*/
     }
 
 }
