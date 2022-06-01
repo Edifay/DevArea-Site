@@ -1,0 +1,66 @@
+#container {
+  background-color: var(--background-component-color);
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "font_xp", serif;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+}
+
+#container img {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+#text_part {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#name {
+  font-size: 35px;
+  width: 300px;
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 15px;
+}
+
+#xp_part {
+  display: flex;
+  font-size: 20px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#xp {
+  width: 100%;
+  text-align: center;
+}
+
+.progress-bar {
+  border-radius: 60px;
+  overflow: hidden;
+  width: 100%;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+
+  span {
+    display: block;
+  }
+}
+
+.bar {
+  background: rgb(106, 106, 106);
+}
+
+.progress {
+  background: var(--main-color);
+  padding: 8px;
+}
