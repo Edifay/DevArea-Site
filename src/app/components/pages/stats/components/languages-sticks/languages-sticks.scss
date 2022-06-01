@@ -1,0 +1,32 @@
+div {
+  width: 82px;
+  height: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+
+.legend {
+  font-size: 15px;
+  text-align: center;
+}
+
+@media screen and(max-width: 1040px) {
+  div {
+    width: 20px;
+  }
+
+  .legend {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(-170deg);
+    margin-bottom: 5px;
+  }
+
+  #name {
+    margin-top: 5px;
+    height: 80px;
+  }
+
+}

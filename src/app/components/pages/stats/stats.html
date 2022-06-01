@@ -1,0 +1,57 @@
+<div id="memberContainer" *ngIf="this.member_count">
+    <h1 class="title" id="member_title">
+        {{this.member_count}}<br/>Membres
+    </h1>
+</div>
+<div class="disabled_button" *ngIf="!member_count">
+    <app-loader></app-loader>
+</div>
+
+<div id="languages_part">
+    <h1 class="title">Nombres de développeurs par langages</h1>
+    <div id="graphContainer" *ngIf="this.languages">
+        <app-languages-sticks
+                id="graph"
+                *ngFor="let language of languages"
+                [name]="language.name"
+                [Members]="language.countMember"
+                [color]="language.color"
+                [numberOfLanguages]="number"
+                [bigger]="bigString"
+        ></app-languages-sticks>
+    </div>
+    <div class="disabled_button" *ngIf="!this.languages">
+        <app-loader></app-loader>
+    </div>
+</div>
+
+<div id="xp_part">
+    <h1 class="title" id="title_graph">Leaderboard de l'xp du serveur</h1>
+    <div id="xp_container" *ngIf="XpBoard">
+        <div id="table_header">
+            <div id="table_header_left">
+                <h2 id="table_header_rank">Rang</h2>
+                <h2 id="table_header_pseudo">Pseudo</h2>
+            </div>
+            <div id="table_header_right">
+                <h2 id="table_header_xp">XP</h2>
+            </div>
+        </div>
+        <app-xp-top-rank
+                id="xp"
+                *ngFor="let person of XpBoard; let i= index"
+                [rank]=person.rank+1
+                [pseudo]="person.name"
+                [xp]=person.xp
+                [url]="person.urlAvatar"
+                [id]="person.id"
+                [level]="person.level"></app-xp-top-rank>
+        <a class="button" on-click="more()" *ngIf="!this.loading" [ngStyle]="{'display':display_mode_button}">Plus</a>
+        <div class="disabled_button" *ngIf="this.loading">
+            <app-loader></app-loader>
+        </div>
+    </div>
+    <div class="disabled_button" *ngIf="!this.XpBoard">
+        <app-loader></app-loader>
+    </div>
+</div>

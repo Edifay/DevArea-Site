@@ -1,0 +1,18 @@
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#container img {
+  width: 70px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 10px;
+}
+
+#container p {
+  text-align: center;
+  font-size: 20px;
+}

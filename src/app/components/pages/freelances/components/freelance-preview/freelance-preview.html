@@ -1,0 +1,13 @@
+<div *ngIf="preview" id="container" (click)="openProfile()">
+    <div id="first_line">
+        <div id="member">
+            <img src="{{this.preview.avatar_url}}">
+        </div>
+        <p id="name">{{this.preview.name}}</p>
+        <p id="description">{{this.preview.description}}...</p>
+    </div>
+    <div id="abilities">
+        <h2 class="ability">Compétences:</h2>
+        <p class="ability" *ngFor="let ability of this.abilities; let i= index"><strong>•</strong> {{ability}}</p>
+    </div>
+</div>

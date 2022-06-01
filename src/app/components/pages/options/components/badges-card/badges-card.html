@@ -1,0 +1,10 @@
+<div id="container" *ngIf="badges">
+  <h2>Vos badges:</h2>
+  <app-badge
+    id="badge"
+    *ngFor="let badge of this.badges; let i= index"
+    [description]="badge.description"
+    [name]="badge.name"
+    [url_icon]="badge.url_icon"
+  ></app-badge>
+</div>

@@ -1,0 +1,134 @@
+#container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 60px;
+}
+
+h1 {
+  text-align: center;
+}
+
+textarea {
+  border-radius: 5px;
+
+  flex-grow: 1;
+
+  background-color: var(--background-color);
+
+  padding: 3px;
+  font-family: "Poppins";
+}
+
+#freelance {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  width: min(1300px, 80%);
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#first_line {
+  display: flex;
+  background-color: var(--background-component-color);
+
+  width: calc(100% - 40px);
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  gap: 30px;
+
+  padding: 20px;
+
+  box-shadow: 0 5px 10px rgb(0 0 0 / 19%);
+}
+
+#memberGroup {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+#memberGroup img {
+  width: 120px;
+  border-radius: 100px;
+}
+
+#memberGroup textarea {
+  width: 260px;
+  min-width: 150px;
+  max-width: 260px;
+  min-height: 23px;
+  max-height: 23px;
+
+  font-size: 19px;
+
+  line-height: 23px;
+
+
+  text-align: center;
+}
+
+#memberGroup div {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.little {
+  font-size: 11px;
+}
+
+.littleAdvert {
+  font-size: 11px;
+  color: red;
+}
+
+#descriptionContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  flex-grow: 1;
+}
+
+#descriptionContainer textarea {
+  max-width: 100%;
+  resize: vertical;
+}
+
+#descriptionContainer p {
+  text-align: end;
+}
+
+.button {
+  margin-bottom: 120px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.disabled_button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#last_line {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 20px;
+}

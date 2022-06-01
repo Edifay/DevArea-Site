@@ -1,0 +1,79 @@
+h1 {
+  font-size: 50px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  margin-bottom: 150px;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#mission_title {
+  font-size: 30px;
+}
+
+#mission_description {
+  font-size: 22px;
+}
+
+#mission_dateRetour {
+  font-size: 22px;
+}
+
+#mission_langage {
+  font-size: 22px;
+}
+
+#mission_support {
+  font-size: 22px;
+}
+
+#mission_niveau {
+  font-size: 22px;
+}
+
+#mission_budget {
+  font-size: 22px;
+}
+
+.error {
+  color: red;
+}
+
+.small{
+  font-size: 14px;
+}
+
+textarea {
+  font-family: "Poppins";
+
+  width: min(1000px, 95%);
+
+  padding: 3px;
+  border-radius: 5px;
+
+  background-color: var(--background-component-color);
+}
+
+#disabled {
+  font-size: 15px;
+
+  color: white;
+
+  padding: 10px 30px;
+
+  border-radius: 5px;
+
+  user-select: none;
+  background-color: grey;
+}

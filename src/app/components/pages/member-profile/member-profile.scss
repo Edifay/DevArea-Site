@@ -1,0 +1,143 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+
+#title_page {
+  color: var(--main-title-contrast-color);
+  font-size: 55px;
+  text-align: center;
+}
+
+#xp_card {
+  display: block;
+}
+
+#first_line {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 30px;
+
+  gap: 30px;
+}
+
+#first_colum {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+
+  gap: 30px;
+}
+
+#second_colum {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#title_missions {
+  font-size: 35px;
+  color: var(--main-title-contrast-color);
+  margin-bottom: 35px;
+}
+
+.no_mission {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--main-title-contrast-color);
+  font-size: 15px;
+}
+
+#missions_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+#descriptionContainer {
+  width: 304px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-component-color);
+  border-radius: 5px;
+
+  padding: 8px;
+
+  gap: 10px;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+}
+
+#description {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+#selector {
+  display: flex;
+  align-items: center;
+}
+
+#selector p {
+  font-size: 25px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  cursor: pointer;
+}
+
+
+.separator {
+  width: 3px;
+  height: 14px;
+
+  border-radius: 20px;
+
+  background-color: var(--main-color);
+}
+
+hr {
+  color: var(--main-color);
+
+  width: 95%;
+}
+
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
+
+@media screen and(max-width: 650px) {
+  #first_line {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  #first_colum {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #second_colum {
+    margin-left: 0;
+  }
+
+  #title_missions {
+    text-align: center;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,69 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  background-color: var(--background-component-color);
+
+  padding: 20px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 5px 10px rgb(0 0 0 / 19%);
+
+  cursor: pointer;
+}
+
+#container:active {
+  user-select: none;
+}
+
+#childs {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+#deadline {
+  text-align: center;
+}
+
+#description {
+  text-align: justify;
+}
+
+#price {
+  text-align: center;
+}
+
+#title {
+  font-size: 22px;
+}
+
+hr {
+  height: 3px;
+  border-radius: 10px;
+
+  width: 30%;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: var(--main-text-color);
+
+  border: none;
+}
+
+#first_line {
+  display: flex;
+  justify-content: space-between;
+}
+
+#first_line img {
+  width: 20px;
+}
+
+.reverse {
+  transform: rotate(180deg);
+}

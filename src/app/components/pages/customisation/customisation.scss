@@ -1,0 +1,81 @@
+.title {
+    text-align: center;
+    padding: 15px;
+    color: var(--main-title-contrast-color);
+    z-index: 2;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.colorModule {
+    background-color: var(--background-component-color);
+    display: block;
+    height: auto;
+    max-width: 80%;
+    width: auto;
+    margin-left: max(250px, 20%);
+    margin-right: 20%;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 19%);
+}
+
+.colorPickers {
+    padding: 2% 2%;
+    font-size: 15px;
+}
+
+.backgroundPicker,
+.modulesPicker,
+.textesPicker,
+.titlesPicker,
+.buttonsInaPicker,
+.buttonsHoverPicker,
+.buttonsActPicker {
+    height: 50px;
+}
+
+input[type=color] {
+    float: right;
+}
+
+.button {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: var(--main-color);
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 23%);
+    transition: background-color 0.15s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--main-color-hover);
+}
+
+.button:active {
+    background-color: var(--main-color-active);
+}
+
+.validate {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .colorModule {
+        margin-top: 20px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}

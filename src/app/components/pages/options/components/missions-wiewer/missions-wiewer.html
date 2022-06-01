@@ -1,0 +1,19 @@
+<div *ngIf="missions">
+    <div id="missions_container">
+        <app-mission-preview
+                id="mission"
+                *ngFor="let mission of missions; let i= index"
+                [id]="mission.id"
+                [title]="mission.title"
+                [description]="mission.description"
+                [posterUrl]="mission.avatarURL"
+                [budget]="mission.budget"
+                [last_update]="mission.lastUpdate"
+        ></app-mission-preview>
+    </div>
+    <h2 *ngIf="missions.length == 0 && controller" class="no_mission">Vous ne possédez pas de
+        mission...</h2>
+    <h2 *ngIf="missions.length == 0 && !controller" class="no_mission">Ce membre ne possède pas de
+        mission...</h2>
+</div>
+<div *ngIf="controller" class="button" routerLink="/mission-creator">Nouvelle mission</div>

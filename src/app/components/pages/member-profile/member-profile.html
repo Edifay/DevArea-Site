@@ -1,0 +1,53 @@
+<div id="container" *ngIf="member_profile">
+    <h1 id="title_page">{{this.member_profile.name}}</h1>
+    <div id="first_line" *ngIf="member_profile">
+        <div id="first_colum">
+            <div id="xp_card">
+                <app-personnal-xp
+                        [avatar]="this.member_profile.urlAvatar"
+                        [name]="this.member_profile.tag"
+                        [next_level_xp]="this.member_profile.next_xp_level"
+                        [previous_level_xp]="this.member_profile.previous_xp_level"
+                        [xp]="this.member_profile.xp"
+                        [previous_level]="this.member_profile.level"
+                        [next_level]="this.member_profile.level+1">
+                </app-personnal-xp>
+            </div>
+
+            <div id="descriptionContainer">
+                <h2>Plus sur moi...</h2>
+                <p *ngIf="!this.member_profile.memberDescription">Ce membre ne possède pas de présentation !</p>
+                <p *ngIf="this.member_profile.memberDescription"
+                   style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;text-align: justify;'
+                   #descriptionComponent></p>
+            </div>
+
+            <div id=badges_card>
+                <app-badges-card
+                        [badges]="member_profile.badges">
+                </app-badges-card>
+            </div>
+        </div>
+        <div id="second_colum">
+            <div id="selector">
+                <p *ngIf="this.status != tabs.Mission" style="color:grey;" (click)="switch(tabs.Mission)">Missions</p>
+                <p *ngIf="this.status == tabs.Mission">Missions</p>
+                <div class="separator"></div>
+                <p *ngIf="this.status != tabs.Freelance" style="color:grey;" (click)="switch(tabs.Freelance)">
+                    Freelance</p>
+                <p *ngIf="this.status == tabs.Freelance">Freelance</p>
+            </div>
+            <hr/>
+
+            <app-missions-wiewer *ngIf="this.status == tabs.Mission"
+                                 [missions]="member_profile.missions_list"></app-missions-wiewer>
+            <app-freelance-wiewer *ngIf="this.status == tabs.Freelance"
+                                  [freelance]="this.member_profile.freelance"></app-freelance-wiewer>
+        </div>
+    </div>
+    <div *ngIf="memberConnectedId == member_id" class="button" (click)="openOptions()">Gérer votre profil...</div>
+</div>
+
+<div class="disabled_button" *ngIf="!member_profile">
+    <app-loader></app-loader>
+</div>
