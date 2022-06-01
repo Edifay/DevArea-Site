@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef, ViewChild  } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
 
 
@@ -67,49 +67,13 @@ export class Customisation implements OnInit {
     // create one cookie with all of this values
     let cookie = {"background": background, "modules": modules, "textes": text, "titles": title, "buttonsIna": buttonsIna, "buttonsHover": buttonsHover, "buttonsAct": buttonsAct};
     this.cookieService.set('custom', JSON.stringify(cookie));
-    this.cookieService.set('theme', 'custom_theme');
     // refresh the page
     window.location.reload();
   }
-
   resetSettings() {
     this.cookieService.delete('custom');
     window.location.reload();
   }
 
-  customExist(){
-    let retour;
-    if (this.cookieService.get('custom')) {
-      retour = true;
-    }
-    else {
-      retour = false;
-    }
-    return retour;
-  }
 
-  shareSettings() {
-    // get the cookie
-    let cookie = this.cookieService.get('custom');
-    // write it in the text area
-    let textAreaShare = document.getElementById('shareTheme') as HTMLTextAreaElement;
-    textAreaShare.style.display = "block";
-    let textAreaImport = document.getElementById('importDiv') as HTMLTextAreaElement;
-    textAreaImport.style.display = "none";
-    textAreaShare.value = cookie;
-  }
-
-  importSettings(){
-    let textAreaImport = document.getElementById('importDiv') as HTMLTextAreaElement;
-    textAreaImport.style.display = "block";
-    let textAreaShare = document.getElementById('shareTheme') as HTMLTextAreaElement;
-    textAreaShare.style.display = "none";
-  }
-  validateImportSettings(){
-    let textAreaImport = document.getElementById('importTheme') as HTMLTextAreaElement;
-    let cookie = textAreaImport.value;
-    let cookieJson = JSON.parse(cookie);
-    this.cookieService.set('custom', JSON.stringify(cookieJson).replace(/\\/g, ""));
-    window.location.reload();
-  }
 }
