@@ -73,6 +73,7 @@ export class Customisation implements OnInit {
   }
 
   resetSettings() {
+    this.cookieService.set('theme', 'dark_theme');
     this.cookieService.delete('custom');
     window.location.reload();
   }
@@ -87,6 +88,49 @@ export class Customisation implements OnInit {
     }
     return retour;
   }
+
+  editBackground(){
+    let backgroundValue = document.getElementById('background') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement; 
+    body.style.cssText = body.style.cssText + `--background-color: ${backgroundValue.value};`;
+  }
+
+  editModules(){
+    let modulesValue = document.getElementById('modules') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--background-component-color: ${modulesValue.value};`;
+  }
+
+  editTextes(){
+    let textesValue = document.getElementById('textes') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--main-text-color: ${textesValue.value};`;
+  }
+
+  editTitles(){
+    let titlesValue = document.getElementById('titles') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--main-title-contrast-color: ${titlesValue.value};`;
+  }
+
+  editButtonsIna(){
+    let buttonsInaValue = document.getElementById('buttonsIna') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--main-color: ${buttonsInaValue.value};`;
+  }
+
+  editButtonsHover(){
+    let buttonsHoverValue = document.getElementById('buttonsHover') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--main-color-hover: ${buttonsHoverValue.value};`;
+  }
+
+  editButtonsAct(){
+    let buttonsActValue = document.getElementById('buttonsAct') as HTMLInputElement;
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
+    body.style.cssText = body.style.cssText + `--main-color-active: ${buttonsActValue.value};`;
+  }
+
 
   shareSettings() {
     // get the cookie
