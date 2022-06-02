@@ -152,8 +152,15 @@ export class Customisation implements OnInit {
   validateImportSettings(){
     let textAreaImport = document.getElementById('importTheme') as HTMLTextAreaElement;
     let cookie = textAreaImport.value;
-    let cookieJson = JSON.parse(cookie);
-    this.cookieService.set('custom', JSON.stringify(cookieJson).replace(/\\/g, ""));
-    window.location.reload();
+    // check if the cookie is valid
+    if (cookie.includes('background') && cookie.includes('modules') && cookie.includes('textes') && cookie.includes('titles') && cookie.includes('buttonsIna') && cookie.includes('buttonsHover') && cookie.includes('buttonsAct')) {
+      let cookieJson = JSON.parse(cookie);
+      this.cookieService.set('custom', JSON.stringify(cookieJson).replace(/\\/g, ""));
+      this.cookieService.set('theme', 'custom_theme');
+      window.location.reload();
+    }
+    else{
+      alert('Cookie invalide');
+    }
   }
 }
