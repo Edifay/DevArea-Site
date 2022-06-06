@@ -5,5 +5,7 @@
 <div id="dist_top"></div>
 <app-connexion-button *ngIf="memberInfos" [sourceImage]="this.memberInfos.urlAvatar" [name]="this.memberInfos.name" [style_on_connection_change]="this.connected"></app-connexion-button>
 <app-connexion-button *ngIf="!memberInfos"></app-connexion-button>
-<router-outlet></router-outlet>
+<div id="main_content">
+    <router-outlet></router-outlet>
+</div>
 <site-footer></site-footer>
