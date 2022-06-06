@@ -4,7 +4,7 @@ N'hésitez pas à rejoindre notre discord pour donner vos retours et vos idées!
 
 Le lien : https://devarea.fr
 
-Pour les développeurs voulant toucher uniquement au front-end end, et de pouvoir connecter son site au back, il faut lancer le serveur avec la commande : 
+Pour les développeurs voulant toucher uniquement au front-end end, et de pouvoir connecter le site lancé localement au back, il faut lancer le serveur avec la commande : 
 
  -> ng serve --port 80 --disable-host-check true --proxy-config proxy.config.json
 
