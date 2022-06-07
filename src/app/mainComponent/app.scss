@@ -1,4 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#main_content {
+    flex: 1;
+}
+
 #main_switcher {
+    position: absolute;
     padding-top: 10px;
     padding-left: 20px;
     float: left;
@@ -12,6 +23,6 @@
         float: left;
     }
     #dist_top {
-        height: 70px;
+        min-height: 70px;
     }
 }
