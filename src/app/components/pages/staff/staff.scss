@@ -1,3 +1,4 @@
+$staffNumber: 8;
 #container {
     display: flex;
     flex-direction: column;
@@ -50,7 +51,7 @@ $animationSpeed: 40s;
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-290px * 7))
+        transform: translateX(calc(-290px * $staffNumber))
     }
 }
 
@@ -76,7 +77,7 @@ $animationSpeed: 40s;
     .slide-track {
         animation: scroll $animationSpeed linear infinite;
         display: flex;
-        width: calc(290px * 7);
+        width: calc(290px * $staffNumber);
     }
     .slide {
         height: auto;
@@ -105,7 +106,7 @@ $animationSpeed: 40s;
     .slide-track {
         animation-play-state: paused;
         display: flex;
-        width: calc(290px * 7);
+        width: calc(290px * $staffNumber);
     }
     .slide {
         height: auto;
@@ -130,7 +131,7 @@ $animationSpeed: 40s;
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-270px * 7))
+            transform: translateX(calc(-270px * $staffNumber))
         }
     }
     // Styling
@@ -155,7 +156,7 @@ $animationSpeed: 40s;
         .slide-track {
             animation: scroll 0s linear infinite;
             display: flex;
-            width: calc(270px * 7);
+            width: calc(270px * $staffNumber);
         }
     }
     #at-remove {
