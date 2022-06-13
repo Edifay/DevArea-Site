@@ -44,6 +44,7 @@ import { FreelanceCreator } from './components/pages/freelance-creator/freelance
 import { FreelancePreview } from './components/pages/freelances/components/freelance-preview/freelance-preview';
 import { InputField } from './components/pages/freelance-creator/components/input-field/input-field';
 import { Customisation } from './components/pages/customisation/customisation';
+import { TypesDescription } from './components/pages/menu/components/types-description/types-description';
 
 @NgModule({
     declarations: [
@@ -84,6 +85,7 @@ import { Customisation } from './components/pages/customisation/customisation';
         InputField,
         Customisation,
         Footer,
+        TypesDescription,
     ],
     imports: [
         BrowserModule,
