@@ -34,17 +34,17 @@ import {ToDo} from './components/pages/to-do/to-do';
 import {MissionCreator} from './components/pages/mission-creator/mission-creator';
 import {MissionPreview} from './components/pages/missions/components/mission-preview/mission-preview';
 import {Mission} from './components/pages/mission/mission';
-import { MemberProfileComponent } from './components/pages/member-profile/member-profile';
-import { PresentationCard } from './components/pages/options/components/presentation-card/presentation-card';
-import { MissionsWiewer } from './components/pages/options/components/missions-wiewer/missions-wiewer';
-import { FreelanceWiewer } from './components/pages/options/components/freelance-wiewer/freelance-wiewer';
-import { Field } from './components/pages/options/components/freelance-wiewer/components/field/field';
-import { Freelances } from './components/pages/freelances/freelances';
-import { FreelanceCreator } from './components/pages/freelance-creator/freelance-creator';
-import { FreelancePreview } from './components/pages/freelances/components/freelance-preview/freelance-preview';
-import { InputField } from './components/pages/freelance-creator/components/input-field/input-field';
-import { Customisation } from './components/pages/customisation/customisation';
-import { TypesDescription } from './components/pages/menu/components/types-description/types-description';
+import {MemberProfileComponent} from './components/pages/member-profile/member-profile';
+import {PresentationCard} from './components/pages/options/components/presentation-card/presentation-card';
+import {MissionsWiewer} from './components/pages/options/components/missions-wiewer/missions-wiewer';
+import {FreelanceWiewer} from './components/pages/options/components/freelance-wiewer/freelance-wiewer';
+import {Field} from './components/pages/options/components/freelance-wiewer/components/field/field';
+import {Freelances} from './components/pages/freelances/freelances';
+import {FreelanceCreator} from './components/pages/freelance-creator/freelance-creator';
+import {FreelancePreview} from './components/pages/freelances/components/freelance-preview/freelance-preview';
+import {InputField} from './components/pages/freelance-creator/components/input-field/input-field';
+import {Customisation} from './components/pages/customisation/customisation';
+import {TypesDescription} from './components/pages/menu/components/types-description/types-description';
 
 @NgModule({
     declarations: [
