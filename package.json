@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:run-local": "ng serve --port 80 --disable-host-check true --proxy-config proxy.config.json"
   },
   "private": true,
   "dependencies": {
