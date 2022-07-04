@@ -8,22 +8,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  margin-top: 60px;
-
   gap: 20px;
 }
 
 .no_mission {
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
-  color: var(--main-title-contrast-color);
-  font-size: 15px;
+  margin-top: 30px;
 }
 
 .button {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 @media screen and(max-width: 650px) {
