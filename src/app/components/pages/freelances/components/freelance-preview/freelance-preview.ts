@@ -17,8 +17,8 @@ export class FreelancePreview implements OnInit {
 
     ngOnInit(): void {
         if (this.preview != undefined) {
-            if (this.preview.abilities.length > 7) {
-                this.abilities = this.preview.abilities.slice(0, 7);
+            if (this.preview.abilities.length > 5) {
+                this.abilities = this.preview.abilities.slice(0, 5);
                 this.abilities.push("...");
             } else {
                 this.abilities = this.preview.abilities;
