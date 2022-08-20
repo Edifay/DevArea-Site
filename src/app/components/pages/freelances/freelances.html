@@ -17,7 +17,7 @@
                 *ngFor="let freelance of this.freelances; let i= index"
                 [preview]="freelance"></app-freelance-preview>
     </div>
-    <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
+    <div *ngIf="!loading && !end " class="button" (click)="this.freelancesService.fetch_more()">Charger plus...</div>
     <div *ngIf="loading" style="cursor: wait;" class="disabled_button">
         <app-loader></app-loader>
     </div>

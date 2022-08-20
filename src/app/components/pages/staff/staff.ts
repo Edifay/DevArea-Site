@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {StaffService} from "../../../services/pagesServices/staff.service";
 
 export interface staffCard {
     name: string;
@@ -17,29 +18,14 @@ export interface staffCard {
 export class Staff implements OnInit {
     public staff: staffCard[] | undefined;
 
-    constructor(private httpClient: HttpClient) {
-        this.getStaff()
+    constructor(private staffService : StaffService) {
+        staffService.staffList$.subscribe(value => {
+            this.staff = value;
+        });
     }
 
     ngOnInit(): void {
-    }
-
-    getStaff() {
-        this.httpClient
-            .get<any[]>('/data/staff/staff_list')
-            .subscribe(
-                (response) => {
-                    this.staff = response;
-                },
-                (error) => {
-                    console.log('Problem : ' + error);
-                }
-            )
-
-    }
-
-    update() {
-        this.getStaff();
+        this.staffService.update();
     }
 
 }

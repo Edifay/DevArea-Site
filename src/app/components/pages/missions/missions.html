@@ -25,7 +25,7 @@
                 [budget]="mission.budget"
         ></app-mission-preview>
     </div>
-    <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
+    <div *ngIf="!loading && !end " class="button" (click)="this.missionsService.fetch_more()">Charger plus...</div>
     <div *ngIf="loading" class="disabled_button"><app-loader></app-loader></div>
     <div id="bottom"></div>
 </div>
