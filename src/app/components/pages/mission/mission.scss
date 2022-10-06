@@ -6,7 +6,7 @@
     padding: 30px;
     margin-bottom: 120px;
     gap: 30px;
-    height: calc(100vh - 403px);
+    height: max(calc(100vh - 403px), 100%);
 }
 
 #mission_content {
