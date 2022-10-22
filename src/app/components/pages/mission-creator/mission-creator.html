@@ -66,7 +66,7 @@
     <div *ngIf="!this.loading && titleController.value.length != 0 && descriptionController.value.length != 0 && dateRetourController.value.length != 0 && langageController.value.length != 0 && supportController.value.length != 0 && niveauController.value.length != 0 && budgetController.value.length != 0"
          class="button" (click)="validate()">Validate
     </div>
-    <div id="disabled"
+    <div class="disabled_button"
          *ngIf="!this.loading && titleController.value.length == 0 || descriptionController.value.length == 0 || dateRetourController.value.length == 0 || langageController.value.length == 0 || supportController.value.length == 0 || niveauController.value.length == 0 || budgetController.value.length == 0">
         Validate
     </div>
