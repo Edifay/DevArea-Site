@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {StaffService} from "../../../services/pagesServices/staff.service";
 
 export interface staffCard {

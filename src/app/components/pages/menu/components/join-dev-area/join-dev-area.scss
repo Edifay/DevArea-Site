@@ -5,10 +5,12 @@ section {
   align-items: center;
 
   height: 200px;
+
 }
 
 h2{
   margin-top: 65px;
+  text-align: center;
 }
 
 .button{
@@ -45,20 +47,4 @@ h1 {
 
 a {
   text-decoration: none;
-}
-
-
-@media screen and (max-width: 835px) {
-  #types {
-    flex-direction: column;
-  }
-  section::before {
-    height: 1300px;
-    width: 100%;
-    border-radius: 0;
-  }
-
-  section {
-    height: 1300px;
-  }
 }

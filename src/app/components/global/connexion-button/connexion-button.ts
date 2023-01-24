@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class ConnexionButton implements OnInit {
 
     @Input() sourceImage: string = '/assets/images/reseaux/discord.png';
-    @Input() name: string = "Not_connected";
+    @Input() name: string = "Not connected";
     @Input() style_on_connection_change = "not_connected";
 
     public visibility_menu = "hidden";

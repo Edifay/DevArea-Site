@@ -1,165 +1,180 @@
 $staffNumber: 8;
 #container {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 223px);
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100%;
 }
 
 #informations {
-    background-color: var(--background-component-color);
-    display: block;
-    height: auto;
-    max-width: 80%;
-    width: auto;
-    border-radius: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+  background-color: var(--background-component-color);
+  display: block;
+  height: auto;
+  max-width: 80%;
+  width: auto;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
 }
 
 p {
-    padding: 2% 2%;
-    font-size: 15px;
-    text-align: justify;
-    z-index: 2;
+  padding: 2% 2%;
+  font-size: 15px;
+  text-align: justify;
+  z-index: 2;
 }
 
 h1 {
-    text-align: center;
-    padding: 15px;
-    z-index: 2;
-    color: var(--main-title-contrast-color);
-    //background-image: url("/assets/images/fond1.jpg");
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    background-repeat: no-repeat;
-    background-size: 100%;
+  text-align: center;
+  padding: 15px;
+  z-index: 2;
+  color: var(--main-title-contrast-color);
+  //background-image: url("/assets/images/fond1.jpg");
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .parent {
-    display: flex;
+  display: flex;
 }
 
 @mixin white-gradient {
-    background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
+  background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
 }
 
 $animationSpeed: 40s;
 // Animation
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-290px * $staffNumber))
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-290px * $staffNumber))
+  }
 }
 
 // Styling
 .slider {
-    margin-top: 100px;
-    overflow: hidden;
-    &::before,
-    &::after {
-        @include white-gradient;
-        content: "";
-        z-index: 2;
-    }
-    &::after {
-        right: 0;
-        top: 0;
-        transform: rotateZ(180deg);
-    }
-    &::before {
-        left: 0;
-        top: 0;
-    }
-    .slide-track {
-        animation: scroll $animationSpeed linear infinite;
-        display: flex;
-        width: calc(290px * $staffNumber);
-    }
-    .slide {
-        height: auto;
-        width: auto;
-    }
+  margin-top: 100px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(290px * $staffNumber);
+  }
+
+  .slide {
+    height: auto;
+    width: auto;
+  }
 }
 
 .slider:hover {
-    margin-top: 100px;
-    overflow: hidden;
-    &::before,
-    &::after {
-        @include white-gradient;
-        content: "";
-        z-index: 2;
-    }
-    &::after {
-        right: 0;
-        top: 0;
-        transform: rotateZ(180deg);
-    }
-    &::before {
-        left: 0;
-        top: 0;
-    }
-    .slide-track {
-        animation-play-state: paused;
-        display: flex;
-        width: calc(290px * $staffNumber);
-    }
-    .slide {
-        height: auto;
-        width: auto;
-    }
+  margin-top: 100px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation-play-state: paused;
+    display: flex;
+    width: calc(290px * $staffNumber);
+  }
+
+  .slide {
+    height: auto;
+    width: auto;
+  }
 }
 
 @media screen and(max-width: 550px) {
-    .parent {
-        left: 50%;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        transform: translate(-50%);
+  .parent {
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  @mixin white-gradient {
+    background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
+  }
+  // Animation
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
     }
-    @mixin white-gradient {
-        background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
+    100% {
+      transform: translateX(calc(-270px * $staffNumber))
     }
-    // Animation
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-270px * $staffNumber))
-        }
+  }
+  // Styling
+  .slider {
+    padding-top: 20px;
+    overflow: hidden;
+    height: fit-content;
+
+    &::before,
+    &::after {
+      @include white-gradient;
+      content: "";
+      z-index: 2;
     }
-    // Styling
-    .slider {
-        padding-top: 150px;
-        overflow: hidden;
-        &::before,
-        &::after {
-            @include white-gradient;
-            content: "";
-            z-index: 2;
-        }
-        &::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-        }
-        &::before {
-            left: 0;
-            top: 0;
-        }
-        .slide-track {
-            animation: scroll 0s linear infinite;
-            display: flex;
-            width: calc(270px * $staffNumber);
-        }
+
+    &::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
     }
-    #at-remove {
-        display: none;
+
+    &::before {
+      left: 0;
+      top: 0;
     }
+
+    .slide-track {
+      animation: scroll 0s linear infinite;
+      display: flex;
+      width: calc(270px * $staffNumber);
+    }
+  }
+  #at-remove {
+    display: none;
+  }
 }
