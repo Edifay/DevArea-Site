@@ -1,4 +1,4 @@
-$staffNumber: 8;
+$staffNumber: 10;
 #container {
   display: flex;
   flex-direction: column;
@@ -45,14 +45,14 @@ h1 {
   background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
 }
 
-$animationSpeed: 40s;
+$animationSpeed: 25s;
 // Animation
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-290px * $staffNumber))
+    transform: translateX(calc(-290px * $staffNumber));
   }
 }
 
@@ -127,11 +127,11 @@ $animationSpeed: 40s;
 
 @media screen and(max-width: 550px) {
   .parent {
-    left: 50%;
-    display: flex;
+    display: block;
     flex-direction: column;
     position: relative;
   }
+
   @mixin white-gradient {
     background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
   }
@@ -144,6 +144,7 @@ $animationSpeed: 40s;
       transform: translateX(calc(-270px * $staffNumber))
     }
   }
+
   // Styling
   .slider {
     padding-top: 20px;
@@ -170,10 +171,11 @@ $animationSpeed: 40s;
 
     .slide-track {
       animation: scroll 0s linear infinite;
-      display: flex;
-      width: calc(270px * $staffNumber);
+      display: block;
+      width: auto;
     }
   }
+
   #at-remove {
     display: none;
   }
