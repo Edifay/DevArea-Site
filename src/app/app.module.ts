@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
+import {NgModule, SecurityContext} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {CookieService} from 'ngx-cookie-service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 
 
@@ -46,6 +46,8 @@ import {InputField} from './components/pages/freelance-creator/components/input-
 import {Customisation} from './components/pages/customisation/customisation';
 import {TypesDescription} from './components/pages/menu/components/types-description/types-description';
 import {JoinDevArea} from "./components/pages/menu/components/join-dev-area/join-dev-area";
+import {MarkdownModule} from "ngx-markdown";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -94,6 +96,8 @@ import {JoinDevArea} from "./components/pages/menu/components/join-dev-area/join
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
+        MarkdownModule.forRoot({loader: HttpClient, sanitize: SecurityContext.HTML}),
+        NgOptimizedImage,
     ],
     providers: [
         CookieService

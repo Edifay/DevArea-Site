@@ -1,27 +1,27 @@
 <div *ngIf="this.mission" id="container">
     <div id="mission_content">
-        <h1>{{mission.title}}</h1>
-        <p id="description">{{mission.description}}</p>
+        <h1>{{mission!.title}}</h1>
+        <markdown emoji class="discord_md" id="description">{{mission!.description}}</markdown>
         <p id="date">{{getCreationDate()}}</p>
     </div>
     <div id="infos">
         <div id="memberInfo" (click)="openProfile()">
-            <img src="{{mission.avatarURL}}">
-            <p><strong>{{mission.memberTag}}</strong></p>
+            <img src="{{mission!.avatarURL}}">
+            <p><strong>{{mission!.memberTag}}</strong></p>
         </div>
         <hr>
-        <p *ngIf="mission.deadLine != 'Non définie'">DeadLine : {{mission.deadLine}}</p>
-        <p *ngIf="mission.deadLine != 'Non définie'">•</p>
-        <p *ngIf="mission.support != 'Non définie'">Support : {{mission.support}}</p>
-        <p *ngIf="mission.support != 'Non définie'">•</p>
-        <p *ngIf="mission.level != 'Non définie'">Difficulté : {{mission.level}}</p>
-        <p *ngIf="mission.level != 'Non définie'">•</p>
-        <p *ngIf="mission.language != 'Non définie'">Langage à utiliser : {{mission.language}}</p>
-        <p *ngIf="mission.language != 'Non définie'">•</p>
-        <p>Budget 💰: {{mission.budget}}</p>
+        <p *ngIf="mission!.deadLine != 'Non définie'">DeadLine : {{mission!.deadLine}}</p>
+        <p *ngIf="mission!.deadLine != 'Non définie'">•</p>
+        <p *ngIf="mission!.support != 'Non définie'">Support : {{mission!.support}}</p>
+        <p *ngIf="mission!.support != 'Non définie'">•</p>
+        <p *ngIf="mission!.level != 'Non définie'">Difficulté : {{mission!.level}}</p>
+        <p *ngIf="mission!.level != 'Non définie'">•</p>
+        <p *ngIf="mission!.language != 'Non définie'">Langage à utiliser : {{mission!.language}}</p>
+        <p *ngIf="mission!.language != 'Non définie'">•</p>
+        <p>Budget 💰: {{mission!.budget}}</p>
         <p>•</p>
-        <p *ngIf="mission.lastUpdate == '1'">Dernière validation il y a {{mission.lastUpdate}} jour</p>
-        <p *ngIf="mission.lastUpdate != '1'">Dernière validation il y a {{mission.lastUpdate}} jours</p>
+        <p *ngIf="mission!.lastUpdate == '1'">Dernière validation il y a {{mission!.lastUpdate}} jour</p>
+        <p *ngIf="mission!.lastUpdate != '1'">Dernière validation il y a {{mission!.lastUpdate}} jours</p>
 
         <div *ngIf="!loading && !took && this.mission.memberID != memberID" class="button" (click)="tookMission()">
             Prendre la mission

@@ -58,6 +58,26 @@ body {
   font-family: "Poppins";
 }
 
+.discord_md {
+  list-style: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.discord_md ul {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.discord_md a {
+  color: var(--main-color);
+}
+
 .discord_channel {
   color: var(--text-channel-color);
   background-color: rgba(0, 255, 255, 0.3);

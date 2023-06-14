@@ -32,20 +32,13 @@ export class Customisation implements OnInit {
     let buttonsHover = getComputedStyle(body).getPropertyValue('--main-color-hover').replace(/\s/g, "");
     let buttonsAct = getComputedStyle(body).getPropertyValue('--main-color-active').replace(/\s/g, "");
     // set the values in the inputs
-    //@ts-ignore
-    backgroundValue?.value = background;
-    //@ts-ignore
-    modulesValue?.value = modules;
-    //@ts-ignore
-    textValue?.value = textes;
-    //@ts-ignore
-    titleValue?.value = titles;
-    //@ts-ignore
-    buttonsInaValue?.value = buttonsIna;
-    //@ts-ignore
-    buttonsHoverValue?.value = buttonsHover;
-    //@ts-ignore
-    buttonsActValue?.value = buttonsAct;
+    backgroundValue.value = background;
+    modulesValue.value = modules;
+    textValue.value = textes;
+    titleValue.value = titles;
+    buttonsInaValue.value = buttonsIna;
+    buttonsHoverValue.value = buttonsHover;
+    buttonsActValue.value = buttonsAct;
   }
   // on click of the button
 
@@ -91,7 +84,7 @@ export class Customisation implements OnInit {
 
   editBackground(){
     let backgroundValue = document.getElementById('background') as HTMLInputElement;
-    var body:HTMLElement = document.querySelector("body") as HTMLElement; 
+    var body:HTMLElement = document.querySelector("body") as HTMLElement;
     body.style.cssText = body.style.cssText + `--background-color: ${backgroundValue.value};`;
   }
 
