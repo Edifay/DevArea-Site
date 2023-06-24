@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "../../../services/member.service";
-import {firstValueFrom} from "rxjs";
+import {firstValueFrom, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-menu',
@@ -20,6 +20,8 @@ export class Menu implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private cookieService: CookieService, private service: MemberService) {
   }
 
+  subscription: Subscription | undefined;
+
   ngOnInit(): void {
     this.loadQueryParams();
   }
@@ -27,8 +29,9 @@ export class Menu implements OnInit {
   async loadQueryParams(): Promise<void> {
     if (this.route.snapshot.queryParams['code'] != undefined) {
       this.cookieService.set('codeDiscord', this.route.snapshot.queryParams['code']);
-      this.service.connected$.subscribe(value => {
+      this.subscription = this.service.connected$.subscribe(value => {
         this.redirect();
+        this.subscription?.unsubscribe();
       });
       this.service.loadInfos();
       await this.router.navigate([], {
