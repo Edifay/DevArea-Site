@@ -1,128 +1,109 @@
-<<<<<<<< HEAD:src/app/components/pages/menu/components/description/description.scss
-.informations {
-  background-color: var(--background-component-color);
-  display: block;
-  height: auto;
-  max-width: 80%;
-  width: auto;
-  margin-left: max(250px, 20%);
-  margin-right: 20%;
-  border-radius: 20px;
-  padding-bottom: 20px;
-
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+section {
+  margin-bottom: 120px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-#click {
-  text-decoration: underline;
+section::before {
+  height: 575px;
 }
 
 h1 {
   text-align: center;
-  padding: 15px;
-
-  color: var(--main-title-contrast-color);
-
-  z-index: 2;
-  //background-image: url("/assets/images/fond1.jpg");
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  background-repeat: no-repeat;
-  background-size: 100%;
 }
 
-p {
-  padding: 2% 2%;
-  font-size: 15px;
+#types {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.pan {
+  background: linear-gradient(150deg, rgb(247, 188, 102) 0%, rgb(250, 195, 105) 100%);
+  width: 220px;
+  height: 300px;
+  border-radius: 40px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow: 0 5px 20px rgba(169, 95, 9, 0.2);
+}
+
+.pan p {
   text-align: justify;
-  z-index: 2;
 }
 
-@media screen and (max-width: 750px) and (min-width: 551px) {
-  .informations {
-    margin-right: 5%;
+.pan:hover {
+  transform: scale(1.005);
+  box-shadow: 0 5px 20px rgba(169, 95, 9, 0.32);
+  transition: 0.4s;
+}
+
+.more {
+  margin-top: auto;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: 10px;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  padding: 10px 0;
+}
+
+.arrow {
+  font-size: 20px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.more:hover {
+  .more_text {
+    text-decoration: underline;
   }
-  p {
-    font-size: 18.9px;
-  }
 }
 
-
-@media screen and (max-width: 550px) {
-  .informations {
-    margin-top: 20px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    max-width: 100%;
-  }
-}
-========
-.informations {
-  background-color: gray;//#606060
-  display: block;
-  height: auto;
-  max-width: 80%;
-  width: auto;
-  margin-top: 20px;
-  margin-left: max(250px, 20%);
-  margin-right: 20%;
-  border-radius: 20px;
-}
-img{
-  width: 100px;
-  height: auto;
-  vertical-align: middle;
-  border-top-left-radius: 20px;
-
-}
 
 a {
-  color: black;
+  text-decoration: none;
+}
 
+.title_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  width: 75px;
+  filter: drop-shadow(2px 2px 2px rgba(112, 46, 6, 0.44));
 }
 
 
-p {
-  padding: 2% 2%;
-  font-size: 15px;
-  text-align: justify;
-}
-
-h2 {
-  padding: 0px;
-  text-align: justify;
-  font-size:20px;
-}
-
-@media screen and (max-width: 750px) and (min-width: 551px) {
-  .informations {
-    margin-right: 5%;
+@media screen and (max-width: 835px) {
+  #types {
+    flex-direction: column;
   }
-  p {
-    font-size: 18.9px;
+  section::before {
+    height: 1300px;
+    width: 100%;
+    border-radius: 0;
   }
-  #title {
-    font-size: 24px;
-    padding-bottom: 0;
-    text-align: center;
+
+  section {
+    height: 1300px;
   }
 }
-
-
-@media screen and (max-width: 550px) {
-  .informations {
-    margin-top: 20px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    max-width: 100%;
-  }
-  p {
-    font-size: 18.9px;
-  }
-}
->>>>>>>> main:src/app/include/commands-available/commands-available.component.scss

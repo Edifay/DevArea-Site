@@ -1,18 +1,28 @@
-#main_switcher {
-  padding-top: 10px;
-  padding-left: 20px;
-  float: left;
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-@media screen and(max-width: 720px) {
-  #main_switcher {
-    display: none;
-    padding-top: 0;
-    padding-left: 0;
-    float: left;
-  }
+#main_content {
+    flex: 1;
+}
 
-  #dist_top {
-    height: 70px;
-  }
+#main_switcher {
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 20px;
+    float: left;
+}
+
+@media screen and (max-width: 720px) {
+    #main_switcher {
+        display: none;
+        padding-top: 0;
+        padding-left: 0;
+        float: left;
+    }
+    #dist_top {
+        min-height: 70px;
+    }
 }

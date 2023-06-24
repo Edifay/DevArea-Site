@@ -2,29 +2,36 @@
     <h1 class="title">Customisation du site</h1>
     <div class="colorPickers">
         <div class="backgroundPicker">
-            <label for="background">Couleur de fond<input #background type="color" id="background" name="background" value="#1b141c"></label>
+            <label for="background">Couleur de fond<input (change)="editBackground()" type="color" id="background" name="background" value="#1b141c"></label>
         </div>
         <div class="modulesPicker">
-            <label for="modules">Couleur des modules<input type="color" id="modules" name="modules" value="#1e2029"></label>
+            <label for="modules">Couleur des modules<input (change)="editModules()" type="color" id="modules" name="modules" value="#1e2029"></label>
         </div>
         <div class="textesPicker">
-            <label for="textes">Couleur des textes<input type="color" id="textes" name="textes" value="#ffffff"></label>
+            <label for="textes">Couleur des textes<input (change)="editTextes()" type="color" id="textes" name="textes" value="#ffffff"></label>
         </div>
         <div class="titlesPicker">
-            <label for="titles">Couleur des titres<input type="color" id="titles" name="titles" value="#ffffff"></label>
+            <label for="titles">Couleur des titres<input (change)="editTitles()" type="color" id="titles" name="titles" value="#ffffff"></label>
         </div>
         <div class="buttonsInaPicker">
-            <label for="buttonsIna">Couleur des boutons inactifs<input type="color" id="buttonsIna" name="buttonsIna" value="#fd654e"></label>
+            <label for="buttonsIna">Couleur des objets principaux inactifs<input (change)="editButtonsIna()" type="color" id="buttonsIna" name="buttonsIna" value="#fd654e"></label>
         </div>
         <div class="buttonsHoverPicker">
-            <label for="buttonsHover">Couleur des boutons au survol<input type="color" id="buttonsHover" name="buttonsHover" value="#d45541"></label>
+            <label for="buttonsHover">Couleur des objets principaux survol<input (change)="editButtonsHover()" type="color" id="buttonsHover" name="buttonsHover" value="#d45541"></label>
         </div>
         <div class="buttonsActPicker">
-            <label for="buttonsAct">Couleur des boutons actifs<input type="color" id="buttonsAct" name="buttonsAct" value="#9c3d2f"></label>
+            <label for="buttonsAct">Couleur des objets principaux actifs<input (change)="editButtonsAct()" type="color" id="buttonsAct" name="buttonsAct" value="#9c3d2f"></label>
         </div>
     </div>
-    <a>
-        <div class="button validate" (click)="saveSettings()">Valider</div>
+    <div class="buttonsCustom">
+        <div class="button" (click)="saveSettings()">Valider</div>
         <div class="button" (click)="resetSettings()">Réinitialiser</div>
-    </a>
+        <div class="button" (click)="shareSettings()">Partager</div>
+        <div class="button" (click)="importSettings()">Importer</div>
+    </div>
+    <textarea id="shareTheme" class="shareTheme" style="display: none;border-color: var(--main-text-color);" readonly></textarea>
+    <div id="importDiv" class="importDiv" style="display: none;">
+        <textarea id="importTheme" class="importTheme" style="border-color: var(--main-text-color);"></textarea>
+        <div class="button" (click)="validateImportSettings()">Valider</div>
+    </div>
 </div>

@@ -1,78 +1,109 @@
+<h1>
+  Créer une mission
+</h1>
 <div id="container">
-    <h1>
-        Créer une mission
-    </h1>
+  <div id="settings">
     <div class="line">
-        <p>Titre</p>
-        <textarea id="mission_title" type="text" maxlength="350" [formControl]="titleController" rows="1"
-                  cols="60"
-                  [ngStyle]="{'border-color': (titleController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="titleController.value.length == 0">Vous devez ajouter un titre !</p>
+      <p>Titre</p>
+      <textarea id="mission_title" type="text" maxlength="150" [formControl]="titleController" rows="1"
+                cols="60"
+                [ngStyle]="{'border-color': (titleController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="titleController.value!.length == 0">Vous devez ajouter un titre !</p>
     </div>
     <div class="line">
-        <p>Description</p>
-        <textarea id="mission_description" type="text" maxlength="2000"
-                  [formControl]="descriptionController" rows="10" cols="80"
-                  [ngStyle]="{'border-color': (descriptionController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="descriptionController.value.length == 0">Vous devez ajouter une description !</p>
+      <p>Description</p>
+      <textarea id="mission_description" type="text" maxlength="2000"
+                [formControl]="descriptionController" rows="10" cols="80"
+                [ngStyle]="{'border-color': (descriptionController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="descriptionController.value!.length == 0">Vous devez ajouter une description !</p>
+      <p style="max-width: 600px; text-align: center">
+        La mise en forme du texte utilise le format
+        <a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-" target="_blank">MarkDown</a> <- petit tuto.<br>
+        Abusez-en cela rend les missions plus attrayantes !
+      </p>
     </div>
     <div class="line">
-        <p>Date de Retour</p>
-        <textarea id="mission_dateRetour" type="text" maxlength="350" [formControl]="dateRetourController" rows="1"
-                  cols="40"
-                  [ngStyle]="{'border-color': (dateRetourController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="dateRetourController.value.length == 0">Vous devez ajouter une date de retour, elle peut
-            être non défini !</p>
+      <p>Date de Retour</p>
+      <textarea id="mission_dateRetour" type="text" maxlength="350" [formControl]="dateRetourController" rows="1"
+                cols="40"
+                [ngStyle]="{'border-color': (dateRetourController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="dateRetourController.value!.length == 0">Vous devez ajouter une date de retour, elle peut
+        être non défini !</p>
     </div>
     <div class="line">
-        <p>Langage</p>
-        <textarea id="mission_langage" type="text" maxlength="350" [formControl]="langageController" rows="1"
-                  cols="40"
-                  [ngStyle]="{'border-color': (langageController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="langageController.value.length == 0">Vous devez ajouter le langage demandé pour cette
-            mission, il peut être non défini !</p>
+      <p>Langage</p>
+      <textarea id="mission_langage" type="text" maxlength="350" [formControl]="langageController" rows="1"
+                cols="40"
+                [ngStyle]="{'border-color': (langageController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="langageController.value!.length == 0">Vous devez ajouter le langage demandé pour cette
+        mission, il peut être non défini !</p>
     </div>
     <div class="line">
-        <p>Support</p>
-        <textarea id="mission_support" type="text" maxlength="350" [formControl]="supportController" rows="1"
-                  cols="40"
-                  [ngStyle]="{'border-color': (supportController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="supportController.value.length == 0">Vous devez ajouter un type de support, il peut être
-            non défini ! !</p>
+      <p>Support</p>
+      <textarea id="mission_support" type="text" maxlength="350" [formControl]="supportController" rows="1"
+                cols="40"
+                [ngStyle]="{'border-color': (supportController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="supportController.value!.length == 0">Vous devez ajouter un type de support, il peut être
+        non défini ! !</p>
     </div>
     <div class="line">
-        <p>Niveau</p>
-        <textarea id="mission_niveau" type="text" maxlength="350" [formControl]="niveauController" rows="1"
-                  cols="40"
-                  [ngStyle]="{'border-color': (niveauController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="error" *ngIf="niveauController.value.length == 0">Vous devez ajouter le niveau demandé pour la
-            mission, il peut être non défini ! !</p>
+      <p>Niveau</p>
+      <textarea id="mission_niveau" type="text" maxlength="350" [formControl]="niveauController" rows="1"
+                cols="40"
+                [ngStyle]="{'border-color': (niveauController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="error" *ngIf="niveauController.value!.length == 0">Vous devez ajouter le niveau demandé pour la
+        mission, il peut être non défini ! !</p>
     </div>
     <div class="line">
-        <p>Budget</p>
-        <textarea id="mission_budget" type="text" maxlength="350" [formControl]="budgetController" rows="1"
-                  cols="40"
-                  [ngStyle]="{'border-color': (budgetController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-        ></textarea>
-        <p class="small">(N'oubliez pas la devise €)</p>
-        <p class="error" *ngIf="budgetController.value.length == 0">Vous devez ajouter un budget maximal !</p>
+      <p>Budget</p>
+      <textarea id="mission_budget" type="text" maxlength="350" [formControl]="budgetController" rows="1"
+                cols="40"
+                [ngStyle]="{'border-color': (budgetController.value!.length == 0) ? 'red' : 'var(--main-text-color)'}"
+      ></textarea>
+      <p class="small">(N'oubliez pas la devise €)</p>
+      <p class="error" *ngIf="budgetController.value!.length == 0">Vous devez ajouter un budget maximal !</p>
     </div>
-    <div *ngIf="!this.loading && titleController.value.length != 0 && descriptionController.value.length != 0 && dateRetourController.value.length != 0 && langageController.value.length != 0 && supportController.value.length != 0 && niveauController.value.length != 0 && budgetController.value.length != 0"
-         class="button" (click)="validate()">Validate
+  </div>
+  <div id="preview">
+    <h2>Aperçu</h2>
+    <div *ngIf="this.memberInfos" id="embed">
+      <div id="member_banner">
+        <img src="{{this.memberInfos.urlAvatar}}">
+        <p>{{this.memberInfos.name}}</p>
+      </div>
+      <h2>{{this.titleController.value}}</h2>
+      <markdown emoji [data]="this.descriptionController.value" class="discord_md" ngPreserveWhitespaces></markdown>
+      <div id="details">
+        <p>Budget: {{this.budgetController.value}}</p>
+        <p *ngIf="this.dateRetourController.value != 'Non définie'">Date de
+          retour: {{this.dateRetourController.value}}</p>
+        <p *ngIf="this.supportController.value != 'Non définie'">Type de support: {{this.supportController.value}}</p>
+        <p *ngIf="this.langageController.value != 'Non définie'">Langage: {{this.langageController.value}}</p>
+        <p *ngIf="this.niveauController.value != 'Non définie'">Niveau estimé: {{this.niveauController.value}}</p>
+      </div>
+      <p id="footer_text"><br>Cette mission est posté par : <span class="discord_channel">@{{this.memberInfos.name}}</span>.</p>
+      <p id="time_stamp">{{this.date}}</p>
     </div>
-    <div id="disabled"
-         *ngIf="!this.loading && titleController.value.length == 0 || descriptionController.value.length == 0 || dateRetourController.value.length == 0 || langageController.value.length == 0 || supportController.value.length == 0 || niveauController.value.length == 0 || budgetController.value.length == 0">
-        Validate
-    </div>
-    <div *ngIf="loading" class="disabled_button">
-        <app-loader></app-loader>
-    </div>
-    <p *ngIf="this.error" class="error">Une erreur est survenue lors de la validation de la mission ! Vous avez un temps
-        de 5s entre chaque validation, vous devez aussi être connecter au site !</p>
+  </div>
+</div>
+<div id="validate">
+  <div
+    *ngIf="!this.loading && titleController.value!.length != 0 && descriptionController.value!.length != 0 && dateRetourController.value!.length != 0 && langageController.value!.length != 0 && supportController.value!.length != 0 && niveauController.value!.length != 0 && budgetController.value!.length != 0"
+    class="button" (click)="validate()">Validate
+  </div>
+  <div class="disabled_button"
+       *ngIf="!this.loading && titleController.value!.length == 0 || descriptionController.value!.length == 0 || dateRetourController.value!.length == 0 || langageController.value!.length == 0 || supportController.value!.length == 0 || niveauController.value!.length == 0 || budgetController.value!.length == 0">
+    Validate
+  </div>
+  <div *ngIf="loading" class="disabled_button">
+    <app-loader></app-loader>
+  </div>
+  <p *ngIf="this.error" class="error">Une erreur est survenue lors de la validation de la mission ! Vous avez un temps
+    de 5s entre chaque validation, vous devez aussi être connecter au site !</p>
 </div>

@@ -5,7 +5,7 @@
         <img *ngIf="show" class="reverse" src="assets/icons/arrow_down.svg" alt="">
     </div>
     <div id="childs" *ngIf="show">
-        <p id="description">{{field.description}}</p>
+        <markdown class="discord_md" id="description" [data]="field.description"></markdown>
         <hr *ngIf="!field.temps.toLowerCase().startsWith('empty')">
         <p id="deadline" *ngIf="!field.temps.toLowerCase().startsWith('empty')">Deadline : {{field.temps}}</p>
         <hr *ngIf="!field.prix.toLowerCase().startsWith('empty')">

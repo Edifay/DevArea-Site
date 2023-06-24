@@ -36,15 +36,15 @@ p {
 }
 
 
-@media screen and(max-width: 550px) {
+@media screen and (max-width: 550px) {
   .staff {
     margin-bottom: 60px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   #impair {
-    transform: rotate(10deg)
+    transform: rotate(10deg);
   }
 
   #pair {

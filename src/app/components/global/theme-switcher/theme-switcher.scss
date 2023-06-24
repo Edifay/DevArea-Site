@@ -4,25 +4,11 @@
   cursor: pointer;
   padding: 10px;
   float: left;
-
   &:hover {
     border-radius: 10px;
   }
-
-  .light_theme, .dark_theme{
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .dark_theme {
-    background-image: url("/assets/images/sun.png");
-  }
-  
-  .light_theme {
-    background-image: url("/assets/images/moon.png");
+  & svg {
+    fill: var(--main-title-contrast-color);
   }
 }
 

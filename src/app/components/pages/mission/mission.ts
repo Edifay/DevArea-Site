@@ -72,7 +72,7 @@ export class Mission implements OnInit {
                     {
                         next: (response) => {
                             console.log(response);
-                            if (response[0] == "Vous avez pris cette mission !" || response[0] == "Vous avez déjà pris cette commande !")
+                            if (response[0] == "Vous venez de prendre cette mission !" || response[0] == "Vous avez déjà pris cette mission !")
                                 this.took = true;
 
                         },

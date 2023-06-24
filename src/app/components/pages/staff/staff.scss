@@ -1,7 +1,9 @@
+$staffNumber: 10;
 #container {
   display: flex;
   flex-direction: column;
-
+  margin-top: 20px;
+  height: 100%;
 }
 
 #informations {
@@ -13,7 +15,6 @@
   border-radius: 20px;
   margin-right: auto;
   margin-left: auto;
-
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
 }
 
@@ -27,11 +28,8 @@ p {
 h1 {
   text-align: center;
   padding: 15px;
-
   z-index: 2;
-
   color: var(--main-title-contrast-color);
-
   //background-image: url("/assets/images/fond1.jpg");
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -47,18 +45,16 @@ h1 {
   background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
 }
 
-$animationSpeed: 40s;
-
+$animationSpeed: 25s;
 // Animation
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-290px * 7))
+    transform: translateX(calc(-290px * $staffNumber));
   }
 }
-
 
 // Styling
 .slider {
@@ -86,7 +82,7 @@ $animationSpeed: 40s;
   .slide-track {
     animation: scroll $animationSpeed linear infinite;
     display: flex;
-    width: calc(290px * 7);
+    width: calc(290px * $staffNumber);
   }
 
   .slide {
@@ -120,7 +116,7 @@ $animationSpeed: 40s;
   .slide-track {
     animation-play-state: paused;
     display: flex;
-    width: calc(290px * 7);
+    width: calc(290px * $staffNumber);
   }
 
   .slide {
@@ -129,14 +125,13 @@ $animationSpeed: 40s;
   }
 }
 
-@media screen and(max-width: 550px) {
+@media screen and (max-width: 550px) {
   .parent {
-    left: 50%;
-    display: flex;
+    display: block;
     flex-direction: column;
-    position: absolute;
-    transform: translate(-50%);
+    position: relative;
   }
+
   @mixin white-gradient {
     background: linear-gradient(to right, rgba(41, 43, 47, 1) 0%, rgba(41, 43, 47, 0) 100%);
   }
@@ -146,15 +141,15 @@ $animationSpeed: 40s;
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-270px * 7))
+      transform: translateX(calc(-270px * $staffNumber))
     }
   }
 
-
   // Styling
   .slider {
-    padding-top: 150px;
+    padding-top: 20px;
     overflow: hidden;
+    height: fit-content;
 
     &::before,
     &::after {
@@ -176,10 +171,11 @@ $animationSpeed: 40s;
 
     .slide-track {
       animation: scroll 0s linear infinite;
-      display: flex;
-      width: calc(270px * 7);
+      display: block;
+      width: auto;
     }
   }
+
   #at-remove {
     display: none;
   }

@@ -1,31 +1,35 @@
 <div id="missions_container">
-    <div id="presentation">
-        <h1 id="title">
-            Les missions payantes
-        </h1>
-        <p>
-            Cet espace représente le channel <a target="_blank" rel="noopener noreferrer"
-                                                  href="https://discord.com/channels/768370886532137000/943817647060025354">
+  <div id="presentation">
+    <h1 id="title">
+      Les missions payantes
+    </h1>
+    <p>
+      Cet espace représente le channel <a target="_blank" rel="noopener noreferrer"
+                                          href="https://discord.com/channels/768370886532137000/943817647060025354">
       <span class
-                    ="discord_channel"># 💰・missions-payantes</span></a> du serveur discord. Vous pourrez y retrouver
-            les
-            missions postées par les utilisateurs.
-        </p>
-        <div class="button" routerLink="/mission-creator">Créer sa mission</div>
+              ="discord_channel"># 💰・missions-payantes</span></a> du serveur discord. Vous pourrez y retrouver
+      les
+      missions postées par les utilisateurs.
+    </p>
+    <div class="button" routerLink="/mission-creator">Créer sa mission</div>
+  </div>
+  <div *ngIf="missions_list" id="missions">
+    <app-mission-preview
+      id="mission"
+      *ngFor="let mission of missions_list; let i= index"
+      [title]="mission.title"
+      [id]="mission.id"
+      [last_update]="mission.lastUpdate"
+      [description]="mission.description"
+      [posterUrl]="mission.avatarURL"
+      [budget]="mission.budget"
+    ></app-mission-preview>
+  </div>
+  <div class="loading">
+    <div *ngIf="!loading && !end " class="button" (click)="this.missionsService.fetch_more()">Charger plus...</div>
+    <div *ngIf="loading" class="disabled_button">
+      <app-loader></app-loader>
     </div>
-    <div *ngIf="missions_list" id="missions">
-        <app-mission-preview
-                id="mission"
-                *ngFor="let mission of missions_list; let i= index"
-                [title]="mission.title"
-                [id]="mission.id"
-                [last_update]="mission.lastUpdate"
-                [description]="mission.description"
-                [posterUrl]="mission.avatarURL"
-                [budget]="mission.budget"
-        ></app-mission-preview>
-    </div>
-    <div *ngIf="!loading && !end " class="button" (click)="fetch_more()">Charger plus...</div>
-    <div *ngIf="loading" class="disabled_button"><app-loader></app-loader></div>
     <div id="bottom"></div>
+  </div>
 </div>
