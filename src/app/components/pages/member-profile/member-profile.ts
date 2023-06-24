@@ -15,14 +15,6 @@ export class MemberProfileComponent implements AfterViewInit {
 
     private descriptionComponent!: ElementRef;
 
-    @ViewChild('descriptionComponent') set content(content: ElementRef) {
-        if (content) {
-            this.descriptionComponent = content;
-            if (this.member_profile && this.member_profile.memberDescription)
-                this.injectDescription(this.member_profile.memberDescription);
-        }
-    }
-
     tabs = tabs;
 
     public memberConnectedId: string | undefined;
@@ -33,9 +25,6 @@ export class MemberProfileComponent implements AfterViewInit {
 
     }
 
-    ngAfterViewInit(): void {
-
-    }
 
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
@@ -82,24 +71,6 @@ export class MemberProfileComponent implements AfterViewInit {
         });
     }
 
-    public injectDescription(str: string) {
-       /* let match = str.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-
-        let final = str;
-        if (match != null)
-            match.map(url => {
-                final = final.replace(url, "<a style='color: var(--main-color);'  href=\"" + url + "\" target=\"_BLANK\">" + url + "</a>")
-            })
-        else
-            final = str;
-
-        let content = "<span>" + final + "</span>";
-        content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-        let new_element = new DOMParser().parseFromString(content, 'text/html').body.firstElementChild;
-
-        this.descriptionComponent.nativeElement.append(new_element);*/
-    }
-
     public status: number = tabs.Mission;
 
     public switch(tabs: number) {
@@ -111,5 +82,8 @@ export class MemberProfileComponent implements AfterViewInit {
             }
         });
     }
+
+  ngAfterViewInit(): void {
+  }
 
 }

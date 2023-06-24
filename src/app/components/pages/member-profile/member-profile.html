@@ -17,9 +17,10 @@
             <div id="descriptionContainer">
                 <h2>Plus sur moi...</h2>
                 <p *ngIf="!this.member_profile.memberDescription">Ce membre ne possède pas de présentation !</p>
-                <p *ngIf="this.member_profile.memberDescription"
-                   style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;text-align: justify;'
-                   #descriptionComponent>{{this.member_profile.memberDescription}}</p>
+                <markdown emoji *ngIf="this.member_profile.memberDescription"
+                          class="discord_md"
+                          [data]="this.member_profile.memberDescription"
+                   style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll;text-align: justify;'></markdown>
             </div>
 
             <div id=badges_card>

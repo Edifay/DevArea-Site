@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {MemberService} from "../../../../../services/member.service";
 import {FormControl} from "@angular/forms";
 import {MarkdownService} from "ngx-markdown";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-presentation-card',
@@ -13,10 +14,13 @@ export class PresentationCard implements OnInit {
   @Input() description: string | undefined;
   public controller = new FormControl('');
 
-  constructor(private httpClient: HttpClient, private service: MemberService, private markdownService: MarkdownService) {
+  constructor(private httpClient: HttpClient, private service: MemberService, private markdownService: MarkdownService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    if (this.route.snapshot.queryParams['edit']) {
+      this.edit();
+    }
   }
 
   public editing: boolean = false;
@@ -61,7 +65,6 @@ export class PresentationCard implements OnInit {
 
   public cancel() {
     this.editing = false;
-
   }
 
 

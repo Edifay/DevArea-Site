@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "../../../services/member.service";
+import {firstValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-menu',
@@ -16,19 +17,41 @@ export class Menu implements OnInit {
 
   }
 
-  constructor(private router: Router, private cookieService: CookieService, private service: MemberService) {
+  constructor(private router: Router, private route: ActivatedRoute, private cookieService: CookieService, private service: MemberService) {
   }
 
   ngOnInit(): void {
-    if (this.router.url.startsWith('/?code=')) {
-      this.cookieService.set('codeDiscord', this.router.url.substr(7, this.router.url.length - 7));
+    this.loadQueryParams();
+  }
+
+  async loadQueryParams(): Promise<void> {
+    if (this.route.snapshot.queryParams['code'] != undefined) {
+      this.cookieService.set('codeDiscord', this.route.snapshot.queryParams['code']);
+      this.service.connected$.subscribe(value => {
+        this.redirect();
+      });
       this.service.loadInfos();
-      this.router.navigate([], {
+      await this.router.navigate([], {
         queryParams: {
           'code': null
         },
         queryParamsHandling: 'merge'
-      })
+      });
+    } else {
+      await this.redirect();
     }
   }
+
+  async redirect(): Promise<void> {
+    if (this.route.snapshot.queryParams['redirect'] != undefined) {
+      console.log("Calling to move : " + this.service.connected$.getValue());
+      await this.router.navigate([this.route.snapshot.queryParams['redirect']], {
+        queryParams: {
+          'redirect': null
+        },
+        queryParamsHandling: 'merge'
+      });
+    }
+  }
+
 }
