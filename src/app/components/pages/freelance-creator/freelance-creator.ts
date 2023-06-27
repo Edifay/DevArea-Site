@@ -41,7 +41,7 @@ export class FreelanceCreator implements OnInit {
         fields: [{
             title: "Donnez un titre à votre compétence...",
             prix: "Donnez un prix à votre compétence...",
-            temps: "Donnez le temps nécessaire pour réalisé votre compétence...",
+            temps: "Donnez le temps nécessaire pour réaliser votre compétence...",
             description: "Donnez une description précise de votre compétence...",
             inline: false,
         }],

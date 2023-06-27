@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "../../../services/member.service";
-import {firstValueFrom, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-menu',

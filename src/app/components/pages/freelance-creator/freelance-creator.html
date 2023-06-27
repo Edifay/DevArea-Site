@@ -2,33 +2,42 @@
   <h1>
     Gestion de sa page Freelance
   </h1>
-  <p id="explication">Les fields de présentation et de description de compétences supportent le format <a style="color:var(--main-color)"
-    href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-"
-    target="_blank">MarkDown</a> abusez-en !</p>
+  <p id="explication">Les fields de présentation et de description de compétences supportent le format <a
+      style="color:var(--main-color)"
+      href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-"
+      target="_blank">MarkDown</a> abusez-en !</p>
   <div id="freelance">
     <div id="first_line">
       <div id="memberGroup">
-        <img src="{{this.memberInfos.urlAvatar}}" alt="">
+        <img src="{{this.memberInfos!.urlAvatar}}" alt="">
         <div>
-                    <textarea rows="1" maxlength="50" [formControl]="nameController"
-                              [ngStyle]="{'border-color': (nameController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-                    ></textarea>
+          <textarea
+              rows="1"
+              maxlength="50"
+              [formControl]="nameController"
+              [ngStyle]="{'border-color': (nameController.value.length == 0) ? 'red' : 'var(--main-text-color)'}">
+          </textarea>
           <p class="little" *ngIf="nameController.value.length == 0"
              style="color: red; text-align: center;">Vous devez remplir ce champ...</p>
           <p class="little">Il est préférable de ne pas mettre de pseudo.</p>
         </div>
       </div>
       <div id="descriptionContainer">
-                <textarea id="description" [formControl]="descriptionController" maxlength="4096"
-                          [ngStyle]="{'border-color': (descriptionController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
-                ></textarea>
+        <textarea
+            id="description"
+            [formControl]="descriptionController"
+            maxlength="4096"
+            [ngStyle]="{'border-color': (descriptionController.value.length == 0) ? 'red' : 'var(--main-text-color)'}"
+        ></textarea>
         <p class="little" *ngIf="descriptionController.value.length == 0"
            style="color: red; text-align: center;">Vous devez remplir ce champ...</p>
-        <p class="littleAdvert" *ngIf="this.descriptionController.value.toString().length >= 4096">4096
-          charactère maximum.</p>
+        <p class="little">N'hésitez pas à mettre des liens, votre porte-folio ou tout autre ressource.
+          <br/>Utilisation du format Markdown recommandé.</p>
+        <p class="littleAdvert"
+           *ngIf="this.descriptionController.value.toString().length >= 4096">4096 charactère
+          maximum.</p>
       </div>
     </div>
-
     <app-input-field *ngFor="let field of this.fields; let i= index"
                      [data]="field"
                      [parent]="this">
@@ -50,6 +59,7 @@
     </div>
   </div>
 </div>
+
 <div *ngIf="!memberInfos" class="disabled_button">
   <app-loader></app-loader>
 </div>
