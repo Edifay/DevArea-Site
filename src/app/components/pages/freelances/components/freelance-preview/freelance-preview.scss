@@ -5,7 +5,7 @@
   width: 350px;
   height: 375px;
 
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 15px;
 
   gap: 30px;
@@ -14,14 +14,29 @@
 
   background-color: var(--background-component-color);
 
-  transition: transform 0.5s;
 
-  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+  box-shadow: 0 3px 3px rgb(0 0 0 / 8%);
+
+  border: solid;
+  border-width: 0px;
+  border-color: var(--background-color);
+
+  transition: border-color 0.1s, transform 0.2s ease-in-out, box-shadow 0.25s;
 }
 
 #container:hover {
-  transform: scale(1.02);
-  transition: transform 0.5s;
+
+  border-color: var(--main-color);
+  border-width: 2px;
+
+  padding: 13px;
+
+  box-shadow: 0 3px 20px rgba(253, 101, 78, 0.24);
+
+  transform: scale(1.01);
+
+  transition: border-color 0.25s, transform 0.2s ease-in-out, box-shadow 0.25s;
+
 }
 
 img {
@@ -46,6 +61,11 @@ img {
 #description {
   text-align: justify;
 }
+
+#description {
+  pointer-events: none;
+}
+
 
 #member {
   display: flex;

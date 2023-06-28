@@ -1,11 +1,11 @@
 <div id="container" (click)="switch()">
     <div id="first_line">
         <p id="title">{{field.title}}</p>
-        <img *ngIf="!show" src="assets/icons/arrow_down.svg" alt="">
-        <img *ngIf="show" class="reverse" src="assets/icons/arrow_down.svg" alt="">
+        <img [class]="this.cookieService.get('theme')" *ngIf="!show" src="assets/icons/arrow_down.svg" alt="">
+        <img [class]="this.cookieService.get('theme')" *ngIf="show" class="reverse" src="assets/icons/arrow_down.svg" alt="">
     </div>
     <div id="childs" *ngIf="show">
-        <markdown class="discord_md" id="description" [data]="field.description"></markdown>
+        <markdown emoji class="discord_md" id="description" [data]="field.description"></markdown>
         <hr *ngIf="!field.temps.toLowerCase().startsWith('empty')">
         <p id="deadline" *ngIf="!field.temps.toLowerCase().startsWith('empty')">Deadline : {{field.temps}}</p>
         <hr *ngIf="!field.prix.toLowerCase().startsWith('empty')">

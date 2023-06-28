@@ -14,6 +14,7 @@
   word-break: break-word;
 }
 
+
 #head_text {
   display: block;
 
@@ -75,4 +76,34 @@ h2 {
   margin-right: 0;
   margin-left: 0;
   margin-bottom: auto;
+}
+
+#grid {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 1115px) {
+  #container{
+    margin-right: 0px;
+  }
+  #grid{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1165px) {
+  #head_text {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

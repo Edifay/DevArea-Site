@@ -47,16 +47,15 @@ export class FreelancesService {
                 .subscribe(
                     (response) => {
                         if (this.freelances$.getValue() != undefined) {
-                            // @ts-ignore
-                            this.freelances$.next([...this.freelances$.getValue(), ...response]);
+                            this.freelances$.next([...this.freelances$.getValue()!, ...response]);
                             this.loading$.next(false);
-                            // @ts-ignore
-                            if (this.number_fetch + this.load_on_more == this.freelances$.getValue().length) {
-                                // @ts-ignore
-                                this.number_fetch = this.freelances$.getValue().length;
+                            if (this.number_fetch + this.load_on_more == this.freelances$.getValue()!.length) {
+                                this.number_fetch = this.freelances$.getValue()!.length;
                                 this.end$.next(false);
-                            } else
+                            } else {
+                                this.number_fetch = this.freelances$.getValue()!.length;
                                 this.end$.next(true);
+                            }
                         }
                     },
                     (error) => {

@@ -5,6 +5,8 @@
 
   background-color: var(--background-component-color);
 
+  width: 600px;
+
   padding: 20px;
 
   border-radius: 5px;
@@ -66,4 +68,15 @@ hr {
 
 .reverse {
   transform: rotate(180deg);
+}
+
+.dark_theme {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+@media screen and (max-width: 1115px) {
+  #container {
+    width: auto;
+  }
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FreelanceField} from "../../../../../../../models/FreelanceContent";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'app-field',
@@ -15,7 +16,7 @@ export class Field implements OnInit {
         temps: ""
     }
 
-    constructor() {
+    constructor(public cookieService: CookieService) {
     }
 
     ngOnInit(): void {

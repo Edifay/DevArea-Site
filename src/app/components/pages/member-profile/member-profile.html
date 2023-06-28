@@ -43,7 +43,7 @@
             <app-missions-wiewer *ngIf="this.status == tabs.Mission"
                                  [missions]="member_profile.missions_list"></app-missions-wiewer>
             <app-freelance-wiewer *ngIf="this.status == tabs.Freelance"
-                                  [freelance]="this.member_profile.freelance"></app-freelance-wiewer>
+                                  [freelance]="this.member_profile!.freelance"></app-freelance-wiewer>
         </div>
     </div>
     <div *ngIf="memberConnectedId == member_id" class="button" (click)="openOptions()">Gérer votre profil...</div>
