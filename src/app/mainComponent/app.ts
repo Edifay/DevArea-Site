@@ -17,8 +17,7 @@ export class App {
     memberInfos: MemberInfos | undefined;
     connected: any;
 
-    public page_theme = "light_theme";
-
+    public page_theme = "dark_theme";
 
     constructor(private cookieService: CookieService, private _memberService: MemberService, private router: Router) {
         enableProdMode();

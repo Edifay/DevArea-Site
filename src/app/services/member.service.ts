@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
 import {BehaviorSubject} from 'rxjs';
 import {MemberInfos} from '../models/member-infos';
+import {MarkdownService} from "ngx-markdown";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,13 @@ export class MemberService {
 
   public code: string | undefined;
 
-  constructor(private _cookieService: CookieService, private _httpClient: HttpClient) {
+  constructor(private _cookieService: CookieService, private _httpClient: HttpClient, private markdownService: MarkdownService) {
     this.loadInfos();
+    const linkRenderer = this.markdownService.renderer.link;
+    this.markdownService.renderer.link = (href, title, text) => {
+      const html = linkRenderer.call(this.markdownService.renderer, href, title, text);
+      return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
+    };
   }
 
   reset() {
