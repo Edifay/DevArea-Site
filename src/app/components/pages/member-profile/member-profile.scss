@@ -79,8 +79,6 @@
 }
 
 #description {
-  white-space: pre-line;
-  word-break: break-word;
 }
 
 #selector {
@@ -112,9 +110,13 @@ hr {
   width: 95%;
 }
 
+markdown {
+  padding-right: 8px;
+}
+
 
 ::-webkit-scrollbar-corner {
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
 }
 
 

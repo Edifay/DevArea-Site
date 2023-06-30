@@ -78,7 +78,7 @@
         <p>{{this.memberInfos.name}}</p>
       </div>
       <h2>{{this.titleController.value}}</h2>
-      <markdown emoji [data]="this.descriptionController.value" class="discord_md" ngPreserveWhitespaces></markdown>
+      <markdown emoji [data]="this.descriptionController.value" ngPreserveWhitespaces></markdown>
       <div id="details">
         <p>Budget: {{this.budgetController.value}}</p>
         <p *ngIf="this.dateRetourController.value != 'Non définie'">Date de

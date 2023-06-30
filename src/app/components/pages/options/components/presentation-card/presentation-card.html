@@ -1,12 +1,11 @@
 <div id="container">
-  <h2>Plus sur moi...</h2>
+  <h2 *ngIf="!description">Plus sur moi...</h2>
   <div class="static">
     <p *ngIf="!description && !this.editing">Vous ne possédez pas de présentation !</p>
     <!--<div id="containerInjector"></div>-->
     <markdown emoji *ngIf="description && !this.editing" id='description'
               [data]="this.description"
-              class="discord_md"
-       style='word-break: break-word; white-space: pre-line; max-height: 400px; overflow: scroll; text-align: justify;'>
+       style='word-break: break-word; max-height: 400px; overflow: scroll; text-align: justify;'>
     </markdown>
     <div *ngIf="!this.editing" id="edit" class="button" (click)="edit()">Modifier</div>
   </div>

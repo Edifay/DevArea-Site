@@ -1,7 +1,7 @@
 <div *ngIf="this.mission" id="container">
     <div id="mission_content">
         <h1>{{mission!.title}}</h1>
-        <markdown emoji class="discord_md" id="description">{{mission!.description}}</markdown>
+        <markdown emoji id="description">{{mission!.description}}</markdown>
         <p id="date">{{getCreationDate()}}</p>
     </div>
     <div id="infos">

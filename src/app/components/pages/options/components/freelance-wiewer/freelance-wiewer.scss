@@ -9,9 +9,6 @@
   padding: 15px;
 
   gap: 30px;
-
-  white-space: pre-wrap;
-  word-break: break-word;
 }
 
 
@@ -84,17 +81,16 @@ h2 {
   flex-wrap: wrap;
 
   justify-content: center;
-  align-items: center;
 
   gap: 30px;
   margin: 20px;
 }
 
 @media screen and (max-width: 1115px) {
-  #container{
+  #container {
     margin-right: 0px;
   }
-  #grid{
+  #grid {
     display: flex;
     flex-direction: column;
   }

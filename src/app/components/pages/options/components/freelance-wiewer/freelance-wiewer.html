@@ -13,7 +13,7 @@
     </div>
     <p *ngIf="controller" class="annonce">Votre page freelance !</p>
     <p *ngIf="!controller" class="annonce">La page freelance de {{this.freelance.name}} !</p>
-    <markdown emoji class="discord_md" [data]="this.freelance.description" style="text-align: justify;"></markdown>
+    <markdown emoji [data]="this.freelance.description" style="text-align: justify;"></markdown>
   </div>
   <div id="grid">
     <app-field *ngFor="let field of this.freelance.fields; let i= index"

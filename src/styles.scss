@@ -11,10 +11,6 @@ html, body {
   transition: all 0.2s;
 }
 
-textarea {
-  transition: none;
-}
-
 .light_theme {
   --background-color: #ffffff;
   --background-component-color: #f1f1f1;
@@ -57,26 +53,6 @@ textarea {
 body {
   background-color: var(--background-color);
   font-family: "Poppins";
-}
-
-.discord_md {
-  list-style: inside;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 0;
-}
-
-.discord_md ul {
-  display: flex;
-  flex-direction: column;
-
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.discord_md a {
-  color: var(--main-color);
 }
 
 .discord_channel {
@@ -213,4 +189,81 @@ section {
 
 section * {
   color: #2f2f2f;
+}
+
+/*DEFAULT CSS FOR MARKDOWN OVERRIDING MARGIN, COLOR AND PADDING*/
+
+markdown h1 {
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+}
+
+markdown h2 {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+
+markdown h3 {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+markdown h4 {
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+}
+
+markdown h5 {
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+}
+
+markdown h6 {
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+}
+
+markdown p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+markdown ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+}
+
+markdown blockquote {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 20px;
+  padding-inline-start: 10px;
+
+  border-left: solid var(--main-color);
+  border-radius: 4px;
+}
+
+markdown ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
+}
+
+markdown blockquote blockquote{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+markdown a {
+  color: var(--main-color);
+}
+
+markdown blockquote p {
+  margin: 0;
 }
