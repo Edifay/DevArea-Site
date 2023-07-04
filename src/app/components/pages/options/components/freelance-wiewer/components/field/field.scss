@@ -7,8 +7,6 @@
 
   width: 600px;
 
-  padding: 20px;
-
   border-radius: 5px;
 
   box-shadow: 0 5px 10px rgb(0 0 0 / 19%);
@@ -23,8 +21,9 @@
 #childs {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 #deadline {
@@ -60,6 +59,11 @@ hr {
 #first_line {
   display: flex;
   justify-content: space-between;
+
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 12px;
 }
 
 #first_line img {

@@ -48,6 +48,7 @@ import {TypesDescription} from './components/pages/menu/components/types-descrip
 import {JoinDevArea} from "./components/pages/menu/components/join-dev-area/join-dev-area";
 import {MarkdownModule} from "ngx-markdown";
 import {NgOptimizedImage} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -93,6 +94,7 @@ import {NgOptimizedImage} from "@angular/common";
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,

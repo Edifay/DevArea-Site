@@ -1,47 +1,49 @@
-<h2 *ngIf="!this.freelance && controller">Vous ne possédez pas de page freelance.</h2>
-<div class="button" style="margin-left: auto; margin-right: auto; margin-top: 30px" (click)="edit()"
-     *ngIf="!this.freelance && controller">Créer sa page Freelance
-</div>
-<h2 *ngIf="!this.freelance && !controller">Ce membre ne possède pas de page freelance.</h2>
-<div *ngIf="this.freelance" id="container">
-  <div id="head_text">
-    <div>
-      <img src="{{this.freelance.avatar_url}}">
-      <p id="name">
-        {{this.freelance.name}}
-      </p>
+<div [@flyInOut]="true">
+    <h2 *ngIf="!this.freelance && controller">Vous ne possédez pas de page freelance.</h2>
+    <div class="button" style="margin-left: auto; margin-right: auto; margin-top: 30px" (click)="edit()"
+         *ngIf="!this.freelance && controller">Créer sa page Freelance
     </div>
-    <p *ngIf="controller" class="annonce">Votre page freelance !</p>
-    <p *ngIf="!controller" class="annonce">La page freelance de {{this.freelance.name}} !</p>
-    <markdown emoji [data]="this.freelance.description" style="text-align: justify;"></markdown>
-  </div>
-  <div id="grid">
-    <app-field *ngFor="let field of this.freelance.fields; let i= index"
-               [field]="field">
-    </app-field>
-  </div>
-  <div *ngIf="controller" style="display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap">
-    <div style="display: flex; flex-direction: column; align-items: center">
-      <div class="button" (click)="bump()" style="margin-bottom: auto" *ngIf="!loadingBump">Bump</div>
-      <div class="disabled_button" (click)="bump()" style="margin-bottom: auto" *ngIf="loadingBump">
-        <app-loader></app-loader>
-      </div>
-      <p style="max-width: 300px; text-align: center; margin-bottom: 15px; color:red;" *ngIf="errorBump">Vous
-        devez attendre 24 heures entre chaque bump !</p>
-    </div>
+    <h2 *ngIf="!this.freelance && !controller">Ce membre ne possède pas de page freelance.</h2>
+    <div *ngIf="this.freelance" id="container">
+        <div id="head_text">
+            <div>
+                <img src="{{this.freelance.avatar_url}}">
+                <p id="name">
+                    {{this.freelance.name}}
+                </p>
+            </div>
+            <p *ngIf="controller" class="annonce">Votre page freelance !</p>
+            <p *ngIf="!controller" class="annonce">La page freelance de {{this.freelance.name}} !</p>
+            <markdown emoji [data]="this.freelance.description" style="text-align: justify;"></markdown>
+        </div>
+        <div id="grid">
+            <app-field *ngFor="let field of this.freelance.fields; let i= index"
+                       [field]="field">
+            </app-field>
+        </div>
+        <div *ngIf="controller" style="display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap">
+            <div style="display: flex; flex-direction: column; align-items: center">
+                <div class="button" (click)="bump()" style="margin-bottom: auto" *ngIf="!loadingBump">Bump</div>
+                <div class="disabled_button" (click)="bump()" style="margin-bottom: auto" *ngIf="loadingBump">
+                    <app-loader></app-loader>
+                </div>
+                <p style="max-width: 300px; text-align: center; margin-bottom: 15px; color:red;" *ngIf="errorBump">Vous
+                    devez attendre 24 heures entre chaque bump !</p>
+            </div>
 
-    <div class="button" (click)="edit()" style="margin-bottom: auto">Modifier</div>
-    <div class="button" (click)="switchComfirm()" *ngIf="!this.comfirm && !loading">Supprimer</div>
-    <div *ngIf="this.comfirm && !loading" style="display: flex; flex-direction: column">
-      <p style="max-width: 300px; text-align: center; margin-bottom: 15px">Supprimer définitivement votre page
-        freelance ?</p>
-      <div style="display: flex; justify-content: center; gap: 15px">
-        <div class="button" (click)="switchComfirm()">Non</div>
-        <div class="button" (click)="delete()">Oui</div>
-      </div>
+            <div class="button" (click)="edit()" style="margin-bottom: auto">Modifier</div>
+            <div class="button" (click)="switchComfirm()" *ngIf="!this.comfirm && !loading">Supprimer</div>
+            <div *ngIf="this.comfirm && !loading" style="display: flex; flex-direction: column">
+                <p style="max-width: 300px; text-align: center; margin-bottom: 15px">Supprimer définitivement votre page
+                    freelance ?</p>
+                <div style="display: flex; justify-content: center; gap: 15px">
+                    <div class="button" (click)="switchComfirm()">Non</div>
+                    <div class="button" (click)="delete()">Oui</div>
+                </div>
+            </div>
+            <div class="disabled_button" *ngIf="loading">
+                <app-loader></app-loader>
+            </div>
+        </div>
     </div>
-    <div class="disabled_button" *ngIf="loading">
-      <app-loader></app-loader>
-    </div>
-  </div>
 </div>

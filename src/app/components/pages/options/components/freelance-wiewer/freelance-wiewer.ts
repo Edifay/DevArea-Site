@@ -4,11 +4,24 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {MemberService} from "../../../../../services/member.service";
 import {tabs} from "../../options";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
     selector: 'app-freelance-wiewer',
     templateUrl: './freelance-wiewer.html',
-    styleUrls: ['./freelance-wiewer.scss']
+    styleUrls: ['./freelance-wiewer.scss'],
+    animations:[
+        trigger('flyInOut', [
+            state('in', style({ transform: 'translateX(0)' })),
+            transition('void => *', [
+                style({ opacity:0 }),
+                animate(100)
+            ]),
+            transition('* => void', [
+                animate(100, style({ opacity:1 }))
+            ])
+        ])
+    ]
 })
 export class FreelanceWiewer implements OnInit {
     @Input() public controller: boolean = false;
