@@ -75,12 +75,12 @@ export class MemberProfileComponent implements AfterViewInit {
 
     public switch(tabs: number) {
         this.status = tabs;
-        this.router.navigate(['/', "member-profile"], {
+        /*this.router.navigate(['/', "member-profile"], {
             queryParams: {
                 member_id: this.member_id,
                 open: this.status
             }
-        });
+        });*/
     }
 
   ngAfterViewInit(): void {

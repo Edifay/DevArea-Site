@@ -14,11 +14,11 @@ import {animate, query, state, style, transition, trigger} from "@angular/animat
                     height: '*',
                     opacity: '1',
                     'margin-bottom':'15px',
+                    transform:'scale(1)'
                 }
             )),
             state('closed', style(
                 {
-                    transform:'scale(0)',
                     height: '0',
                     opacity: '0',
                 }

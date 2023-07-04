@@ -52,11 +52,11 @@ export class Options implements OnInit {
 
     public switch(tabs: number) {
         this.status = tabs;
-        this.router.navigate(['/', "options"], {
+        /*this.router.navigate(['/', "options"], {
             queryParams: {
                 open: this.status
             }
-        });
+        });*/
     }
 
 }
