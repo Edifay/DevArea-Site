@@ -11,11 +11,9 @@
 
   box-shadow: 0 5px 10px rgb(0 0 0 / 19%);
 
-  cursor: pointer;
 }
 
 #container:active {
-  user-select: none;
 }
 
 #childs {
@@ -65,6 +63,9 @@ hr {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 12px;
+
+  user-select: none;
+  cursor: pointer;
 }
 
 #first_line img {

@@ -41,7 +41,7 @@ import {animate, query, state, style, transition, trigger} from "@angular/animat
                 }
             )),
             transition('bot => top', [
-                animate('0.08s')
+                animate('0.15s')
             ]),
             transition('top => bot', [
                 animate('0.08s')
