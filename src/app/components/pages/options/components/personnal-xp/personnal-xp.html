@@ -9,8 +9,7 @@
     </div>
     <div class="progress-bar">
       <span class="bar">
-        <span class="progress"
-              [ngStyle]="{'width':(this.xp - this.previous_level_xp) / (this.next_level_xp - this.previous_level_xp)*100+'%'}"></span>
+        <span class="progress" [ngStyle]="{width:getLong()+'%'}"></span>
       </span>
     </div>
 
