@@ -3,11 +3,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "../../../services/member.service";
 import {Subscription} from "rxjs";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.html',
-  styleUrls: ['./menu.scss']
+  styleUrls: ['./menu.scss'],
+  animations:[smoothAppear]
 })
 export class Menu implements OnInit {
   @Input() pseudo: string = '';

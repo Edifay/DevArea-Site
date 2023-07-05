@@ -4,12 +4,14 @@ import {ActivatedRoute, Route, Router} from "@angular/router";
 import {MemberService} from "../../../services/member.service";
 import {tabs} from "../options/options";
 import {MemberProfile} from "../../../models/member-profile";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 
 @Component({
     selector: 'app-member-profile',
     templateUrl: './member-profile.html',
-    styleUrls: ['./member-profile.scss']
+    styleUrls: ['./member-profile.scss'],
+    animations:[smoothAppear]
 })
 export class MemberProfileComponent implements AfterViewInit {
 

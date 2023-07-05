@@ -3,11 +3,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MissionContent} from "../../../models/missionContent";
 import {HttpClient} from "@angular/common/http";
 import {MemberService} from "../../../services/member.service";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
     selector: 'app-mission',
     templateUrl: './mission.html',
-    styleUrls: ['./mission.scss']
+    styleUrls: ['./mission.scss'],
+    animations:[smoothAppear]
 })
 export class Mission implements OnInit {
 

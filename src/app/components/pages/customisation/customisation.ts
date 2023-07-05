@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 
 @Component({
   selector: 'app-customisation',
   templateUrl: './customisation.html',
-  styleUrls: ['./customisation.scss']
+  styleUrls: ['./customisation.scss'],
+  animations:[smoothAppear]
 })
 
 

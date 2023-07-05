@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {formatNumber} from "@angular/common";
 import{HttpClient} from "@angular/common/http";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
   selector: 'app-reseaux',
   templateUrl: './reseaux.html',
-  styleUrls: ['./reseaux.scss']
+  styleUrls: ['./reseaux.scss'],
+  animations:[smoothAppear]
 })
 export class Reseaux implements OnInit {
   openTab:boolean=false;

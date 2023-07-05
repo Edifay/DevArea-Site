@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {MemberInfos} from "../../../models/member-infos";
 import {InputFieldData} from "./components/input-field/input-field";
 import {HttpClient} from "@angular/common/http";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -29,7 +30,8 @@ function dataFieldToField(datas: InputFieldData[]): FreelanceField[] {
 @Component({
     selector: 'app-freelance-creator',
     templateUrl: './freelance-creator.html',
-    styleUrls: ['./freelance-creator.scss']
+    styleUrls: ['./freelance-creator.scss'],
+    animations:[smoothAppear]
 })
 export class FreelanceCreator implements OnInit {
 

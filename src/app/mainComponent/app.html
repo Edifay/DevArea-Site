@@ -1,11 +1,12 @@
-<div id="main_switcher">
+<div id="main_switcher" [@appear]="true">
     <app-theme-switcher></app-theme-switcher>
 </div>
-<site-header></site-header>
+<site-header [@appear]="true"></site-header>
 <div id="dist_top"></div>
-<app-connexion-button *ngIf="memberInfos" [sourceImage]="this.memberInfos.urlAvatar" [name]="this.memberInfos.name" [style_on_connection_change]="this.connected"></app-connexion-button>
+<app-connexion-button [@appear]="true" *ngIf="memberInfos" [sourceImage]="this.memberInfos.urlAvatar" [name]="this.memberInfos.name"
+                      [style_on_connection_change]="this.connected"></app-connexion-button>
 <app-connexion-button *ngIf="!memberInfos"></app-connexion-button>
-<div id="main_content">
+<div id="main_content" [@appear]="true">
     <router-outlet></router-outlet>
 </div>
-<site-footer></site-footer>
+<site-footer [@appear]="true"></site-footer>

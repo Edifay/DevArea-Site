@@ -2,11 +2,13 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {WebFreelancePreview} from "../../../models/WebFreelancePreview";
 import {FreelancesService} from "../../../services/pagesServices/freelances.service";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
     selector: 'app-freelances',
     templateUrl: './freelances.html',
-    styleUrls: ['./freelances.scss']
+    styleUrls: ['./freelances.scss'],
+    animations:[smoothAppear]
 })
 export class Freelances implements OnInit {
     public freelances: WebFreelancePreview[] | undefined;

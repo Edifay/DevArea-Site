@@ -1,4 +1,4 @@
-<div *ngIf="this.mission" id="container">
+<div *ngIf="this.mission" id="container" [@appear]="true">
     <div id="mission_content">
         <h1>{{mission!.title}}</h1>
         <markdown emoji id="description">{{mission!.description}}</markdown>

@@ -2,11 +2,13 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {MissionPreview} from "../../../models/missionPreview";
 import {MissionsService} from "../../../services/pagesServices/missions.service";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
     selector: 'app-missions',
     templateUrl: './missions.html',
-    styleUrls: ['./missions.scss']
+    styleUrls: ['./missions.scss'],
+    animations:[smoothAppear]
 })
 
 export class Missions implements OnInit {

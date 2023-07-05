@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {StatsService} from "../../../services/pagesServices/stats.service";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 export interface Language {
     name: string;
@@ -20,7 +21,8 @@ export interface XpMember {
 @Component({
     selector: 'app-stats',
     templateUrl: './stats.html',
-    styleUrls: ['./stats.scss']
+    styleUrls: ['./stats.scss'],
+    animations:[smoothAppear]
 })
 
 export class Stats implements OnInit {

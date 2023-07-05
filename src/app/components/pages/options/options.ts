@@ -4,6 +4,7 @@ import {CookieService} from "ngx-cookie-service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MemberService} from "../../../services/member.service";
 import {MemberInfos} from "../../../models/member-infos";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 export enum tabs {
     Mission,
@@ -13,7 +14,8 @@ export enum tabs {
 @Component({
     selector: 'app-options',
     templateUrl: './options.html',
-    styleUrls: ['./options.scss']
+    styleUrls: ['./options.scss'],
+    animations:[smoothAppear]
 })
 export class Options implements OnInit {
 

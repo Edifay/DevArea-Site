@@ -3,6 +3,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {MemberService} from "../services/member.service";
 import {MemberInfos} from "../models/member-infos";
 import {Router} from '@angular/router';
+import {smoothAppear} from "../animations/smoothAppear";
 
 let count = 0;
 let oldPage = window.location.href.split('/').pop()
@@ -10,7 +11,10 @@ let oldPage = window.location.href.split('/').pop()
 @Component({
     selector: 'app-root',
     templateUrl: './app.html',
-    styleUrls: ['./app.scss']
+    styleUrls: ['./app.scss'],
+    animations:[
+        smoothAppear
+    ]
 })
 export class App {
 

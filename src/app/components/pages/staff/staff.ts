@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StaffService} from "../../../services/pagesServices/staff.service";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 export interface staffCard {
     name: string;
@@ -12,7 +13,8 @@ export interface staffCard {
 @Component({
     selector: 'app-staff',
     templateUrl: './staff.html',
-    styleUrls: ['./staff.scss']
+    styleUrls: ['./staff.scss'],
+    animations:[smoothAppear]
 })
 export class Staff implements OnInit {
     public staff: staffCard[] | undefined;

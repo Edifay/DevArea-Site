@@ -6,11 +6,13 @@ import {Router} from "@angular/router";
 import {MemberInfos} from "../../../models/member-infos";
 import {MarkdownService} from "ngx-markdown";
 import {formatDate} from "@angular/common";
+import {smoothAppear} from "../../../animations/smoothAppear";
 
 @Component({
   selector: 'app-mission-creator',
   templateUrl: './mission-creator.html',
-  styleUrls: ['./mission-creator.scss']
+  styleUrls: ['./mission-creator.scss'],
+  animations:[smoothAppear]
 })
 export class MissionCreator implements OnInit {
 

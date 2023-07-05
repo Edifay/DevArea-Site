@@ -1,4 +1,4 @@
-<div id="container" *ngIf="member_profile">
+<div id="container" *ngIf="member_profile" [@appear]="true">
     <h1 id="title_page">{{this.member_profile.name}}</h1>
     <div id="first_line" *ngIf="member_profile">
         <div id="first_colum">
