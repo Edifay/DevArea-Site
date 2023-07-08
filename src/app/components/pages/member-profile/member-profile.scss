@@ -119,6 +119,22 @@ markdown {
   background: rgba(0, 0, 0, 0);
 }
 
+#avis_grid {
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 30px;
+
+
+}
+
+
 
 @media screen and (max-width: 650px) {
   #first_line {

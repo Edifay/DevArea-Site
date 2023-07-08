@@ -9,13 +9,14 @@ import {smoothAppear} from "../../../animations/smoothAppear";
 export enum tabs {
     Mission,
     Freelance,
+    Avis
 }
 
 @Component({
     selector: 'app-options',
     templateUrl: './options.html',
     styleUrls: ['./options.scss'],
-    animations:[smoothAppear]
+    animations: [smoothAppear]
 })
 export class Options implements OnInit {
 

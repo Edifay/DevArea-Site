@@ -49,6 +49,7 @@ import {JoinDevArea} from "./components/pages/menu/components/join-dev-area/join
 import {MarkdownModule} from "ngx-markdown";
 import {NgOptimizedImage} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AvisCard } from './components/pages/options/components/avis-card/avis-card';
 
 @NgModule({
     declarations: [
@@ -91,6 +92,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         Footer,
         TypesDescription,
         JoinDevArea,
+        AvisCard,
     ],
     imports: [
         BrowserModule,

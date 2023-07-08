@@ -1,0 +1,25 @@
+<div id="container">
+  <div id="first_line">
+    <div id="member_info" (click)="openProfile()">
+      <img src="{{this.avi?.avatarUrl}}" alt="">
+      <div id="text">
+        <h3>{{this.avi?.name}}</h3>
+        <h6>{{this.avi?.status}}</h6>
+      </div>
+    </div>
+    <div id="note">
+      <p *ngIf="this.avi!.grade > 0">⭐</p>
+      <p *ngIf="this.avi!.grade > 1">⭐</p>
+      <p *ngIf="this.avi!.grade > 2">⭐</p>
+      <p *ngIf="this.avi!.grade > 3">⭐</p>
+      <p *ngIf="this.avi!.grade > 4">⭐</p>
+
+      <p *ngIf="this.avi!.grade < 5" class="inverted">⭐</p>
+      <p *ngIf="this.avi!.grade < 4" class="inverted">⭐</p>
+      <p *ngIf="this.avi!.grade < 3" class="inverted">⭐</p>
+      <p *ngIf="this.avi!.grade < 2" class="inverted">⭐</p>
+      <p *ngIf="this.avi!.grade < 1" class="inverted">⭐</p>
+    </div>
+  </div>
+  <p>{{this.avi?.comment}}</p>
+</div>

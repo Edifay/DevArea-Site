@@ -1,6 +1,7 @@
 import { Badge } from "./badge";
 import {MissionPreview} from "./missionPreview";
 import {FreelanceContent} from "./FreelanceContent";
+import {avis} from "./avis";
 
 export interface MemberProfile {
     id: string;
@@ -16,4 +17,5 @@ export interface MemberProfile {
     freelance: FreelanceContent | undefined;
     badges: Badge[];
     memberDescription: string | undefined;
+    avis:avis[];
 }

@@ -36,6 +36,10 @@
                 <p *ngIf="this.status != tabs.Freelance" style="color:grey;" (click)="switch(tabs.Freelance)">
                     Freelance</p>
                 <p *ngIf="this.status == tabs.Freelance">Freelance</p>
+                <div class="separator" *ngIf="this.member_profile!.avis.length != 0 || this.status == tabs.Avis"></div>
+                <p *ngIf="this.status != tabs.Avis && (this.member_profile!.avis.length != 0 || this.status == tabs.Avis)" style="color:grey;" (click)="switch(tabs.Avis)">
+                    Avis</p>
+                <p *ngIf="this.status == tabs.Avis && (this.member_profile!.avis.length != 0 || this.status == tabs.Avis)">Avis</p>
             </div>
             <hr/>
 
@@ -43,6 +47,12 @@
                                  [missions]="member_profile.missions_list"></app-missions-wiewer>
             <app-freelance-wiewer *ngIf="this.status == tabs.Freelance"
                                   [freelance]="this.member_profile!.freelance"></app-freelance-wiewer>
+            <div id="avis_grid" *ngIf="this.status == tabs.Avis && this.member_profile!.avis.length != 0" >
+                <app-avis-card *ngFor="let avi of this.member_profile!.avis "
+                               [@appear]="true"
+                               [avi]="avi"></app-avis-card>
+            </div>
+            <h2 [@appear]="true" *ngIf="this.status == tabs.Avis && this.member_profile!.avis.length == 0" style="text-align: center">Ce membre ne possède pas d'avis.</h2>
         </div>
     </div>
     <div *ngIf="memberConnectedId == member_id" class="button" (click)="openOptions()">Gérer votre profil...</div>
