@@ -2,6 +2,7 @@ import {Badge} from "./badge";
 import {MissionPreview} from "./missionPreview";
 import {FreelanceContent} from "./FreelanceContent";
 import {avis} from "./avis";
+import {WebValidatedChallenge} from "./WebValidatedChallengeCard";
 
 export interface MemberInfos {
     id: string;
@@ -18,4 +19,5 @@ export interface MemberInfos {
     badges: Badge[];
     memberDescription: string | undefined;
     avis:avis[];
+    challengesAccomplished:WebValidatedChallenge[];
 }

@@ -1,0 +1,47 @@
+<div class="container" [@appear]="true">
+    <div class="large_component">
+        <h1 class="title">
+            Les challenges
+        </h1>
+        <p>
+            Les challenges, tout d'abord qu'est ce que c'est ?<br><br>
+
+            Un challenge est un petit défi algorithmique et/ou de programmation intéractif proposé par Dev'Area.<br><br>
+
+            Le fonctionnement est assez simple, vous avez simplement a télécharger le client dans votre language préféré
+            pour commencer les défis !
+
+            Le client vous permettra de dialoguer avec le serveur pour recevoir les jeux de tests et validé vos réponses
+            !
+        </p>
+        <div class="button" routerLink="download">
+            Télécharger un client
+        </div>
+    </div>
+    <div id="bottom_container">
+        <div id="map_section">
+            <h1 class="title">Challenge Map</h1>
+            <div id="mapContainer">
+                <p *ngIf="isConnected === 'not_connected'">Connectez-vous pour votre votre progression.</p>
+                <div class="levelContainer" *ngFor="let i of eachLevel()">
+                    <div class="challengeContainer">
+                        <div *ngFor="let challenge of getChallengesOfLevel(i)">
+                            <p [id]="challenge" class="challenge" (mouseenter)="enter(challenge)"
+                               (mouseleave)="leave()">{{ getChallengeStatus(challenge) + challenge }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="activity_section">
+            <h1 class="title">Activité récente</h1>
+            <div id="activityContainer">
+                <div class="activityCard" *ngFor="let card of challengeActivity">
+                    <img [src]="card.avatarUrl" alt="">
+                    <p>{{ card.name }} a validé <strong style="font-style: italic">{{ card.challenge.name }}</strong> il
+                        y a {{ transform(card.challenge.date) }}.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

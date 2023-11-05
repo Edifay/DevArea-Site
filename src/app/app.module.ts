@@ -50,6 +50,8 @@ import {MarkdownModule} from "ngx-markdown";
 import {NgOptimizedImage} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AvisCard } from './components/pages/options/components/avis-card/avis-card';
+import { ChallengesComponent } from './components/pages/challenges/challenges';
+import { ChallengesDownload } from './components/pages/challenges-download/challenges-download';
 
 @NgModule({
     declarations: [
@@ -93,6 +95,8 @@ import { AvisCard } from './components/pages/options/components/avis-card/avis-c
         TypesDescription,
         JoinDevArea,
         AvisCard,
+        ChallengesComponent,
+        ChallengesDownload,
     ],
     imports: [
         BrowserModule,

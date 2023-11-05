@@ -1,0 +1,19 @@
+table {
+    width: min(800px, 90%);
+
+    margin-right: auto;
+    margin-left: auto;
+
+    border-spacing: 0;
+}
+thead{
+    font-size: 24px;
+}
+
+
+table td {
+    border: 1px solid;
+    text-align: center;
+
+    font-size: 18px;
+}

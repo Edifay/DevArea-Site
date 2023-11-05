@@ -1,0 +1,141 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+
+#presentation {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-component-color);
+    border-radius: 20px;
+    margin-bottom: 60px;
+    width: min(1335px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+#bottom_container {
+    display: flex;
+
+    flex-wrap: wrap-reverse;
+}
+
+
+#activityContainer {
+    margin: 30px auto 0;
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+
+.activityCard {
+    background-color: var(--background-component-color);
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+
+    img {
+        width: 50px;
+
+        border-radius: 50px;
+    }
+}
+
+#map_section {
+    flex: 2;
+}
+
+#activity_section {
+    flex: 1;
+
+    margin-right: 20px;
+    margin-left: 20px;
+
+    min-width: 300px;
+}
+
+#mapContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+    gap: 60px;
+}
+
+.levelContainer {
+    border-radius: 8px;
+
+    padding: 13px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+.challengeContainer {
+    display: flex;
+
+    gap: 50px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.challenge {
+    background-color: var(--background-component-color);
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 570px) {
+    .challenge {
+        font-size: 14px;
+    }
+
+    #activity_section {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+}
+
+@media screen and (max-width: 678px) {
+    #bottom_container {
+        gap: 100px;
+    }
+}

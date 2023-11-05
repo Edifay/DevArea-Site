@@ -15,6 +15,8 @@ import {NotFound} from "./components/pages/not-found/not-found";
 import {MemberProfileComponent} from "./components/pages/member-profile/member-profile";
 import {Freelances} from "./components/pages/freelances/freelances";
 import {FreelanceCreator} from "./components/pages/freelance-creator/freelance-creator";
+import {ChallengesComponent} from "./components/pages/challenges/challenges";
+import {ChallengesDownload} from "./components/pages/challenges-download/challenges-download";
 
 const routes: Routes = [
     {path: 'menu', component: Menu},
@@ -32,6 +34,8 @@ const routes: Routes = [
     {path: 'member-profile', component: MemberProfileComponent},
     {path: 'freelances', component: Freelances},
     {path: 'freelance-creator', component: FreelanceCreator},
+    {path: 'challenges', component: ChallengesComponent},
+    {path: 'challenges/download', component: ChallengesDownload},
     {path: '**', component: NotFound}
 ];
 
