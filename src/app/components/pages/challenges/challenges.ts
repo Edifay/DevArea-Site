@@ -5,8 +5,7 @@ import {ChallengesService} from "../../../services/pagesServices/challenges.serv
 import 'leader-line';
 import {MemberService} from "../../../services/member.service";
 import {MemberInfos} from "../../../models/member-infos";
-import {NavigationEnd, NavigationStart, Router} from "@angular/router";
-import {getDependency} from "@angular/compiler-cli/linker/src/file_linker/partial_linkers/util";
+import {NavigationEnd, Router} from "@angular/router";
 
 declare let LeaderLine: any;
 
@@ -62,8 +61,8 @@ export class ChallengesComponent implements OnInit, OnDestroy {
      * We admit that every dependencies tree is right.
      * @param map
      */
-    buildMap(map: Map<string, string[]> | undefined) {
-        if(JSON.stringify(map) === JSON.stringify(this.map) && this.lines.size != 0)
+    buildMap(map: Map<string, string[]> | undefined): void {
+        if (JSON.stringify(map) === JSON.stringify(this.map) && this.lines.size != 0)
             return;
 
         this.lines.forEach(value => value.remove());
@@ -100,7 +99,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
                 cloned.delete(ele);
         }
 
-        setTimeout(() => {
+        setTimeout((): void => {
             map.forEach((dependencies, challenge) => {
                 if (dependencies.length == 0) {
                     let line = new LeaderLine(
@@ -113,7 +112,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
                 }
 
                 dependencies.forEach(
-                    (dependency) => {
+                    (dependency: string): void => {
                         let line = new LeaderLine(
                             LeaderLine.pointAnchor(document.getElementById(dependency), {x: '50%', y: '100%'}),
                             LeaderLine.pointAnchor(document.getElementById(challenge), {x: '50%', y: 0}),
@@ -127,20 +126,20 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         }, 100);
     }
 
-    enterReq(challenge: string) {
+    enterReq(challenge: string): void {
         if (this.map.get(challenge)?.length == 0) {
             this.lines.get(challenge + challenge).show("draw");
             this.lines.get(challenge + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
         }
 
-        this.map.get(challenge)?.forEach(dependency => {
+        this.map.get(challenge)?.forEach((dependency: string) => {
             this.lines.get(dependency + challenge).show("draw");
             this.lines.get(dependency + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
             this.enterReq(dependency);
         });
     }
 
-    enter(challenge: string) {
+    enter(challenge: string): void {
         this.lines.forEach(value => {
             value.hide("draw")
             value.setOptions({endPlugColor: 'rgba(0,0,0,0)'});
@@ -149,7 +148,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         this.enterReq(challenge);
     }
 
-    leave() {
+    leave(): void {
         this.lines.forEach(value => {
             value.show("draw");
             value.setOptions({endPlugColor: ChallengesComponent.mainColor});
@@ -172,18 +171,18 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         if (contain)
             return "";
 
-        let unlocked = true;
-        this.map.get(challenge)?.forEach(dependency => {
+        let unlocked: boolean = true;
+        this.map.get(challenge)?.forEach((dependency: string): void => {
             contain = false;
             this.memberInfo!.challengesAccomplished.forEach(challengeAccomplished => {
                 if (challengeAccomplished.name == dependency)
                     contain = true;
             });
-            if(!contain)
+            if (!contain)
                 unlocked = false;
         })
 
-        if(unlocked)
+        if (unlocked)
             return "🔓";
         else
             return "🔒";

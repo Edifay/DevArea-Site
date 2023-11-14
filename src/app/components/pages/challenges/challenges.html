@@ -22,7 +22,7 @@
         <div id="map_section">
             <h1 class="title">Challenge Map</h1>
             <div id="mapContainer">
-                <p *ngIf="isConnected === 'not_connected'">Connectez-vous pour votre votre progression.</p>
+                <p style="color:var(--main-color); font-style: italic;" *ngIf="isConnected === 'not_connected'">Connectez-vous pour voir votre progression.</p>
                 <div class="levelContainer" *ngFor="let i of eachLevel()">
                     <div class="challengeContainer">
                         <div *ngFor="let challenge of getChallengesOfLevel(i)">
