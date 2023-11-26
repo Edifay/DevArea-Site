@@ -6,6 +6,7 @@ import 'leader-line';
 import {MemberService} from "../../../services/member.service";
 import {MemberInfos} from "../../../models/member-infos";
 import {NavigationEnd, Router} from "@angular/router";
+import {LinesService} from "../../../services/pagesServices/lines.service";
 
 declare let LeaderLine: any;
 
@@ -22,7 +23,6 @@ export class ChallengesComponent implements OnInit, OnDestroy {
 
     public map: Map<string, string[]> = new Map();
     public mapLevel: Map<string, number> = new Map();
-    public lines: Map<string, any> = new Map();
 
     public isConnected: string = "connected";
     public memberInfo: MemberInfos | undefined;
@@ -33,23 +33,23 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         endPlug: 'arrow2',
     };
 
-    constructor(public challengeService: ChallengesService, public memberService: MemberService, private router: Router) {
+    constructor(public linesServices: LinesService, public challengeService: ChallengesService, public memberService: MemberService, private router: Router) {
         this.challengeService.challengeActivity$.subscribe(value => this.challengeActivity = value);
         this.challengeService.map$.subscribe(value => this.buildMap(value));
 
         this.memberService.connected$.subscribe(value => this.isConnected = value);
         this.memberService.memberInfos$.subscribe(value => this.memberInfo = value);
-
-        router.events.subscribe(
-            (event) => {
-                if (event instanceof NavigationEnd) {
-                    this.lines.forEach(value => value.remove());
-                }
-            });
+        /*
+                router.events.subscribe(
+                    (event) => {
+                        if (event instanceof NavigationEnd) {
+                            this.linesServices.destroyAll();
+                        }
+                    });*/
     }
 
     ngOnDestroy(): void {
-        this.lines.forEach(value => value.remove());
+        this.linesServices.destroyAll();
     }
 
     ngOnInit(): void {
@@ -62,10 +62,8 @@ export class ChallengesComponent implements OnInit, OnDestroy {
      * @param map
      */
     buildMap(map: Map<string, string[]> | undefined): void {
-        if (JSON.stringify(map) === JSON.stringify(this.map) && this.lines.size != 0)
+        if (JSON.stringify(map) === JSON.stringify(this.map) && this.linesServices.lines.size != 0)
             return;
-
-        this.lines.forEach(value => value.remove());
 
         if (map == undefined)
             return;
@@ -98,7 +96,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
             for (let ele of atRemove)
                 cloned.delete(ele);
         }
-
+        
         setTimeout((): void => {
             map.forEach((dependencies, challenge) => {
                 if (dependencies.length == 0) {
@@ -108,7 +106,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
                         ChallengesComponent.arrowStyle
                     );
                     line.path = 'straight';
-                    this.lines.set(challenge + challenge, line);
+                    this.linesServices.set(challenge + challenge, line);
                 }
 
                 dependencies.forEach(
@@ -119,7 +117,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
                             ChallengesComponent.arrowStyle
                         );
                         line.path = 'straight';
-                        this.lines.set(dependency + challenge, line);
+                        this.linesServices.set(dependency + challenge, line);
                     }
                 )
             })
@@ -128,19 +126,19 @@ export class ChallengesComponent implements OnInit, OnDestroy {
 
     enterReq(challenge: string): void {
         if (this.map.get(challenge)?.length == 0) {
-            this.lines.get(challenge + challenge).show("draw");
-            this.lines.get(challenge + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
+            this.linesServices.lines.get(challenge + challenge).show("draw");
+            this.linesServices.lines.get(challenge + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
         }
 
         this.map.get(challenge)?.forEach((dependency: string) => {
-            this.lines.get(dependency + challenge).show("draw");
-            this.lines.get(dependency + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
+            this.linesServices.lines.get(dependency + challenge).show("draw");
+            this.linesServices.lines.get(dependency + challenge).setOptions({endPlugColor: ChallengesComponent.mainColor});
             this.enterReq(dependency);
         });
     }
 
     enter(challenge: string): void {
-        this.lines.forEach(value => {
+        this.linesServices.lines.forEach(value => {
             value.hide("draw")
             value.setOptions({endPlugColor: 'rgba(0,0,0,0)'});
         });
@@ -149,7 +147,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
     }
 
     leave(): void {
-        this.lines.forEach(value => {
+        this.linesServices.lines.forEach(value => {
             value.show("draw");
             value.setOptions({endPlugColor: ChallengesComponent.mainColor});
         });
