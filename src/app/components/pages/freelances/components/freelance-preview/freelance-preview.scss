@@ -22,6 +22,8 @@
   border-color: var(--background-color);
 
   transition: border-color 0.1s, transform 0.2s ease-in-out, box-shadow 0.25s;
+
+  text-decoration: none;
 }
 
 #container:hover {

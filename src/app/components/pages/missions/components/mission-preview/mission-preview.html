@@ -1,4 +1,4 @@
-<div id="preview" (click)="open()">
+<a id="preview" (click)="open()"  routerLink="/mission" [queryParams]="{id: this.id}">
     <p id="title">{{title}}</p>
     <p>{{description}}</p>
     <div id="last_line">
@@ -9,4 +9,4 @@
             <img src="{{posterUrl}}">
         </div>
     </div>
-</div>
+</a>

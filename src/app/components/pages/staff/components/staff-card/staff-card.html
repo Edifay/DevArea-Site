@@ -1,7 +1,9 @@
 <div id="{{ staff_id }}" class="staff">
+  <a routerLink="/member-profile" [queryParams]="{member_id: this.staff_member_id}">
     <h1 id="name" [ngStyle]="{'font-size':getSize()}" (click)="openProfile()">
-        <img id="icon" src="{{ staff_urlAvatar }}">
-        {{ staff_name }}</h1>
-    <p id="description" [ngStyle]="{'font-size':getDescriptionSize()}"> {{ staff_bio }} </p>
+      <img id="icon" src="{{ staff_urlAvatar }}">
+      {{ staff_name }}</h1>
+  </a>
+  <p id="description" [ngStyle]="{'font-size':getDescriptionSize()}"> {{ staff_bio }} </p>
 </div>
 

@@ -16,4 +16,4 @@
     <h2 *ngIf="missions.length == 0 && !controller" class="no_mission">Ce membre ne possède pas de
         mission...</h2>
 </div>
-<div *ngIf="controller" class="button" routerLink="/mission-creator">Nouvelle mission</div>
+<a *ngIf="controller" class="button" routerLink="/mission-creator">Nouvelle mission</a>

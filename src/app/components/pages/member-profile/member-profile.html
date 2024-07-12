@@ -56,7 +56,7 @@
             <h2 [@appear]="true" *ngIf="this.status == tabs.Avis && this.member_profile!.avis.length == 0" style="text-align: center">Ce membre ne possède pas d'avis.</h2>
         </div>
     </div>
-    <div *ngIf="memberConnectedId == member_id" class="button" (click)="openOptions()">Gérer votre profil...</div>
+    <a *ngIf="memberConnectedId == member_id" class="button" routerLink="/options" (click)="openOptions()">Gérer votre profil...</a>
 </div>
 
 <div class="disabled_button" *ngIf="!member_profile">

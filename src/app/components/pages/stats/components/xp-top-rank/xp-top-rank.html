@@ -1,10 +1,10 @@
 <div id="container">
     <div id="left">
         <h2 id="rank"><a id="emoji">{{trophy}}</a>:</h2>
-        <div id="profile" (click)="openProfile()">
+        <a id="profile" (click)="openProfile()" routerLink="/member-profile" [queryParams]="{member_id: this.id}">
             <img src="{{url}}">
             <h2 id="pseudo">{{pseudo}}</h2>
-        </div>
+        </a>
     </div>
     <div id="right">
         <h2 id="xp">{{xp}}</h2>

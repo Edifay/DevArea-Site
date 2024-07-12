@@ -1,8 +1,8 @@
 <div [@appear]="true">
     <h2 *ngIf="!this.freelance && controller">Vous ne possédez pas de page freelance.</h2>
-    <div class="button" style="margin-left: auto; margin-right: auto; margin-top: 30px" (click)="edit()"
+    <a class="button" (click)="edit()" routerLink="/freelance-creator"
          *ngIf="!this.freelance && controller">Créer sa page Freelance
-    </div>
+    </a>
     <h2 *ngIf="!this.freelance && !controller">Ce membre ne possède pas de page freelance.</h2>
     <div *ngIf="this.freelance" id="container">
         <div id="head_text">

@@ -35,4 +35,5 @@ export class FreelancePreview implements OnInit {
         });
     }
 
+  protected readonly tabs = tabs;
 }
