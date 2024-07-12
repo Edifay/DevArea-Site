@@ -3,6 +3,7 @@
     <div id="first_line" *ngIf="member_profile">
         <div id="first_colum">
             <div id="xp_card">
+                <a id="button_contact" class="button" href="https://www.discordapp.com/users/{{member_id}}">🗨️</a>
                 <app-personnal-xp
                         [avatar]="this.member_profile.urlAvatar"
                         [name]="this.member_profile.tag"

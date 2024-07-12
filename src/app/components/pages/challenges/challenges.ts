@@ -5,8 +5,9 @@ import {ChallengesService} from "../../../services/pagesServices/challenges.serv
 import 'leader-line';
 import {MemberService} from "../../../services/member.service";
 import {MemberInfos} from "../../../models/member-infos";
-import {NavigationEnd, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {LinesService} from "../../../services/pagesServices/lines.service";
+import {HttpClient} from "@angular/common/http";
 
 declare let LeaderLine: any;
 
@@ -33,7 +34,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         endPlug: 'arrow2',
     };
 
-    constructor(public linesServices: LinesService, public challengeService: ChallengesService, public memberService: MemberService, private router: Router) {
+    constructor(public linesServices: LinesService, public challengeService: ChallengesService, public memberService: MemberService, private router: Router, public httpClient: HttpClient) {
         this.challengeService.challengeActivity$.subscribe(value => this.challengeActivity = value);
         this.challengeService.map$.subscribe(value => this.buildMap(value));
 
@@ -96,7 +97,7 @@ export class ChallengesComponent implements OnInit, OnDestroy {
             for (let ele of atRemove)
                 cloned.delete(ele);
         }
-        
+
         setTimeout((): void => {
             map.forEach((dependencies, challenge) => {
                 if (dependencies.length == 0) {
@@ -124,6 +125,27 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         }, 100);
     }
 
+    isHoveringPopup: boolean = false;
+
+    currentClicked: string = "";
+    currentPopupText: string = "";
+
+    click(challenge: string): void {
+        this.currentPopupText = "";
+        this.currentClicked = challenge;
+        this.httpClient
+            .get<string[]>('/data/challenges/load_message_challenge?challenge=' + challenge)
+            .subscribe(
+                (response) => {
+                    this.currentPopupText = response[0];
+                },
+                (error) => {
+                    console.log(error);
+                    console.log('Problem : ' + error);
+                }
+            )
+    }
+
     enterReq(challenge: string): void {
         if (this.map.get(challenge)?.length == 0) {
             this.linesServices.lines.get(challenge + challenge).show("draw");
@@ -146,7 +168,26 @@ export class ChallengesComponent implements OnInit, OnDestroy {
         this.enterReq(challenge);
     }
 
-    leave(): void {
+    enterInPopup() {
+        this.isHoveringPopup = true;
+    }
+
+    leavePopup(): void {
+        this.isHoveringPopup = false;
+        this.currentClicked = "";
+        this.currentPopupText = "";
+    }
+
+    leave(challenge: string): void {
+        /*if (this.currentClicked === challenge) {
+            setTimeout(() => {
+                if (!this.isHoveringPopup) {
+                    this.currentClicked = "";
+                    this.currentPopupText = "";
+                }
+            }, 20)
+        }*/
+
         this.linesServices.lines.forEach(value => {
             value.show("draw");
             value.setOptions({endPlugColor: ChallengesComponent.mainColor});

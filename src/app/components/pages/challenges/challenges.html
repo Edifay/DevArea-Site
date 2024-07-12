@@ -1,3 +1,12 @@
+<div id="popup" [@appear]="true" *ngIf="currentClicked !== '' " (mouseenter)="enterInPopup()">
+    <div class="line">
+        <h1>{{ currentClicked }}</h1>
+        <div class="button" (click)="leavePopup()">X</div>
+    </div>
+    <markdown [data]="currentPopupText" *ngIf="currentPopupText !== ''"></markdown>
+    <app-loader *ngIf="currentPopupText === ''"></app-loader>
+</div>
+
 <div class="container" [@appear]="true">
     <div class="large_component">
         <h1 class="title">
@@ -11,7 +20,8 @@
             Le fonctionnement est assez simple, vous avez simplement à télécharger le client dans votre language préféré
             pour commencer les défis !
 
-            Le client vous permettra de dialoguer avec le serveur pour recevoir les jeux de tests et valider vos réponses
+            Le client vous permettra de dialoguer avec le serveur pour recevoir les jeux de tests et valider vos
+            réponses
             !
         </p>
         <div class="button" routerLink="download">
@@ -22,12 +32,14 @@
         <div id="map_section">
             <h1 class="title">Challenge Map</h1>
             <div id="mapContainer">
-                <p style="color:var(--main-color); font-style: italic;" *ngIf="isConnected === 'not_connected'">Connectez-vous pour voir votre progression.</p>
+                <p style="color:var(--main-color); font-style: italic;" *ngIf="isConnected === 'not_connected'">
+                    Connectez-vous pour voir votre progression.</p>
                 <div class="levelContainer" *ngFor="let i of eachLevel()">
                     <div class="challengeContainer">
                         <div *ngFor="let challenge of getChallengesOfLevel(i)">
-                            <p [id]="challenge" class="challenge" (mouseenter)="enter(challenge)"
-                               (mouseleave)="leave()">{{ getChallengeStatus(challenge) + challenge }}</p>
+                            <p [id]="challenge" class="challenge" (click)="click(challenge)"
+                               (mouseenter)="enter(challenge)"
+                               (mouseleave)="leave(challenge)">{{ getChallengeStatus(challenge) + challenge }}</p>
                         </div>
                     </div>
                 </div>
